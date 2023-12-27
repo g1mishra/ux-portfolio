@@ -1,113 +1,236 @@
-import Image from 'next/image'
+import Header from "@/components/Header";
+import ProjectCard from "@/components/ProjectCard";
+import ArrowLinkIcon from "@/components/icons/ArrowLinkIcon";
+import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+const projects = [
+  {
+    title: "Homie",
+    description: "A mobile app that helps you find roommates and housing.",
+    thumbnail: "/images/homie.png",
+    colour: "stadiabt",
+    link: "/project/homie",
+  },
+  {
+    title: "Homeslice",
+    description: "A mobile app that helps you find roommates and housing.",
+    thumbnail: "/images/homeslice.png",
+    colour: "spotlight",
+    link: "/project/homeslice",
+  },
+  {
+    title: "Sugarwise",
+    description: "A mobile app that helps you find roommates and housing.",
+    thumbnail: "/images/sugarwise.png",
+    colour: "thn",
+    link: "/project/sugarwise",
+  },
+];
+
+const Work = () => {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+    <main>
+      <Header />
+      <div className="section-hero">
+        <div className="hero-fade">
+          <div className="scroll-wrapper">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="49"
+              viewBox="0 0 48 49"
+              fill="none"
+              className="icon-scroll-down animate-bounce"
+            >
+              <path
+                d="M24 44.1899L10 30.1899L12.1 28.0899L22.5 38.4899V4.18994H25.5V38.4899L35.9 28.0899L38 30.1899L24 44.1899Z"
+                fill="#F2F2F2"
+              />
+            </svg>
+          </div>
+        </div>
+        <div className="container-hero-image">
+          <div className="glare-item-top outer-edge"></div>
+          <div className="window-outline">
+            <div className="glare-item-top hero-inner"></div>
+            <div className="window-main">
+              <div className="shine-wrapper">
+                <div className="shine-small"></div>
+                <div className="shine-big"></div>
+              </div>
+              <div className="window-bar">
+                <div className="window-dots-wrapper">
+                  <div className="dot red"></div>
+                  <div className="dot yellow"></div>
+                  <div className="dot green"></div>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="33"
+                  viewBox="0 0 32 33"
+                  fill="none"
+                  className="icon-windowbar-plus"
+                >
+                  <path
+                    d="M14.8646 26.2687V17.9354H6.53125V15.6644H14.8646V7.33105H17.1356V15.6644H25.4689V17.9354H17.1356V26.2687H14.8646Z"
+                    fill="#F2F2F2"
+                  />
+                </svg>
+              </div>
+              <div className="window-content">
+                <div className="flex flex-col">
+                  <h1 className="text-6xl w-10/12 font-bold leading-normal text-white">
+                    Hi, I&#39;m Sampada
+                  </h1>
+                  <h2 className="text-6xl mt-3 w-10/12 font-bold">
+                    <span className="text-[#f2f2f2]">I </span>
+                    <span className="shadow-text ">design</span>
+                    <span className="text-[#f2f2f2]">, </span>
+                    <span className="shadow-text ">sketch</span>
+                    <span className="text-[#f2f2f2]"> &amp; </span>
+                    <span className="shadow-text t">doodle</span>
+                    <span className="text-[#f2f2f2]">.</span>
+                  </h2>
+                  <p className="text-2xl mt-8 w-10/12 font-normal text-white">
+                    I&#39;m a passionate User Experience Designer based in
+                    Indianapolis, Indiana with an experience in delivering
+                    end-to-end UX/UI design fro products and services. My design
+                    journey is fueled by a profound passion for improving the
+                    lives of others through design, and I am constantly seeking
+                    to learn new things every day.
+                  </p>
+                </div>
+                <div className="window-grain"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="hero-bg-gradient"></div>
+        <div className="hero-noise"></div>
+      </div>
+      <div className="section-hero-portrait">
+        <div className="flex flex-col gap-4">
+          <h1 className="text-2xl font-bold leading-normal text-white">
+            Hi, I&#39;m Sampada
+          </h1>
+          <h2 className="text-5xl font-bold">
+            <span className="text-[#f2f2f2]">I </span>
+            <span className="shadow-text ">design</span>
+            <span className="text-[#f2f2f2]">, </span>
+            <span className="shadow-text ">sketch</span>
+            <span className="text-[#f2f2f2]"> &amp; </span>
+            <span className="shadow-text t">doodle</span>
+            <span className="text-[#f2f2f2]">.</span>
+          </h2>
+          <p className="mt-3 text-xl font-normal text-white">
+            I&#39;m a passionate User Experience Designer based in Indianapolis,
+            Indiana with an experience in delivering end-to-end UX/UI design fro
+            products and services. My design journey is fueled by a profound
+            passion for improving the lives of others through design, and I am
+            constantly seeking to learn new things every day.
+          </p>
+        </div>
+        <div className="divider-scroll-wrapper">
+          <div className="hero-portrait-divider"></div>
+          <div className="hero-portrait-scroll">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="49"
+              viewBox="0 0 48 49"
+              className="icon-scroll-down portrait animate-bounce"
+              fill="none"
+            >
+              <path
+                d="M24 44.1899L10 30.1899L12.1 28.0899L22.5 38.4899V4.18994H25.5V38.4899L35.9 28.0899L38 30.1899L24 44.1899Z"
+                fill="#F2F2F2"
+              />
+            </svg>
+            <div className="text-portrait-overline selected-work">
+              Recent Work
+            </div>
+          </div>
+        </div>
+        <div className="hero-noise" />
+      </div>
+      <div className="section-projects">
+        <div className="container-projects">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              thumbnail={project.thumbnail}
+              colour={project.colour as any}
+              link={project.link}
             />
-          </a>
+          ))}
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="section-footer">
+        <div className="container-footer">
+          <div className="footer-top-wrapper">
+            <div />
+            <div className="footer-links-column-wrapper">
+              <div className="footer-links-column">
+                <div className="text-footer-links-overline">MAIN</div>
+                <div className="footer-links-wrapper">
+                  <Link
+                    href="/"
+                    aria-current="page"
+                    className="footer-link w-inline-block w--current"
+                  >
+                    <div className="text-footer-link">Work</div>
+                  </Link>
+                  <Link href="/about" className="footer-link w-inline-block">
+                    <div className="text-footer-link">Info</div>
+                  </Link>
+                </div>
+              </div>
+              <div className="footer-links-column">
+                <div className="text-footer-links-overline">CONTACT</div>
+                <div className="footer-links-wrapper">
+                  <a
+                    href="#linkedin"
+                    target="_blank"
+                    className="footer-link w-inline-block"
+                  >
+                    <div className="text-footer-link">LinkedIn</div>
+                    <ArrowLinkIcon className="icon-external" />
+                  </a>
+                  <a
+                    href="#resume"
+                    target="_blank"
+                    className="footer-link w-inline-block"
+                  >
+                    <div className="text-footer-link">Resume</div>
+                    <ArrowLinkIcon className="icon-external" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom-wrapper">
+            <div className="footer-bottom-left">
+              <div className="text-footer-copyright">
+                © 2023. All Rights Reserved.
+              </div>
+              <div className="text-under-copyright">
+                Made with love and Mango Green Teas (50% sugar, less ice).
+              </div>
+            </div>
+            <div className="footer-bottom-right">
+              <div className="text-last-updated">
+                Last updated: 28/12/2023, 2:46:54 AM
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
-  )
-}
+  );
+};
+
+export default Work;
