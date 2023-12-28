@@ -1,112 +1,49 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+import HeroGradientBG from "@/components/HeroGradientBG";
+import OverviewSection from "@/components/project/OverviewSection";
+import ProjectHero from "@/components/project/ProjectHero";
 import React from "react";
 
-function MyComponent(props: any) {
+function HomeslicePage() {
   return (
-    <div className="flex flex-col items-stretch bg-stone-950 pb-12">
-      <div className="flex w-full flex-col items-stretch px-16 pb-1.5 pt-12 max-md:max-w-full max-md:px-5">
-        <div className="mx-12 mt-14 flex items-start justify-between gap-5 px-px max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:flex-wrap">
-          <div className="flex flex-col items-start max-md:max-w-full">
-            <div className="flex items-stretch justify-center gap-2.5 rounded-[100px] border border-solid border-zinc-100 border-opacity-0 bg-zinc-100 bg-opacity-10 px-10 py-6 backdrop-blur-[5px] max-md:px-5">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c330f51ec8917395415786f0d437e605ea0ddf5e6f92e83586b2161c83fae395?"
-                className="aspect-square w-6 max-w-full shrink-0 overflow-hidden object-contain object-center"
-              />
-              <div className="text-2xl my-auto justify-center self-center font-medium leading-5 tracking-tight text-zinc-100">
-                Back
-              </div>
-            </div>
-            <div className="text-6xl max-md:text-4xl mt-10 justify-center self-end whitespace-nowrap bg-clip-text text-center font-medium leading-[88px] tracking-tighter max-md:mt-10">
-              Homslice
-            </div>
-          </div>
-          <div className="mt-40 flex flex-col items-stretch self-end max-md:mt-10">
-            <div className="whitespace-nowrap text-lg leading-6 text-zinc-100">
-              CONTENTS
-            </div>
-            <div className="mt-10 text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Overview
-            </div>
-            <div className="mt-10 text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Kickoff
-            </div>
-            <div className="mt-10 text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Research
-            </div>
-            <div className="mt-10 whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Architecture
-            </div>
-            <div className="mt-10 whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Wireframing
-            </div>
-            <div className="mt-9 whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Prototyping
-            </div>
-            <div className="mt-9 whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Final designs
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="mb-64 mt-7 flex w-full max-w-[1441px] flex-col self-center px-5 max-md:mb-10 max-md:max-w-full">
-        <div className="self-end whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-          Style guide
-        </div>
-        <div className="mt-9 self-end whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-          Takeaway
-        </div>
-        <div className="mt-[541px] w-[1106px] max-w-full self-center max-md:mt-10">
-          <div className="flex gap-5 max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div className="flex w-[62%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="flex grow flex-col items-stretch max-md:mt-10 max-md:max-w-full">
-                <div className="text-xl font-bold leading-6 text-white max-md:max-w-full">
-                  Overview
-                </div>
-                <div className="mt-12 text-xl leading-8 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
-                  Homeslice is a community-driven platform that connects
-                  students with local families or individuals who are keen to
-                  share their cultural traditions. An intuitive and
-                  user-friendly interface, empowering students to connect with
-                  families open to hosting them for cultural celebrations. At
-                  the same time, students can reciprocate by inviting these
-                  families to participate in their own cultural festivals. This
-                  aims to provide an immersive and enriching experience,
-                  effectively alleviating homesickness by fostering new cultural
-                  immersion and shared celebrations with a community.
-                </div>
-              </div>
-            </div>
-            <div className="ml-5 flex w-[38%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="flex flex-col items-stretch max-md:mt-10">
-                <div className="text-xl font-medium leading-6 text-white">
-                  My Role
-                </div>
-                <div className="mt-12 text-xl font-medium leading-8 text-zinc-100 max-md:mt-10">
-                  Product Designer
-                </div>
-                <div className="mt-7 text-xl leading-8 text-zinc-100 text-opacity-60">
-                  User Research, Interaction design, Visual design, Prototyping
-                  & Testing
-                </div>
-                <div className="mt-12 text-xl font-medium leading-6 text-white max-md:mt-10">
-                  Timeline
-                </div>
-                <div className="mt-7 text-xl leading-8 text-zinc-100 text-opacity-60">
-                  Nov - Dec 2023
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <main className="relative flex flex-col items-stretch bg-gray-100 pb-12">
+      <HeroGradientBG
+        gradient="linear-gradient(180deg, #2E2463 -20.99%, #A55900 -4.7%, rgba(16, 16, 16, 0.80) 89.5%)"
+        height="636px"
+        maxHeight="70vh"
+      />
+      <ProjectHero
+        title="Homeslice"
+        contents={[
+          "Overview",
+          "Kickoff",
+          "Research",
+          "Architecture",
+          "Wireframing",
+          "Prototyping",
+          "Final designs",
+          "Style guide",
+          "Takeaway",
+        ]}
+      />
+      <div className="container mx-auto flex flex-col items-center px-4">
+        <OverviewSection
+          overview={[
+            "Homeslice is a community-driven platform that connects students with local families or individuals who are keen to share their cultural traditions.",
+            "An intuitive and user-friendly interface, empowering students to connect with families open to hosting them for cultural celebrations. This aims to provide an immersive and enriching experience, effectively alleviating homesickness by fostering new cultural immersion and shared celebrations with a community.",
+          ]}
+          role="Product Designer"
+          research="User Research, Interaction design, Visual design, Prototyping & Testing"
+          timeline="Nov - Dec 2023"
+        />
         <div className="ml-28 mt-28 flex items-start gap-5 self-start max-md:ml-2.5 max-md:mt-10">
           <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
           <div className="self-stretch text-xl font-medium leading-6 text-white text-opacity-60">
             KICKOFF
           </div>
         </div>
-        <div className="ml-28 mt-14 max-w-[591px] self-start text-lg font-medium leading-8 text-zinc-100 max-md:mt-10 max-md:max-w-full">
+        <div className="ml-28 mt-14 max-w-[591px] self-start text-lg font-medium leading-8 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
           <span className="text-xl">
             The design journey was initiated by addressing these questions
             first:
@@ -114,22 +51,22 @@ function MyComponent(props: any) {
           <br />
           <ol>
             <li>
-              <span className="text-2xl leading-[50px] text-zinc-100">
+              <span className="text-2xl leading-[50px] text-whitesmoke-100">
                 Who is our target audience?
               </span>
             </li>
             <li>
-              <span className="text-2xl leading-[50px] text-zinc-100">
+              <span className="text-2xl leading-[50px] text-whitesmoke-100">
                 Why only them?{" "}
               </span>
             </li>
             <li>
-              <span className="text-2xl leading-[50px] text-zinc-100">
+              <span className="text-2xl leading-[50px] text-whitesmoke-100">
                 How is the problem affecting the target audience?
               </span>
             </li>
             <li>
-              <span className="text-2xl leading-[50px] text-zinc-100">
+              <span className="text-2xl leading-[50px] text-whitesmoke-100">
                 What are the effects of the problem on the target audience?
               </span>
             </li>
@@ -145,18 +82,18 @@ function MyComponent(props: any) {
         <div className="mt-28 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />
         <div className="ml-28 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
           <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
-          <div className="justify-center text-xl font-medium leading-6 text-zinc-100 text-opacity-40">
+          <div className="justify-center text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
             THE PROBLEM
           </div>
         </div>
-        <div className="text-2xl ml-28 mt-12 max-w-[475px] justify-center self-start font-medium leading-[62px] tracking-normal text-zinc-100 max-md:mt-10 max-md:max-w-full">
+        <div className="ml-28 mt-12 max-w-[475px] justify-center self-start text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
           This wasn’t just a typical loneliness.
         </div>
         <div className="mt-24 flex w-full max-w-[1211px] items-start justify-between gap-5 self-center max-md:mt-10 max-md:max-w-full max-md:flex-wrap">
-          <div className="shrink grow basis-auto justify-center text-xl font-medium leading-7 text-zinc-100">
+          <div className="shrink grow basis-auto justify-center text-xl font-medium leading-7 text-whitesmoke-100">
             Navigating the Emotional Maze : A Tangle of Homesickness Constraints
           </div>
-          <div className="shrink grow basis-auto justify-center self-stretch text-xl leading-7 text-zinc-100 text-opacity-60 max-md:max-w-full">
+          <div className="shrink grow basis-auto justify-center self-stretch text-xl leading-7 text-whitesmoke-100 text-opacity-60 max-md:max-w-full">
             Being away from the family, transitioning to a new environment,
             cultural norms and lack of support system were some of the factors
             which led to homesickness among international students.
@@ -171,12 +108,12 @@ function MyComponent(props: any) {
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c38268bec2fccd1f83c3654ca15f4de60ff56dfd96981269c6db2cf05f73cac?"
             className="my-auto aspect-square w-7 max-w-full shrink-0 overflow-hidden object-contain object-center"
           />
-          <div className="shrink grow basis-auto justify-center self-stretch text-lg italic leading-7 text-zinc-100 text-opacity-90 max-md:max-w-full">
-            <span className="text-zinc-100">
+          <div className="shrink grow basis-auto justify-center self-stretch text-lg italic leading-7 text-whitesmoke-100 text-opacity-90 max-md:max-w-full">
+            <span className="text-whitesmoke-100">
               &quot;The struggle is not just in understanding their culture{" "}
             </span>
             but in preserving mine.{" "}
-            <span className="text-zinc-100">
+            <span className="text-whitesmoke-100">
               Sometimes, I feel so lost and start missing my home.”
             </span>
           </div>
@@ -212,20 +149,20 @@ function MyComponent(props: any) {
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/5f7f8c543f905e52054013b199e0befeff16442622e4de2bd83f9a40548b4e65?"
           className="mt-10 aspect-square w-14 max-w-full items-center justify-center self-center overflow-hidden object-contain object-center"
         />
-        <div className="mt-8 justify-center self-center whitespace-nowrap text-center text-xl font-medium leading-7 text-zinc-100 text-opacity-40">
+        {/* <div className="mt-8 justify-center self-center whitespace-nowrap text-center text-xl font-medium leading-7 text-whitesmoke-100 text-opacity-40">
           HOW MIGHT WE
         </div>
-        <div className="text-4xl mt-11 max-w-[1180px] justify-center self-center text-center font-medium leading-[56px] text-zinc-100 max-md:mt-10 max-md:max-w-full">
+        <div className="mt-11 max-w-[1180px] justify-center self-center text-center text-4xl font-medium leading-[56px] text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
           How might we alleviate the impact of homesickness created by cultural
           shock on Indian international students?
         </div>
         <div className="ml-28 mt-64 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
           <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
-          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-zinc-100 text-opacity-40">
+          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
             USER RESEARCH
           </div>
         </div>
-        <div className="ml-28 mt-11 max-w-[673px] self-start text-xl leading-7 text-zinc-100 max-md:mt-10 max-md:max-w-full">
+        <div className="ml-28 mt-11 max-w-[673px] self-start text-xl leading-7 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
           To better grasp the challenges of homesickness in our target audience,
           we conducted one-on-one interviews. The 8 participants we interviewed
           exhibited varying degrees of homesickness during the initial weeks of
@@ -237,14 +174,14 @@ function MyComponent(props: any) {
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/2e9301300d13bc69c47afc1eb751e47fd6a841e2e49e2510f64f7a4fe9b26475?"
             className="aspect-square w-9 max-w-full overflow-hidden object-contain object-center"
           />
-          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-zinc-100 max-md:mt-10 max-md:max-w-full">
+          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
             Lack of support system
           </div>
-          <div className="mt-7 self-stretch text-lg leading-7 text-zinc-100 max-md:max-w-full">
+          <div className="mt-7 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
             When students have a strong support network, they often experience a
             smoother transition. The design solution should aim at helping
             students feel{" "}
-            <span className="text-zinc-100">
+            <span className="text-whitesmoke-100">
               connected to their friends, and form a support network to abate
               homesickness.
             </span>
@@ -257,10 +194,10 @@ function MyComponent(props: any) {
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/392e8bd2e19cf1f281faa765986bcda09e01590c316f96e8b7c5dfa9ee52e4d5?"
             className="aspect-square w-9 max-w-full overflow-hidden object-contain object-center"
           />
-          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-zinc-100 max-md:mt-10 max-md:max-w-full">
+          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
             Cultural Differences
           </div>
-          <div className="mt-8 self-stretch text-lg leading-7 text-zinc-100 max-md:max-w-full">
+          <div className="mt-8 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
             <div />
           </div>
         </div>
@@ -270,10 +207,10 @@ function MyComponent(props: any) {
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e2fe97b562523ad5ca1aa2202c0610f25b7f716a2b4803422ef115e5083caee?"
             className="aspect-square w-9 max-w-full overflow-hidden object-contain object-center"
           />
-          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-zinc-100 max-md:mt-10 max-md:max-w-full">
+          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
             Inability to Engage in Familiar Activities
           </div>
-          <div className="mt-7 self-stretch text-lg leading-7 text-zinc-100 max-md:max-w-full">
+          <div className="mt-7 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
             <div />
           </div>
         </div>
@@ -283,10 +220,10 @@ function MyComponent(props: any) {
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff7cdb25569e35716dbdc7a9c1d534f92ed13e904a3c6d6515d08248477f9dc5?"
             className="aspect-square w-9 max-w-full overflow-hidden object-contain object-center"
           />
-          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-zinc-100 max-md:mt-10 max-md:max-w-full">
+          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
             Transition to Living Independently
           </div>
-          <div className="mb-7 mt-7 self-stretch text-lg leading-7 text-zinc-100 max-md:max-w-full">
+          <div className="mb-7 mt-7 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
             <div />
           </div>
         </div>
@@ -373,7 +310,7 @@ function MyComponent(props: any) {
         <div className="mt-24 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />
         <div className="ml-28 mt-32 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
           <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
-          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-zinc-100 text-opacity-40">
+          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
             BRAINSTORMING AND IDEATION
           </div>
         </div>
@@ -385,14 +322,14 @@ function MyComponent(props: any) {
         <div className="mt-36 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />
         <div className="ml-28 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
           <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
-          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-zinc-100 text-opacity-40">
+          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
             PROPOSED SOLUTION
           </div>
         </div>
-        <div className="ml-28 mt-16 max-w-[592px] justify-center self-start text-xl font-medium leading-7 text-zinc-100 max-md:mt-10 max-md:max-w-full">
+        <div className="ml-28 mt-16 max-w-[592px] justify-center self-start text-xl font-medium leading-7 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
           <div />
         </div>
-        <div className="text-2xl ml-28 mt-20 max-w-[475px] justify-center self-start font-medium leading-[62px] tracking-normal text-zinc-100 max-md:mt-10 max-md:max-w-full">
+        <div className="ml-28 mt-20 max-w-[475px] justify-center self-start text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
           Our application facilitates two flows
         </div>
         <div className="mr-24 mt-7 flex w-[684px] max-w-full flex-col items-start self-end rounded-3xl bg-zinc-900 py-11 pl-12 pr-20 max-md:mr-2.5 max-md:px-5">
@@ -406,7 +343,7 @@ function MyComponent(props: any) {
               Hosting an event or a party
             </div>
           </div>
-          <div className="mt-11 w-[501px] max-w-full self-end text-lg leading-6 text-zinc-100 text-opacity-60 max-md:mt-10">
+          <div className="mt-11 w-[501px] max-w-full self-end text-lg leading-6 text-whitesmoke-100 text-opacity-60 max-md:mt-10">
             The user will start by signing up and establishing his personalized
             profile. Once the profile is set, he can effortlessly create a post
             to share details of his upcoming party or event.
@@ -423,7 +360,7 @@ function MyComponent(props: any) {
               Joining an event or attending an event
             </div>
           </div>
-          <div className="mt-11 w-[501px] max-w-full self-end text-lg leading-6 text-zinc-100 text-opacity-60 max-md:mt-10">
+          <div className="mt-11 w-[501px] max-w-full self-end text-lg leading-6 text-whitesmoke-100 text-opacity-60 max-md:mt-10">
             The user will begin his journey by signing up. Once the signup
             process is completed, they can explore a variety of events on the
             homescreen. From there, they can simply choose the one that
@@ -433,17 +370,17 @@ function MyComponent(props: any) {
         <div className="mt-52 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />
         <div className="ml-28 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
           <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
-          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-zinc-100 text-opacity-40">
+          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
             PRODUCT EVALUATIONS
           </div>
         </div>
-        <div className="text-2xl ml-28 mt-14 max-w-[475px] justify-center self-start font-medium leading-[62px] tracking-normal text-zinc-100 max-md:mt-10 max-md:max-w-full">
+        <div className="ml-28 mt-14 max-w-[475px] justify-center self-start text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
           User Evaluations
         </div>
         <div className="mt-7 w-full max-w-[1224px] self-center max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col max-md:items-stretch max-md:gap-0">
             <div className="flex w-[45%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="justify-center text-xl font-medium leading-7 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
+              <div className="justify-center text-xl font-medium leading-7 text-whitesmoke-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
                 To gain insights into how potential users interact with our
                 solution, we performed usability testing with four individuals
                 who have either experienced homesickness in the past and are
@@ -490,13 +427,13 @@ function MyComponent(props: any) {
             Join an event of your choice
           </div>
         </div>{" "}
-        <div className="text-2xl ml-28 mt-24 max-w-[475px] justify-center self-start font-medium leading-[62px] tracking-normal text-zinc-100 max-md:mt-10 max-md:max-w-full">
+        <div className="ml-28 mt-24 max-w-[475px] justify-center self-start text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
           Expert Evaluations
         </div>{" "}
         <div className="mt-5 w-full max-w-[1224px] self-center max-md:max-w-full">
           <div className="flex gap-5 max-md:flex-col max-md:items-stretch max-md:gap-0">
             <div className="flex w-[45%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="justify-center text-xl font-medium leading-7 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
+              <div className="justify-center text-xl font-medium leading-7 text-whitesmoke-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
                 We asked four professionals to assess our app. We evaluated our
                 app using experts in the area of human-computer interaction
                 (HCI). <br />
@@ -544,7 +481,7 @@ function MyComponent(props: any) {
             Accept an event invite.
           </div>
         </div>{" "}
-        <div className="text-2xl mt-32 max-w-[999px] justify-center self-center text-center font-medium leading-[62px] tracking-normal text-zinc-100 max-md:mt-10 max-md:max-w-full">
+        <div className="mt-32 max-w-[999px] justify-center self-center text-center text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
           The performance breakdown of each task, by each expert, is illustrated
           below
         </div>{" "}
@@ -603,10 +540,10 @@ function MyComponent(props: any) {
                   <div className="mt-16 self-center whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
                     SUCESS
                   </div>{" "}
-                  <div className="mt-14 items-stretch justify-center whitespace-nowrap border border-solid border-zinc-800 bg-zinc-900 px-11 py-5 text-center text-lg font-medium leading-6 text-zinc-100 max-md:mt-10 max-md:px-5">
+                  <div className="mt-14 items-stretch justify-center whitespace-nowrap border border-solid border-zinc-800 bg-zinc-900 px-11 py-5 text-center text-lg font-medium leading-6 text-whitesmoke-100 max-md:mt-10 max-md:px-5">
                     FAILURE
                   </div>{" "}
-                  <div className="mt-7 items-stretch justify-center whitespace-nowrap border border-solid border-zinc-800 bg-zinc-900 px-11 py-5 text-center text-lg font-medium leading-6 text-zinc-100 max-md:px-5">
+                  <div className="mt-7 items-stretch justify-center whitespace-nowrap border border-solid border-zinc-800 bg-zinc-900 px-11 py-5 text-center text-lg font-medium leading-6 text-whitesmoke-100 max-md:px-5">
                     FAILURE
                   </div>
                 </div>{" "}
@@ -647,7 +584,7 @@ function MyComponent(props: any) {
                     <div className="my-auto text-center text-lg font-bold leading-6 text-amber-600">
                       SUCESS
                     </div>{" "}
-                    <div className="grow items-stretch justify-center self-stretch whitespace-nowrap border border-solid border-zinc-800 bg-zinc-900 px-11 py-5 text-center text-lg font-medium leading-6 text-zinc-100 max-md:px-5">
+                    <div className="grow items-stretch justify-center self-stretch whitespace-nowrap border border-solid border-zinc-800 bg-zinc-900 px-11 py-5 text-center text-lg font-medium leading-6 text-whitesmoke-100 max-md:px-5">
                       FAILURE
                     </div>
                   </div>
@@ -656,10 +593,10 @@ function MyComponent(props: any) {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
-    </div>
+    </main>
   );
 }
 
-export default MyComponent;
+export default HomeslicePage;

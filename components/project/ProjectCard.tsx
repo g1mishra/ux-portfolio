@@ -18,7 +18,7 @@ const ProjectCard = ({
   return (
     <div className="project-card-outline">
       <div className="glare-item-top outer-edge"></div>
-      <Link href={link} className="project-card w-inline-block min-h-[200px]">
+      <Link href={link} className="project-card w-inline-block min-h-[200px] max-h-[700px]">
         <div className="glare-item-top inner-edge"></div>
         <div className="projectcard-top">
           <div className="projectcard-title-row">

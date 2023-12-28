@@ -50,7 +50,7 @@ const config: Config = {
       spacing: {},
       fontFamily: {
         karla: "Karla",
-        inter: "Inter",
+        inter: "var(--font-inter)",
         inherit: "inherit",
       },
       borderRadius: {

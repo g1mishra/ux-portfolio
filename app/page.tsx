@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
-import ProjectCard from "@/components/ProjectCard";
 import ArrowLinkIcon from "@/components/icons/ArrowLinkIcon";
-import Image from "next/image";
+import ProjectCard from "@/components/project/ProjectCard";
 import Link from "next/link";
 
 const projects = [
@@ -81,19 +80,19 @@ const Work = () => {
               </div>
               <div className="window-content">
                 <div className="flex flex-col">
-                  <h1 className="text-6xl w-10/12 font-bold leading-normal text-white">
+                  <h1 className="w-10/12 text-6xl font-bold leading-normal text-white">
                     Hi, I&#39;m Sampada
                   </h1>
-                  <h2 className="text-6xl mt-3 w-10/12 font-bold">
-                    <span className="text-[#f2f2f2]">I </span>
+                  <h2 className="mt-3 w-10/12 text-6xl font-bold">
+                    <span className="text-whitesmoke-100">I </span>
                     <span className="shadow-text ">design</span>
-                    <span className="text-[#f2f2f2]">, </span>
+                    <span className="text-whitesmoke-100">, </span>
                     <span className="shadow-text ">sketch</span>
-                    <span className="text-[#f2f2f2]"> &amp; </span>
+                    <span className="text-whitesmoke-100"> &amp; </span>
                     <span className="shadow-text t">doodle</span>
-                    <span className="text-[#f2f2f2]">.</span>
+                    <span className="text-whitesmoke-100">.</span>
                   </h2>
-                  <p className="text-2xl mt-8 w-10/12 font-normal text-white">
+                  <p className="mt-8 w-10/12 text-2xl font-normal text-white">
                     I&#39;m a passionate User Experience Designer based in
                     Indianapolis, Indiana with an experience in delivering
                     end-to-end UX/UI design fro products and services. My design
@@ -116,13 +115,13 @@ const Work = () => {
             Hi, I&#39;m Sampada
           </h1>
           <h2 className="text-5xl font-bold">
-            <span className="text-[#f2f2f2]">I </span>
+            <span className="text-whitesmoke-100">I </span>
             <span className="shadow-text ">design</span>
-            <span className="text-[#f2f2f2]">, </span>
+            <span className="text-whitesmoke-100">, </span>
             <span className="shadow-text ">sketch</span>
-            <span className="text-[#f2f2f2]"> &amp; </span>
+            <span className="text-whitesmoke-100"> &amp; </span>
             <span className="shadow-text t">doodle</span>
-            <span className="text-[#f2f2f2]">.</span>
+            <span className="text-whitesmoke-100">.</span>
           </h2>
           <p className="mt-3 text-xl font-normal text-white">
             I&#39;m a passionate User Experience Designer based in Indianapolis,

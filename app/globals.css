@@ -182,17 +182,17 @@ img {
 }
 
 .nav-indicator-glow {
-  width: 24px;
+  width: 32px;
   height: 4px;
   background-color: var(--on-background);
   border-radius: 2px;
   margin-bottom: -2px;
-  margin-left: 33px;
+  margin-left: 29px;
   box-shadow: 0 2px 25px 2px #fff;
 }
 
 .nav-indicator-glow.info {
-  margin-left: 121px;
+  margin-left: 117px;
 }
 
 .nav-toggle {
@@ -225,6 +225,7 @@ img {
   letter-spacing: 0.2px;
   font-weight: 500;
   line-height: 18px;
+  font-size: 16px;
 }
 
 .nav-indicator-pill {

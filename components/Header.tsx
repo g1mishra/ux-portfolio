@@ -34,10 +34,10 @@ const Header = () => {
             />
             <div className="nav-pill">
               <Link href="/" className="nav-toggle work w-inline-block">
-                <div className="text-nav-toggle">Work</div>
+                <div className="text-nav-toggle ">Work</div>
               </Link>
               <Link href="/about" className="nav-toggle w-inline-block">
-                <div className="text-nav-toggle">Info</div>
+                <div className="text-nav-toggle ">Info</div>
               </Link>
               <div
                 className={`nav-indicator-pill ${

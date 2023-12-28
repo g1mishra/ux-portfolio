@@ -1,128 +1,114 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
+import HeroGradientBG from "@/components/HeroGradientBG";
+import OverviewSection from "@/components/project/OverviewSection";
+import ProjectHero from "@/components/project/ProjectHero";
 import * as React from "react";
 
-function MyComponent(props: any) {
+function HomiePage() {
   return (
-    <div className="flex flex-col items-center bg-stone-950 pb-12">
-      <div className="flex w-full flex-col items-stretch self-stretch px-16 pb-1.5 pt-12 max-md:max-w-full max-md:px-5">
-        <div className="ml-14 mr-12 mt-14 flex items-start justify-between gap-5 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:flex-wrap">
-          <div className="flex flex-col items-start max-md:max-w-full">
-            <div className="flex items-stretch justify-center gap-2.5 rounded-[100px] border border-solid border-zinc-100 border-opacity-0 bg-zinc-100 bg-opacity-10 px-10 py-6 backdrop-blur-[5px] max-md:px-5">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c330f51ec8917395415786f0d437e605ea0ddf5e6f92e83586b2161c83fae395?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-                className="aspect-square w-6 max-w-full shrink-0 overflow-hidden object-contain object-center"
-              />
-              <div className="text-2xl my-auto justify-center self-center font-medium leading-5 tracking-tight text-zinc-100">
-                Back
-              </div>
-            </div>
-            <div className="text-6xl max-md:text-4xl mt-10 justify-center self-end whitespace-nowrap bg-clip-text text-center font-medium leading-[88px] tracking-tighter max-md:mt-10">
-              Homie
-            </div>
-          </div>
-          <div className="mt-40 flex flex-col items-stretch self-end max-md:mt-10">
-            <div className="whitespace-nowrap text-lg leading-6 text-zinc-100">
-              CONTENTS
-            </div>
-            <div className="mt-10 text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Overview
-            </div>
-            <div className="mt-10 text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Kickoff
-            </div>
-            <div className="mt-10 text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Research
-            </div>
-            <div className="mt-10 whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Architecture
-            </div>
-            <div className="mt-10 whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Wireframing
-            </div>
-            <div className="mt-9 whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Prototyping
-            </div>
-            <div className="mt-9 whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-              Final designs
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="mt-7 flex w-full max-w-[1313px] flex-col max-md:max-w-full">
-        <div className="self-end whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60">
-          Style guide
-        </div>
-        <div className="mr-3 mt-9 self-end whitespace-nowrap text-lg font-light leading-6 text-zinc-100 text-opacity-60 max-md:mr-2.5">
-          Takeaway
-        </div>
-        <div className="ml-6 mt-[541px] w-[1085px] max-w-full self-start max-md:mt-10">
-          <div className="flex gap-5 max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div className="flex w-[61%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="flex grow flex-col items-stretch max-md:mt-10 max-md:max-w-full">
-                <div className="text-xl font-bold leading-6 text-white max-md:max-w-full">
-                  Overview
-                </div>
-                <div className="mt-12 text-xl leading-8 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
-                  Homie simplifies room and roommate discovery, modernizing the
-                  way users customize and share their housing preferences to
-                  find the ideal match in an outdated market. Homie is a room
-                  discovery service that primarily allows users to find a room
-                  and a roommate and share their requirements with just a few
-                  steps. With existing applications, sharing of housing details
-                  and personalizing their requirements for a perfect roommate
-                  and a room is either non-existent, very limited, or extremely
-                  outdated. Homie aims to assist potential users who are looking
-                  for rooms and ideal roommates for themselves. <br />
-                </div>
-              </div>
-            </div>
-            <div className="ml-5 flex w-[39%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="flex flex-col items-stretch max-md:mt-10">
-                <div className="text-xl font-medium leading-6 text-white">
-                  My Role
-                </div>
-                <div className="mt-12 text-xl font-medium leading-8 text-zinc-100 max-md:mt-10">
-                  Product Designer
-                </div>
-                <div className="mt-7 text-xl leading-8 text-zinc-100 text-opacity-60">
-                  User Research, Interaction design, Visual design, Prototyping
-                  & Testing
-                </div>
-                <div className="mt-12 text-xl font-medium leading-6 text-white max-md:mt-10">
-                  Timeline
-                </div>
-                <div className="mt-7 text-xl leading-8 text-zinc-100 text-opacity-60">
-                  March - May 2022
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="ml-7 mt-36 flex h-0.5 w-[1076px] max-w-full shrink-0 flex-col self-start max-md:mt-10" />
-        <div className="z-[1] ml-7 flex w-[1076px] max-w-full flex-col items-center justify-center self-start rounded-[32px] px-16 py-12 shadow-2xl max-md:px-5">
-          <div className="mb-10 mt-5 flex w-[745px] max-w-full flex-col">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/91245e13b5937867ad31869d13eb14bf7bbe2cf4531ea9f32b7a4e213aa34e0f?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-              className="aspect-square w-[54px] max-w-full self-center overflow-hidden object-contain object-center"
+    <main className="relative flex flex-col items-center bg-gray-100 pb-12">
+      <HeroGradientBG
+        gradient="linear-gradient(180deg, #2E2463 -20.99%, #512E8A -4.7%, rgba(16, 16, 16, 0.80) 89.5%)"
+        height="636px"
+        maxHeight="70vh"
+      />
+      <ProjectHero
+        title="Homie"
+        contents={[
+          "Overview",
+          "Kickoff",
+          "Research",
+          "Architecture",
+          "Wireframing",
+          "Prototyping",
+          "Final designs",
+          "Style guide",
+          "Takeaway",
+        ]}
+      />
+
+      <div className="container mx-auto flex flex-col items-center px-4 md:px-16">
+        <OverviewSection
+          overview={[
+            "Homie simplifies room and roommate discovery, modernizing the way users customize and share their housing preferences to find the ideal match in an outdated market.",
+            "Homie is a room discovery service that primarily allows users to find a room and a roommate and share their requirements with just a few steps. With existing applications, sharing of housing details and personalizing their requirements for a perfect roommate and a room is either non-existent, very limited, or extremely outdated. Homie aims to assist potential users who are looking for rooms and ideal roommates for themselves.",
+          ]}
+          role="Product Designer"
+          research="User Research, Interaction design, Visual design, Prototyping & Testing"
+          timeline="March - May 2022"
+        />
+        <div
+          style={{
+            borderRadius: "32px",
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(163, 119, 255, 0.20) 0%, rgba(0, 0, 0, 0.00) 100%), rgba(242, 242, 242, 0.04)",
+            boxShadow: "0px 40px 100px 0px rgba(0, 0, 0, 0.40)",
+          }}
+          className="mt-12 flex w-full flex-col items-center justify-center self-start rounded-[32px] px-16 py-12 max-md:px-5"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="56"
+            height="56"
+            viewBox="0 0 56 56"
+            fill="none"
+          >
+            <path
+              d="M54.6004 27.9999C54.6004 13.3091 42.6912 1.3999 28.0004 1.3999C13.3096 1.3999 1.40039 13.3091 1.40039 27.9999C1.40039 42.6907 13.3096 54.5999 28.0004 54.5999C42.6912 54.5999 54.6004 42.6907 54.6004 27.9999Z"
+              fill="url(#paint0_radial_1582_1685)"
+              fill-opacity="0.2"
             />
-            <div className="mt-4 justify-center self-center whitespace-nowrap text-sm font-medium leading-5 tracking-[2px] text-zinc-100 text-opacity-60">
-              CHALLENGES
-            </div>
-            <div className="text-2xl mt-14 justify-center self-center text-center font-bold leading-10 text-zinc-100 max-md:mt-10 max-md:max-w-full">
+            <path
+              d="M12.418 39.3088L28.0022 12.3823L43.5863 39.3088H12.418ZM16.4012 37.0079H39.6031L28.0022 16.9757L16.4012 37.0079ZM28.1482 35.0882C28.4507 35.0882 28.7059 34.9822 28.9137 34.7702C29.1216 34.5583 29.2256 34.3011 29.2256 33.9986C29.2256 33.6962 29.1196 33.4423 28.9077 33.2372C28.6956 33.0321 28.4384 32.9297 28.136 32.9297C27.8335 32.9297 27.5784 33.0342 27.3705 33.2434C27.1626 33.4526 27.0586 33.7085 27.0586 34.0109C27.0586 34.3133 27.1645 34.5685 27.3766 34.7764C27.5886 34.9843 27.8458 35.0882 28.1482 35.0882ZM27.0922 31.22H29.1922V23.4469H27.0922V31.22Z"
+              fill="#A377FF"
+            />
+            <path
+              d="M54.6004 27.9999C54.6004 13.3091 42.6912 1.3999 28.0004 1.3999C13.3096 1.3999 1.40039 13.3091 1.40039 27.9999C1.40039 42.6907 13.3096 54.5999 28.0004 54.5999C42.6912 54.5999 54.6004 42.6907 54.6004 27.9999Z"
+              stroke="url(#paint1_linear_1582_1685)"
+              stroke-width="2.8"
+            />
+            <defs>
+              <radialGradient
+                id="paint0_radial_1582_1685"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(28.0004 27.9999) rotate(90) scale(26.6)"
+              >
+                <stop stop-color="#A377FF" />
+                <stop offset="1" stop-color="#A377FF" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient
+                id="paint1_linear_1582_1685"
+                x1="28.0004"
+                y1="-9.77148e-05"
+                x2="28.0004"
+                y2="55.9999"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#A377FF" />
+                <stop offset="1" stop-color="#A377FF" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <div className="mt-4 justify-center self-center whitespace-nowrap text-sm font-medium leading-5 tracking-[2px] text-zinc-100 text-opacity-60">
+            CHALLENGES
+          </div>
+          <div className="mt-10 mb-4 flex flex-col gap-[25px]">
+            <p className="text-lg font-bold leading-10 text-whitesmoke-100 md:text-center md:text-2xl">
               Create easy-to-understand customized feed for the users.
-            </div>
-            <div className="text-2xl mt-11 self-stretch text-center font-bold leading-10 text-zinc-100 max-md:mt-10 max-md:max-w-full">
+            </p>
+            <p className="text-lg font-bold leading-10  text-whitesmoke-100 md:text-center md:text-2xl">
               Combine user’s need and wants to improvise the user experience.
-            </div>
-            <div className="text-2xl mx-5 mt-11 self-stretch text-center font-bold leading-10 text-zinc-100 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full">
+            </p>
+            <p className="text-lg font-bold leading-10  text-whitesmoke-100 md:text-center md:text-2xl">
               Allow users to dive into the places they’ve viewed or searched.
-            </div>
-            <div className="text-2xl mt-11 self-center text-center font-bold leading-10 text-zinc-100 max-md:mt-10 max-md:max-w-full">
+            </p>
+            <p className="text-lg font-bold leading-10  text-whitesmoke-100 md:text-center md:text-2xl">
               Bridge gap between users sharing a similar interests.
-            </div>
+            </p>
           </div>
         </div>
         <div className="ml-7 mt-36 flex items-start gap-5 self-start max-md:ml-2.5 max-md:mt-10">
@@ -159,7 +145,7 @@ function MyComponent(props: any) {
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/71e108884d55dd635c56fe823b69533f298e1644680eb0c6fcaa747ea460299f?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
                     className="aspect-[0.97] w-9 max-w-full overflow-hidden object-contain object-center"
                   />
-                  <div className="text-2xl mt-12 justify-center font-medium leading-[49.92px] text-zinc-100 max-md:mt-10">
+                  <div className="mt-12 justify-center text-2xl font-medium leading-[49.92px] text-zinc-100 max-md:mt-10">
                     Who is our primary user?
                   </div>
                 </div>
@@ -169,7 +155,7 @@ function MyComponent(props: any) {
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/639ea04300daebaa465dfc4829d43dfa282b75e128388756ffecd82354850a63?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
                     className="aspect-[0.97] w-9 max-w-full items-center justify-center overflow-hidden object-contain object-center"
                   />
-                  <div className="text-2xl mt-12 justify-center font-medium leading-[49.92px] text-zinc-100 max-md:mt-10">
+                  <div className="mt-12 justify-center text-2xl font-medium leading-[49.92px] text-zinc-100 max-md:mt-10">
                     What kind of goals do they have?
                   </div>
                 </div>
@@ -183,7 +169,7 @@ function MyComponent(props: any) {
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/6689d76d74cc53b854d1cc1a3160a21125d1a50e64519ffd167e3d58d5dfe870?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
             className="aspect-[0.97] w-9 max-w-full items-center justify-center overflow-hidden object-contain object-center"
           />
-          <div className="text-2xl mt-12 justify-center font-medium leading-[49.92px] text-zinc-100 max-md:mt-10">
+          <div className="mt-12 justify-center text-2xl font-medium leading-[49.92px] text-zinc-100 max-md:mt-10">
             How this application will help?
           </div>
         </div>
@@ -193,7 +179,7 @@ function MyComponent(props: any) {
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/2f4df362cadb361158aba2a2f8d77e511b8483d3a368e3f958150363bb2fbb09?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
             className="aspect-[0.97] w-9 max-w-full items-center justify-center overflow-hidden object-contain object-center"
           />
-          <div className="text-2xl mt-12 justify-center font-medium leading-[49.92px] text-zinc-100 max-md:mt-10">
+          <div className="mt-12 justify-center text-2xl font-medium leading-[49.92px] text-zinc-100 max-md:mt-10">
             What is the scope of this project?
           </div>
         </div>
@@ -250,7 +236,7 @@ function MyComponent(props: any) {
           <div className="grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-zinc-800 px-16 py-10 text-xl font-medium leading-6 text-zinc-100 max-md:px-5">
             Customized Feed
           </div>
-          <div className="text-2xl grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 font-bold leading-6 text-violet-400 max-md:px-5">
+          <div className="grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 text-2xl font-bold leading-6 text-violet-400 max-md:px-5">
             Yes
           </div>
           <div className="flex h-[94px] w-[223px] shrink-0 flex-col rounded-3xl border-2 border-solid border-zinc-800" />
@@ -261,7 +247,7 @@ function MyComponent(props: any) {
             Schedule free visit
           </div>
           <div className="flex h-[94px] w-[223px] shrink-0 flex-col rounded-3xl border-2 border-solid border-zinc-800" />
-          <div className="text-2xl grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 font-bold leading-6 text-violet-400 max-md:px-5">
+          <div className="grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 text-2xl font-bold leading-6 text-violet-400 max-md:px-5">
             Yes
           </div>
           <div className="flex h-[94px] w-[223px] shrink-0 flex-col rounded-3xl border-2 border-solid border-zinc-800" />
@@ -271,7 +257,7 @@ function MyComponent(props: any) {
             Modern UI
           </div>
           <div className="flex h-[94px] w-[223px] shrink-0 flex-col rounded-3xl border-2 border-solid border-zinc-800" />
-          <div className="text-2xl grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 font-bold leading-6 text-violet-400 max-md:px-5">
+          <div className="grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 text-2xl font-bold leading-6 text-violet-400 max-md:px-5">
             Yes
           </div>
           <div className="flex h-[94px] w-[223px] shrink-0 flex-col rounded-3xl border-2 border-solid border-zinc-800" />
@@ -280,13 +266,13 @@ function MyComponent(props: any) {
           <div className="grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-zinc-800 px-16 py-10 text-xl font-medium leading-6 text-zinc-100 max-md:px-5">
             User profile
           </div>
-          <div className="text-2xl grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 font-bold leading-6 text-violet-400 max-md:px-5">
+          <div className="grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 text-2xl font-bold leading-6 text-violet-400 max-md:px-5">
             Yes
           </div>
-          <div className="text-2xl grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 font-bold leading-6 text-violet-400 max-md:px-5">
+          <div className="grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 text-2xl font-bold leading-6 text-violet-400 max-md:px-5">
             Yes
           </div>
-          <div className="text-2xl grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 font-bold leading-6 text-violet-400 max-md:px-5">
+          <div className="grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 text-2xl font-bold leading-6 text-violet-400 max-md:px-5">
             Yes
           </div>
         </div>
@@ -295,7 +281,7 @@ function MyComponent(props: any) {
             Room manager
           </div>
           <div className="flex h-[94px] w-[223px] shrink-0 flex-col rounded-3xl border-2 border-solid border-zinc-800" />
-          <div className="text-2xl grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 font-bold leading-6 text-violet-400 max-md:px-5">
+          <div className="grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 text-2xl font-bold leading-6 text-violet-400 max-md:px-5">
             Yes
           </div>
           <div className="flex h-[94px] w-[223px] shrink-0 flex-col rounded-3xl border-2 border-solid border-zinc-800" />
@@ -306,7 +292,7 @@ function MyComponent(props: any) {
           </div>
           <div className="flex h-[94px] w-[223px] shrink-0 flex-col rounded-3xl border-2 border-solid border-zinc-800" />
           <div className="flex h-[94px] w-[223px] shrink-0 flex-col rounded-3xl border-2 border-solid border-zinc-800" />
-          <div className="text-2xl grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 font-bold leading-6 text-violet-400 max-md:px-5">
+          <div className="grow items-center justify-center whitespace-nowrap rounded-3xl border-2 border-solid border-violet-400 px-16 py-10 text-2xl font-bold leading-6 text-violet-400 max-md:px-5">
             Yes
           </div>
         </div>
@@ -428,14 +414,14 @@ function MyComponent(props: any) {
                 <div className="mt-9 self-center whitespace-nowrap text-xl font-extrabold text-violet-400">
                   PRIMARY
                 </div>
-                <div className="text-2xl mt-9 font-medium text-zinc-100">
+                <div className="mt-9 text-2xl font-medium text-zinc-100">
                   Rahul Nikam, 28
                   <br />
                 </div>
                 <div className="mt-3.5 self-center whitespace-nowrap text-xl font-light text-zinc-100">
                   Software Engineer
                 </div>
-                <div className="text-2xl mt-12 self-center whitespace-nowrap font-medium text-zinc-100 max-md:mt-10">
+                <div className="mt-12 self-center whitespace-nowrap text-2xl font-medium text-zinc-100 max-md:mt-10">
                   Frustrations
                 </div>
                 <div className="mt-12 self-stretch text-xl leading-10 text-zinc-100 text-opacity-60 max-md:mt-10">
@@ -456,14 +442,14 @@ function MyComponent(props: any) {
                 <div className="mt-9 self-center whitespace-nowrap text-xl font-extrabold text-violet-400">
                   SECONDARY
                 </div>
-                <div className="text-2xl mt-9 font-medium text-zinc-100">
+                <div className="mt-9 text-2xl font-medium text-zinc-100">
                   Naina Gupta, 22
                   <br />
                 </div>
                 <div className="mt-2.5 self-center whitespace-nowrap text-xl font-light text-zinc-100">
                   Student
                 </div>
-                <div className="text-2xl mt-14 self-center whitespace-nowrap font-medium text-zinc-100 max-md:mt-10">
+                <div className="mt-14 self-center whitespace-nowrap text-2xl font-medium text-zinc-100 max-md:mt-10">
                   Frustrations
                 </div>
                 <div className="mt-12 self-stretch text-xl leading-10 text-zinc-100 text-opacity-60 max-md:mt-10">
@@ -581,8 +567,8 @@ function MyComponent(props: any) {
           <br />
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
-export default MyComponent;
+export default HomiePage;

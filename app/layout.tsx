@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Karla } from "next/font/google";
+import { Inter, Karla } from "next/font/google";
 import "./globals.css";
 
 const karla = Karla({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`bg-black text-white ${karla.className}`}>
+      <body
+        className={`bg-black text-white ${karla.className} ${inter.variable}`}
+      >
         {children}
       </body>
     </html>
