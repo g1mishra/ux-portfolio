@@ -1,6 +1,5 @@
 "use client";
 import ArrowLinkIcon from "@/components/icons/ArrowLinkIcon";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -20,10 +19,9 @@ const Header = () => {
           <div className="nav-left-wrapper">
             <div className="logo-block">
               <div className="logo-background" />
-              <div className="logo-text">
-                <div className="text-logo">Sampada</div>
-                <div className="text-underlogo">UX Designer</div>
-              </div>
+              <Link href="/" className="logo-text">
+                <h1 className="text-logo">Sampada</h1>
+              </Link>
             </div>
           </div>
           <div className="nav-pill-wrapper">
