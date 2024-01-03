@@ -1,11 +1,12 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import React from "react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useCallback, useEffect, useState } from "react";
+import ScrollLink from "../ScrollLink";
 
 interface ProjectHeroProps {
   title: string;
-  contents: string[];
+  contents: { name: string; path: string }[];
   onBackClick?: () => void;
 }
 
@@ -15,6 +16,46 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
   onBackClick,
 }) => {
   const router = useRouter();
+  const pathname = usePathname();
+  const [activeContent, setActiveContent] = useState<number | null>(null);
+
+  const handleScroll = useCallback(() => {
+    const scrollPosition = window.scrollY;
+    const activeIndex = contents.findIndex((content) => {
+      const element = document.getElementById(content.path.slice(1));
+
+      if (element) {
+        // Check if the element is in the viewport
+        const elementRect = element.getBoundingClientRect();
+        return (
+          elementRect.top <= window.innerHeight / 2 &&
+          elementRect.bottom >= window.innerHeight / 2
+        );
+      }
+
+      return false;
+    });
+
+    setActiveContent(activeIndex);
+  }, [contents]);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleScroll]);
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      const hash = pathname.split("#")[1];
+      const activeIndex = contents.findIndex(
+        (content) => content.path === `#${hash?.toLowerCase()}`,
+      );
+      setActiveContent(activeIndex);
+    };
+    handleRouteChange();
+  }, [contents, pathname]);
 
   const updatedOnBackClick = () => {
     if (onBackClick) {
@@ -63,17 +104,22 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
       >
         {title}
       </h1>
-      <div className="fixed bottom-0 top-0  z-50 hidden flex-col justify-center gap-6 self-end md:flex">
+      <div className="fixed bottom-0 top-0  z-50 hidden flex-col justify-center gap-6 self-end xl:flex">
         <div className="whitespace-nowrap text-lg leading-6 text-whitesmoke-100 ">
           CONTENTS
         </div>
         {contents.map((content, index) => (
-          <div
+          <ScrollLink
             key={index}
-            className="whitespace-nowrap text-base font-light leading-6 text-whitesmoke-100 text-opacity-60 xl:text-lg"
+            href={content.path}
+            style={{
+              color:
+                activeContent === index ? "white" : "rgba(242, 242, 242, 0.60)",
+            }}
+            className={`cursor-pointer whitespace-nowrap text-base font-light  leading-6 text-opacity-60 xl:text-lg`}
           >
-            {content}
-          </div>
+            {content.name}
+          </ScrollLink>
         ))}
       </div>
     </section>

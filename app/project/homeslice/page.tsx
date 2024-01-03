@@ -16,15 +16,15 @@ function HomeslicePage() {
       <ProjectHero
         title="Homeslice"
         contents={[
-          "Overview",
-          "Kickoff",
-          "Research",
-          "Architecture",
-          "Wireframing",
-          "Prototyping",
-          "Final designs",
-          "Style guide",
-          "Takeaway",
+          { name: "Overview", path: "#overview" },
+          { name: "Kickoff", path: "#kickoff" },
+          { name: "Research", path: "#research" },
+          { name: "Architecture", path: "#architecture" },
+          { name: "Wireframing", path: "#wireframing" },
+          { name: "Prototyping", path: "#prototyping" },
+          { name: "Final designs", path: "#final-designs" },
+          { name: "Style guide", path: "#style-guide" },
+          { name: "Takeaway", path: "#takeaway" },
         ]}
       />
       <div className="container mx-auto flex flex-col items-center px-4">

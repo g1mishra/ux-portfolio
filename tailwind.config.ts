@@ -47,9 +47,12 @@ const config: Config = {
       backgroundColor: {
         c242: "rgba(242, 242, 242, 0.05)",
       },
+      boxShadow: {
+        white20: "0px 0px 20px 0px #FFF",
+      },
       spacing: {},
       fontFamily: {
-        karla: "Karla",
+        karla: "var(--font-karla)",
         inter: "var(--font-inter)",
         inherit: "inherit",
       },

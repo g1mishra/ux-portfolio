@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Karla } from "next/font/google";
 import "./globals.css";
 
-const karla = Karla({ subsets: ["latin"] });
+const karla = Karla({ subsets: ["latin"], variable: "--font-karla" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
