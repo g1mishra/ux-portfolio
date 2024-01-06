@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
+import Divider from "@/components/Divider";
 import HeroGradientBG from "@/components/HeroGradientBG";
 import OverviewSection from "@/components/project/OverviewSection";
 import ProjectHero from "@/components/project/ProjectHero";
@@ -243,7 +244,7 @@ function HomiePage() {
             </div>
           </div>
         </div>
-        <div className="mt-20 h-[1px] w-full bg-dimgray max-md:my-10" />
+        <Divider />
         <div id="research" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
             <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
@@ -282,7 +283,7 @@ function HomiePage() {
           </div>
         </div>
 
-        <div className="mt-20 h-[1px] w-full bg-dimgray max-md:my-10" />
+        <Divider />
 
         <div id="architecture" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
@@ -317,7 +318,7 @@ function HomiePage() {
           </div>
         </div>
 
-        <div className="mt-20 h-[1px] w-full bg-dimgray max-md:my-10" />
+        <Divider />
 
         <div id="wireframing" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
@@ -348,7 +349,7 @@ function HomiePage() {
           </div>
         </div>
 
-        <div className="mt-20 h-[1px] w-full bg-dimgray max-md:my-10" />
+        <Divider />
 
         <div id="prototyping" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
@@ -400,7 +401,7 @@ function HomiePage() {
           </div>
         </div>
 
-        <div className="mt-20 h-[1px] w-full bg-dimgray max-md:my-10" />
+        <Divider />
 
         <div id="final-designs" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
@@ -466,7 +467,7 @@ function HomiePage() {
           ))}
         </div>
 
-        <div className="mt-20 h-[1px] w-full bg-dimgray max-md:my-10" />
+        <Divider />
 
         <div id="takeaway" className="flex w-full flex-col">
           <div className="mt-0 flex w-full items-center gap-5 md:mt-16">

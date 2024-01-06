@@ -38,7 +38,7 @@ function HomeslicePage() {
           timeline="Nov - Dec 2023"
         />
         <div className="ml-28 mt-28 flex items-start gap-5 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
+          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
           <div className="self-stretch text-xl font-medium leading-6 text-white text-opacity-60">
             KICKOFF
           </div>
@@ -79,9 +79,9 @@ function HomeslicePage() {
           </span>
           <br />
         </div>
-        <div className="mt-28 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />
+        <div className="mt-28 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-whitesmoke-400 bg-opacity-40 max-md:mt-10" />
         <div className="ml-28 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
+          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
           <div className="justify-center text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
             THE PROBLEM
           </div>
@@ -102,7 +102,7 @@ function HomeslicePage() {
         <div className="mr-20 mt-14 max-w-[517px] justify-center self-end text-xl leading-7 text-white max-md:mr-2.5 max-md:mt-10 max-md:max-w-full">
           {/* <div _text="" /> */}
         </div>
-        <div className="ml-28 mt-16 flex items-center justify-between gap-5 self-start rounded-3xl bg-zinc-100 bg-opacity-0 px-11 py-9 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+        <div className="ml-28 mt-16 flex items-center justify-between gap-5 self-start rounded-3xl bg-whitesmoke-400 bg-opacity-0 px-11 py-9 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c38268bec2fccd1f83c3654ca15f4de60ff56dfd96981269c6db2cf05f73cac?"
@@ -118,7 +118,7 @@ function HomeslicePage() {
             </span>
           </div>
         </div>
-        <div className="ml-28 mt-6 flex items-center justify-between gap-5 self-start rounded-3xl bg-zinc-100 bg-opacity-0 px-11 py-9 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+        <div className="ml-28 mt-6 flex items-center justify-between gap-5 self-start rounded-3xl bg-whitesmoke-400 bg-opacity-0 px-11 py-9 max-md:max-w-full max-md:flex-wrap max-md:px-5">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/31092e19c1677237dcf3d269b67649d60547aec66e16615ef2522c1b8bc7a443?"
@@ -130,7 +130,7 @@ function HomeslicePage() {
             <span className="text-white">adjust to the cultural shift</span>
           </div>
         </div>
-        <div className="ml-28 mt-6 flex items-center justify-between gap-5 self-start rounded-3xl bg-zinc-100 bg-opacity-0 px-11 py-9 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+        <div className="ml-28 mt-6 flex items-center justify-between gap-5 self-start rounded-3xl bg-whitesmoke-400 bg-opacity-0 px-11 py-9 max-md:max-w-full max-md:flex-wrap max-md:px-5">
           <img
             loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/f2c5e2c74df66ec9247f9e2769a499bfdc978cfe0a117a0852fae5a5fb889dae?"
@@ -157,7 +157,7 @@ function HomeslicePage() {
           shock on Indian international students?
         </div>
         <div className="ml-28 mt-64 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
+          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
           <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
             USER RESEARCH
           </div>
@@ -307,9 +307,9 @@ function HomeslicePage() {
             </div>
           </div>
         </div>
-        <div className="mt-24 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />
+        <div className="mt-24 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-whitesmoke-400 bg-opacity-40 max-md:mt-10" />
         <div className="ml-28 mt-32 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
+          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
           <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
             BRAINSTORMING AND IDEATION
           </div>
@@ -319,9 +319,9 @@ function HomeslicePage() {
           srcSet="..."
           className="mt-24 aspect-[1.01] w-[1125px] max-w-full self-center overflow-hidden object-contain object-center max-md:mt-10"
         />
-        <div className="mt-36 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />
+        <div className="mt-36 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-whitesmoke-400 bg-opacity-40 max-md:mt-10" />
         <div className="ml-28 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
+          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
           <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
             PROPOSED SOLUTION
           </div>
@@ -367,9 +367,9 @@ function HomeslicePage() {
             resonates with them and join.
           </div>
         </div>
-        <div className="mt-52 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />
+        <div className="mt-52 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-whitesmoke-400 bg-opacity-40 max-md:mt-10" />
         <div className="ml-28 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
+          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
           <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
             PRODUCT EVALUATIONS
           </div>

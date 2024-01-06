@@ -1,8 +1,64 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+import Divider from "@/components/Divider";
 import HeroGradientBG from "@/components/HeroGradientBG";
 import OverviewSection from "@/components/project/OverviewSection";
 import ProjectHero from "@/components/project/ProjectHero";
+import Image from "next/image";
+
+const problemRows = [
+  {
+    id: "1",
+    text: [
+      `“I try to limit my sugar intake, but `,
+      `I'm not sure how much sugar is in what I'm eating `,
+      `right now.”`,
+    ],
+  },
+  {
+    id: "2",
+    text: [
+      `“I try to limit my sugar intake, but `,
+      `I'm not sure how much sugar is in what I'm eating `,
+      `right now.”`,
+    ],
+  },
+  {
+    id: "3",
+    text: [
+      `“In the sweetness, `,
+      `we might not notice how much sugar quietly adds up, impacting our health.`,
+      `”`,
+    ],
+  },
+];
+
+const researchRows = [
+  {
+    imgSrc: "/icons/fluent_cube-quick-20-regular.png",
+    title: "Easy and quick access to nutritional data of the food item",
+    description: [
+      "When the user would be in a hurry and would not have time to go through the nutritional data they would ",
+      "need an easy and quick way to know about the nutritional values of the food items",
+    ],
+  },
+  {
+    imgSrc: "/icons/fluent-mdl2_issue-tracking-mirrored.png",
+    title: "Tracking user’s sugar intake",
+    description: [
+      "The user faces challenges in keeping track of their daily sugar intake and determining how much more they can consume. This becomes a cumbersome task, prompting the ",
+      "need for a convenient solution to monitor and manage their sugar consumption effectively",
+    ],
+  },
+  {
+    imgSrc: "/icons/jam_triangle-danger.png",
+    title: "Unaware of dangers of sugar and healthier sugar alternatives",
+    description: [
+      "The user lacks awareness of the potential harm caused by excessive sugar consumption and is unfamiliar with healthier alternatives. Consequently, they seek a solution to ",
+      "become more informed about the negative impacts of sugar and discover healthier choices for their well-being.",
+    ],
+  },
+];
 
 const SugarwisePage = () => {
   return (
@@ -26,7 +82,7 @@ const SugarwisePage = () => {
           { name: "Takeaway", path: "#takeaway" },
         ]}
       />
-      <div className="container mx-auto flex flex-col items-center px-4">
+      <div className="container mx-auto flex w-full max-w-[882px] flex-col items-center px-4 font-karla min-[1440px]:max-w-[1044px] min-[1920px]:max-w-[1440px]">
         <OverviewSection
           overview={[
             "Sugarwise is an Augmented Reality (AR) - based mobile application. It enable users to scan grocery products at the grocery stores and scans the vital information, such as sugar content and provides healthier alternatives for those scanned products.",
@@ -36,389 +92,393 @@ const SugarwisePage = () => {
           research="User Research, Interaction design, Visual design, Prototyping & Testing"
           timeline="August - October 2023"
         />
-      </div>
-      <div className="mt-7 flex w-full max-w-[1440px] flex-col self-center px-5 max-md:mb-10 max-md:max-w-full">
-        <div className="ml-32 mt-96 flex items-start gap-5 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />
-          <div className="self-stretch text-xl font-medium leading-6 text-white text-opacity-60">
-            KICKOFF
+        <div
+          id="kickoff"
+          className="mt-16 grid grid-cols-1 gap-10 md:mt-36 md:grid-cols-2"
+        >
+          <div className="flex flex-col">
+            <div className="flex items-center gap-5">
+              <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+              <h3 className="self-stretch text-xl font-medium leading-6 text-white text-opacity-60">
+                KICKOFF
+              </h3>
+            </div>
+            <div className="mt-12 flex flex-col gap-8 self-start">
+              <span className="text-lg text-whitesmoke-100 text-opacity-60 sm:text-xl">
+                Before initiating the design process, we needed to answer some
+                important questions.
+              </span>
+              <ol className="ml-[22.87px] md:ml-[27.44px] list-decimal text-xl md:text-2xl">
+                <li>
+                  <span className="text-xl md:text-2xl leading-[50px] text-whitesmoke-100">
+                    Who is our target audience?
+                  </span>
+                </li>
+                <li>
+                  <span className="text-xl md:text-2xl leading-[50px] text-whitesmoke-100">
+                    What is the reason for choosing them as the target audience?
+                  </span>
+                </li>
+                <li>
+                  <span className="text-xl md:text-2xl leading-[50px] text-whitesmoke-100">
+                    How will the application help them with the problem?
+                  </span>
+                </li>
+                <li>
+                  <span className="text-xl md:text-2xl leading-[50px] text-whitesmoke-100">
+                    What is the scope of this project?
+                  </span>
+                </li>
+              </ol>
+              <span className="text-lg text-whitesmoke-100 text-opacity-60 sm:text-xl">
+                We conducted eight observations at different locations to grasp
+                people&apos;s eating habits. Subsequently, we conducted
+                interviews to delve deeper into the subject, revealing a clear
+                picture of how people tend to consume a significant amount of
+                sugar.
+              </span>
+              <br />
+            </div>
           </div>
+          <div className="hidden flex-col items-stretch gap-6 max-md:ml-0 max-md:w-full md:flex" />
         </div>
-        <div className="ml-32 mt-14 max-w-[593px] self-start text-lg font-medium leading-8 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          <span className="text-xl">
-            Before initiating the design process, we needed to answer some
-            important questions.
-          </span>
-          <br />
-          <ol>
-            <li>
-              <span className="text-2xl leading-[50px] text-whitesmoke-100">
-                Who is our target audience?{" "}
-              </span>
-            </li>
-            <li>
-              <span className="text-2xl leading-[50px] text-whitesmoke-100">
-                What is the reason for choosing them as the target audience?
-              </span>
-            </li>
-            <li>
-              <span className="text-2xl leading-[50px] text-whitesmoke-100">
-                How will the application help them with the problem?{" "}
-              </span>
-            </li>
-            <li>
-              <span className="text-2xl leading-[50px] text-whitesmoke-100">
-                What is the scope of this project?{" "}
-              </span>{" "}
-            </li>
-          </ol>
-          <br />
-          <br />
-          <span className="text-xl">
-            We conducted eight observations at different locations to grasp
-            people&apos;s eating habits. Subsequently, we conducted interviews
-            to delve deeper into the subject, revealing a clear picture of how
-            people tend to consume a significant amount of sugar.
-          </span>
-          <br />
-        </div>{" "}
-        <div className="mt-32 flex h-px w-[1100px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />{" "}
-        <div className="ml-28 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />{" "}
-          <div className="justify-center text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            THE PROBLEM
+        <Divider />
+        <div
+          id="problems"
+          className="mt-5 grid grid-cols-1 gap-y-10 md:mt-20 md:grid-cols-2"
+        >
+          <div className="flex flex-col">
+            <div className="flex items-center gap-5">
+              <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+              <h3 className="self-stretch text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-60">
+                THE PROBLEM
+              </h3>
+            </div>
+            <div className="mt-12 flex flex-col gap-10 self-start max-md:mt-10 md:gap-16">
+              <h4
+                className="text-xl font-medium leading-8 text-opacity-60"
+                style={{
+                  textShadow:
+                    "0px 5px 15px rgba(0, 87, 255, 0.25), 0px -6px 15px rgba(13, 146, 18, 0.10), 0px 0px 20px rgba(255, 255, 255, 0.20)",
+                }}
+              >
+                <span className="text-lg leading-10 text-whitesmoke-100 sm:text-xl md:text-2xl">
+                  This went beyond ordinary sugar consumption.
+                </span>
+              </h4>
+            </div>
           </div>
-        </div>{" "}
-        <div className="ml-28 mt-12 max-w-[520px] justify-center self-start text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          This went beyond ordinary sugar consumption.
-        </div>{" "}
-        <div className="mt-24 w-full max-w-[1189px] self-center max-md:mt-10 max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div className="flex w-[55%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="justify-center text-xl font-medium leading-7 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-                Exploring the Sweetness Spectrum: Navigating Constraints in the
-                Realm of Sweet Indulgence.
-              </div>
-            </div>{" "}
-            <div className="ml-5 flex w-[45%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="text-xl leading-7 text-whitesmoke-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
+          <div />
+          <div className="col-span-2 grid grid-cols-1 sm:gap-10 md:grid-cols-2">
+            <p className="justify-center text-xl font-medium leading-[1.4] text-whitesmoke-100">
+              Exploring the Sweetness Spectrum: Navigating Constraints in the
+              Realm of Sweet Indulgence.
+            </p>
+            <div className="flex flex-col gap-8">
+              <p className="text-xl leading-[1.35] text-whitesmoke-100 text-opacity-60 ">
                 The younger generation, especially students, often struggle to
                 maintain a diet that has a good amount of protein, fiber, and
                 just sufficient carbohydrates and sugar, to put simply a healthy
-                diet.{" "}
-              </div>
+                diet.
+              </p>
+              <p className=" text-xl leading-[1.35] text-whitesmoke-100 text-opacity-60">
+                Their busy schedules, limited time, and the omnipresence of
+                sugar-packed, pre-packaged foods have created a scenario where
+                excessive sugar consumption is the norm.
+              </p>
+              <p className="text-xl leading-[1.35] text-whitesmoke-100">
+                <span className="opacity-60">
+                  Therefore, we narrowed down our focus from young adults to
+                  university students.
+                </span>{" "}
+                We aimed to pinpoint those among this group who genuinely desire
+                to improve their dietary habits but lack the knowledge and
+                guidance to do so effectively.
+              </p>
             </div>
           </div>
-        </div>{" "}
-        <div className="mr-16 mt-10 max-w-[520px] self-end text-xl leading-7 text-whitesmoke-100 text-opacity-60 max-md:mr-2.5 max-md:max-w-full">
-          Their busy schedules, limited time, and the omnipresence of
-          sugar-packed, pre-packaged foods have created a scenario where
-          excessive sugar consumption is the norm.
-        </div>{" "}
-        <div className="mr-16 mt-11 max-w-[519px] self-end text-xl leading-7 text-whitesmoke-100 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full">
-          Therefore, we narrowed down our focus from young adults to university
-          students.{" "}
-          <span className="text-whitesmoke-100">
-            We aimed to pinpoint those among this group who genuinely desire to
-            improve their dietary habits but lack the knowledge and guidance to
-            do so effectively.
-          </span>
-        </div>{" "}
-        <div className="ml-28 mt-20 flex items-center justify-between gap-5 self-start rounded-3xl bg-zinc-100 bg-opacity-0 px-11 py-9 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c410bb44d55e47605f0cd2c0e5315a2bb19f2f113e0e22000e3e4f13e570f14?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-            className="my-auto aspect-square w-7 max-w-full shrink-0 overflow-hidden object-contain object-center"
-          />{" "}
-          <div className="shrink grow basis-auto justify-center self-stretch text-lg italic leading-7 text-whitesmoke-100 max-md:max-w-full">
-            “I try to limit my sugar intake, but{" "}
-            <span className="text-whitesmoke-100">
-              I&apos;m not sure how much sugar is in what I&apos;m eating
-            </span>
+          <div className="flex flex-col gap-5">
+            {problemRows.map((item) => (
+              <div
+                key={item.id}
+                className="flex items-center justify-center gap-5 rounded-3xl bg-whitesmoke-400 px-6 py-4 max-sm:flex-wrap sm:px-10 sm:py-9"
+              >
+                <svg
+                  className="shrink-0"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                >
+                  <g clipPath="url(#clip0_1584_1835)">
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M13.9987 2.3335C7.5552 2.3335 2.33203 7.55666 2.33203 14.0002C2.33203 20.4437 7.5552 25.6668 13.9987 25.6668C20.4422 25.6668 25.6654 20.4437 25.6654 14.0002C25.6654 7.55666 20.4422 2.3335 13.9987 2.3335ZM9.91537 11.0835C9.91537 10.5473 10.021 10.0163 10.2262 9.52087C10.4314 9.02546 10.7322 8.57532 11.1113 8.19614C11.4905 7.81697 11.9407 7.5162 12.4361 7.31099C12.9315 7.10578 13.4625 7.00016 13.9987 7.00016C14.5349 7.00016 15.0659 7.10578 15.5613 7.31099C16.0567 7.5162 16.5069 7.81697 16.8861 8.19614C17.2652 8.57532 17.566 9.02546 17.7712 9.52087C17.9764 10.0163 18.082 10.5473 18.082 11.0835C18.082 12.1665 17.6518 13.2051 16.8861 13.9708C16.1203 14.7366 15.0817 15.1668 13.9987 15.1668C12.9157 15.1668 11.8771 14.7366 11.1113 13.9708C10.3456 13.2051 9.91537 12.1665 9.91537 11.0835ZM21.2997 19.8148C20.4264 20.9134 19.3161 21.8004 18.0519 22.4097C16.7877 23.019 15.4021 23.3348 13.9987 23.3335C12.5953 23.3348 11.2097 23.019 9.9455 22.4097C8.68126 21.8004 7.57102 20.9134 6.6977 19.8148C8.58887 18.458 11.1695 17.5002 13.9987 17.5002C16.8279 17.5002 19.4085 18.458 21.2997 19.8148Z"
+                      fill="#0D9212"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1584_1835">
+                      <rect width="28" height="28" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p className="shrink grow basis-auto justify-center self-stretch text-lg italic leading-7 text-whitesmoke-100">
+                  {item.text.map((_text, index) => {
+                    if (index % 2 === 0) {
+                      return (
+                        <span
+                          style={{
+                            color: "rgba(242, 242, 242, 0.60)",
+                            textShadow:
+                              "0px 0px 10px rgba(242, 242, 242, 0.40)",
+                          }}
+                          key={index}
+                        >
+                          {_text}
+                        </span>
+                      );
+                    }
+                    return <span key={index}>{_text}</span>;
+                  })}
+                </p>
+              </div>
+            ))}
           </div>
-        </div>{" "}
-        <div className="ml-28 mt-6 flex items-center justify-between gap-5 self-start rounded-md bg-zinc-100 bg-opacity-0 px-11 py-9 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/418778b8ab7ff3d071a8227e647ea442fd666472b402abfb3cebb8d03eb7d1f1?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-            className="my-auto aspect-square w-7 max-w-full shrink-0 overflow-hidden object-contain object-center"
-          />{" "}
-          <div className="shrink grow basis-auto justify-center self-stretch text-lg italic leading-7 text-whitesmoke-100 max-md:max-w-full">
-            “I try to limit my sugar intake, but{" "}
-            <span className="text-whitesmoke-100">
-              I&apos;m not sure how much sugar is in what I&apos;m eating
-            </span>
+        </div>
+        <div
+          className="mt-20 flex w-full flex-col items-center bg-dimgray p-8 pt-0 max-md:my-10 md:p-14"
+          style={{
+            borderRadius: "32px",
+            background:
+              "radial-gradient(683.88% 39.03% at 50% 50%, rgba(13, 146, 18, 0.04) 0%, rgba(0, 0, 0, 0.00) 100%), rgba(217, 217, 217, 0.10)",
+            boxShadow: "0px 40px 100px 0px rgba(0, 0, 0, 0.40)",
+          }}
+        >
+          <Image
+            alt="Icon Challenge"
+            src="/icons/icon-challenge.png"
+            width="57"
+            height="56"
+            className="mt-10 aspect-square w-14 max-w-full items-center justify-center self-center overflow-hidden object-contain object-center"
+          />
+          <p className="mt-6 justify-center self-center whitespace-nowrap text-center text-lg font-medium leading-7 text-whitesmoke-100 text-opacity-40 md:text-xl">
+            HOW MIGHT WE
+          </p>{" "}
+          <p className="mt-6 justify-center self-center text-center text-lg font-medium leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-xl md:text-3xl">
+            How might we tackle high sugar consumption for the students, who
+            want to eat healthy food but struggles to find such food items?
+          </p>{" "}
+        </div>
+        <div id="research" className="my-10 flex w-full flex-col md:my-20">
+          <div className="flex items-center gap-5">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
+              USER RESEARCH
+            </h2>
           </div>
-        </div>{" "}
-        <div className="ml-28 mt-6 flex items-center justify-between gap-5 self-start rounded-md bg-zinc-100 bg-opacity-0 px-11 py-9 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/54beeb602d370d3a63be5646f01199ed0eedfe398303c84f7cad873d9edfb400?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-            className="my-auto aspect-square w-7 max-w-full shrink-0 overflow-hidden object-contain object-center"
-          />{" "}
-          <div className="shrink grow basis-auto justify-center self-stretch text-lg italic leading-7 text-whitesmoke-100 max-md:max-w-full">
-            &quot;In the sweetness,{" "}
-            <span className="text-whitesmoke-100">
-              we might not notice how much sugar quietly adds up, impacting our
-              health.
-            </span>
-          </div>
-        </div>{" "}
-        <div className="mt-24 h-px shrink-0 self-stretch max-md:mt-10 max-md:max-w-full" />{" "}
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/5556086236723f08f87241411a8fc62853f0c4de2588226c848fb2ca99d5ebd7?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-          className="mt-10 aspect-square w-14 max-w-full items-center justify-center self-center overflow-hidden object-contain object-center"
-        />{" "}
-        <div className="mt-8 justify-center self-center whitespace-nowrap text-center text-xl font-medium leading-7 text-whitesmoke-100 text-opacity-40">
-          HOW MIGHT WE
-        </div>{" "}
-        <div className="mt-11 max-w-[1253px] justify-center self-center text-center text-4xl font-medium leading-[56px] text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          How might we tackle high sugar consumption for the students, who want
-          to eat healthy food but struggles to find such food items?
-        </div>{" "}
-        <div className="ml-32 mt-60 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />{" "}
-          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            USER RESEARCH
-          </div>
-        </div>{" "}
-        <div className="ml-32 mt-11 max-w-[662px] self-start text-xl leading-7 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          To better grasp the challenges of high sugar consumption in our target
-          audience, we conducted one-on-one interviews. The 8 participants we
-          interviewed exhibited varying degrees of homesickness during the
-          initial weeks of college.
-        </div>{" "}
-        <div className="mr-36 mt-16 flex w-[684px] max-w-full flex-col items-start self-end rounded-3xl border border-solid border-stone-500 py-11 pl-12 pr-16 max-md:mr-2.5 max-md:mt-10 max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/9ce24472274cc3167d463267e5c3e9b4380eda40b96a8eb652a5b92767c41545?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-            className="aspect-square w-[45px] max-w-full overflow-hidden object-contain object-center"
-          />{" "}
-          <div className="mt-9 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:max-w-full">
-            Easy and quick access to nutritional data of the food item
-          </div>{" "}
-          <div className="mb-6 mt-7 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
-            When the user would be in a hurry and would not have time to go
-            through the nutritional data they would{" "}
-            <span className="text-whitesmoke-100">
-              need an easy and quick way to know about the nutritional values of
-              the food items
-            </span>
-          </div>
-        </div>{" "}
-        <div className="mr-36 mt-8 flex w-[684px] max-w-full flex-col items-start self-end rounded-3xl border border-solid border-stone-500 py-11 pl-12 pr-20 max-md:mr-2.5 max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/e9a54e4ecff399835c43f10ce1c769f707902ef4bd5fa3593fbe88f47c13b59a?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-            className="aspect-square w-[37px] max-w-full overflow-hidden object-contain object-center"
-          />{" "}
-          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-            Tracking user’s sugar intake
-          </div>{" "}
-          <div className="mt-7 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
-            The user faces challenges in keeping track of their daily sugar
-            intake and determining how much more they can consume. This becomes
-            a cumbersome task, prompting the{" "}
-            <span className="text-whitesmoke-100">
-              need for a convenient solution to monitor and manage their sugar
-              consumption effectively
-            </span>
-          </div>
-        </div>{" "}
-        <div className="mr-36 mt-8 flex w-[684px] max-w-full flex-col items-start self-end rounded-3xl border border-solid border-stone-500 py-8 pl-12 pr-14 max-md:mr-2.5 max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/18c417aee5017996fb52e90090e64365a2b64c52bf3f3c4bc49b965afacdb995?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-            className="aspect-square w-[37px] max-w-full overflow-hidden object-contain object-center"
-          />{" "}
-          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-            Unaware of dangers of sugar and healthier sugar alternatives
-          </div>{" "}
-          <div className="mt-7 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
-            The user lacks awareness of the potential harm caused by excessive
-            sugar consumption and is unfamiliar with healthier alternatives.
-            Consequently, they seek a solution to{" "}
-            <span className="text-whitesmoke-100">
-              become more informed about the negative impacts of sugar and
-              discover healthier choices for their well-being.
-            </span>
-          </div>
-        </div>{" "}
-        <div className="mt-40 flex w-[1059px] max-w-full items-start gap-0 self-center max-md:mt-10 max-md:flex-wrap">
-          <div className="h-[647px] w-px shrink-0 self-start bg-stone-500" />{" "}
-          <div className="mt-4 flex grow basis-[0%] flex-col items-center self-end max-md:max-w-full">
-            <div className="flex w-[519px] max-w-full items-start justify-between gap-5 max-md:flex-wrap">
-              <div className="text-lg leading-6 text-white">WEEK 1</div>{" "}
-              <div className="self-stretch text-lg leading-6 text-white">
-                WEEK 2
-              </div>{" "}
-              <div className="self-stretch text-lg leading-6 text-white">
-                WEEK 3
-              </div>{" "}
-              <div className="text-lg leading-6 text-white">WEEK 4</div>
-            </div>{" "}
-            <div className="mt-16 self-stretch max-md:mt-10 max-md:max-w-full">
-              <div className="flex gap-5 max-md:flex-col max-md:items-stretch max-md:gap-0">
-                <div className="flex w-[51%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-                  <div className="flex w-full flex-col items-start rounded-3xl border border-solid border-zinc-800 bg-zinc-900 py-6 pl-3.5 pr-20 max-md:pr-5">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/df385e2bf0bb46978c34be7aa21d28bb64a83cbe3c8a54565880aad4c4e0fa58?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-                      className="aspect-square w-[38px] max-w-full overflow-hidden object-contain object-center"
-                    />{" "}
-                    <div className="mt-5 text-lg leading-6 text-white">
-                      Problem Framing Report
-                    </div>
-                  </div>
-                </div>{" "}
-                <div className="ml-5 flex w-[49%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-                  <div className="flex grow flex-col items-start">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/45c94797238d5c21b91332465129b82bb68a41b42f35ab167b280871b0e6c566?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-                      className="aspect-[0.52] w-[77px] max-w-full overflow-hidden object-contain object-center"
-                    />{" "}
-                    <div className="mt-8 flex flex-col items-start self-stretch rounded-3xl border border-solid border-zinc-800 bg-zinc-900 py-6 pl-4 pr-20 max-md:pr-5">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8c38e74fa7b0ad4ef6b6d830f1f63e069dcad2878340afa55250a2a55c621e7?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-                        className="aspect-square w-[38px] max-w-full overflow-hidden object-contain object-center"
-                      />{" "}
-                      <div className="mt-5 text-lg leading-6 text-white">
-                        Design Exploration Report
-                      </div>
-                    </div>
-                  </div>
+          <p className="mt-12 w-full max-w-screen-sm self-start text-lg font-medium leading-normal text-neutral-400 max-md:mt-10 md:text-xl lg:max-w-screen-md">
+            To better grasp the challenges of high sugar consumption in our
+            target audience, we conducted one-on-one interviews. The 8
+            participants we interviewed exhibited varying degrees of
+            homesickness during the initial weeks of college.
+            <br />
+          </p>
+          <div className="ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10 lg:max-w-screen-md">
+            {researchRows.map((item, index) => (
+              <div
+                className="flex flex-col items-start self-end rounded-3xl border border-solid border-stone-500 max-md:p-5 md:px-12 md:py-11"
+                key={index}
+              >
+                <Image
+                  width={45}
+                  height={45}
+                  loading="lazy"
+                  alt="Icon"
+                  src={item.imgSrc}
+                  className="aspect-square w-[45px] max-w-full overflow-hidden object-contain object-center"
+                />
+                <div className="mt-9 justify-center self-stretch text-xl leading-tight text-whitesmoke-100 max-md:max-w-full">
+                  {item.title}
+                </div>
+                <div className="mb-6 mt-7 self-stretch text-lg leading-[1.44] text-whitesmoke-100 max-md:max-w-full">
+                  {item.description.map((_text, index) => {
+                    if (index % 2 === 0) {
+                      return (
+                        <span
+                          style={{
+                            color: "rgba(242, 242, 242, 0.60)",
+                          }}
+                          key={index}
+                        >
+                          {_text}
+                        </span>
+                      );
+                    }
+                    return <span key={index}>{_text}</span>;
+                  })}
                 </div>
               </div>
-            </div>
-          </div>{" "}
-          <div className="flex grow basis-[0%] flex-col items-start self-stretch pb-12 max-md:max-w-full">
-            <div className="flex w-full items-stretch justify-between gap-5 self-stretch max-md:max-w-full max-md:flex-wrap">
-              <div className="h-[800px] w-px shrink-0 bg-stone-500" />{" "}
-              <div className="mt-4 self-start text-lg leading-6 text-white">
-                WEEK 5
-              </div>{" "}
-              <div className="mt-4 flex items-stretch justify-between gap-5 self-start">
-                <div className="text-lg leading-6 text-white">WEEK 6</div>{" "}
-                <div className="self-start text-lg leading-6 text-white">
-                  WEEK 7
-                </div>
-              </div>
-            </div>{" "}
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/0490f7ea22c2cd97759356e612280656f8c1728e50b3f451bdb2d86d1b39a7ab?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-              className="aspect-[0.44] w-[65px] max-w-full overflow-hidden object-contain object-center"
-            />{" "}
-            <div className="mb-28 mt-10 flex flex-col items-start self-stretch rounded-3xl border border-solid border-zinc-800 bg-zinc-900 pb-12 pl-4 pr-20 pt-6 max-md:mb-10 max-md:max-w-full max-md:pr-5">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/e0721895ee078abaafd1957c0f01e2c0a170f1ac0ba7ccb84aa82890bf6e3a60?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-                className="aspect-square w-[38px] max-w-full overflow-hidden object-contain object-center"
-              />{" "}
-              <div className="mt-5 whitespace-nowrap text-lg leading-6 text-white">
-                Prototyping, Testing and Launching
-              </div>
-            </div>
-          </div>{" "}
-          <div className="h-[688px] w-px shrink-0 self-start bg-stone-500" />
-        </div>{" "}
-        <div className="mt-52 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />{" "}
-        <div className="ml-28 mt-32 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />{" "}
-          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            BRAINSTORMING AND IDEATION
+            ))}
           </div>
-        </div>{" "}
-        <img
-          loading="lazy"
-          srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/845dc5e9ed243874d601221d022fbb46d1c2d6fa659c2c031f4bd245f6c17ce6?apiKey=0a6b15d7691a40b885f9cbf59314b167&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/845dc5e9ed243874d601221d022fbb46d1c2d6fa659c2c031f4bd245f6c17ce6?apiKey=0a6b15d7691a40b885f9cbf59314b167&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/845dc5e9ed243874d601221d022fbb46d1c2d6fa659c2c031f4bd245f6c17ce6?apiKey=0a6b15d7691a40b885f9cbf59314b167&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/845dc5e9ed243874d601221d022fbb46d1c2d6fa659c2c031f4bd245f6c17ce6?apiKey=0a6b15d7691a40b885f9cbf59314b167&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/845dc5e9ed243874d601221d022fbb46d1c2d6fa659c2c031f4bd245f6c17ce6?apiKey=0a6b15d7691a40b885f9cbf59314b167&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/845dc5e9ed243874d601221d022fbb46d1c2d6fa659c2c031f4bd245f6c17ce6?apiKey=0a6b15d7691a40b885f9cbf59314b167&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/845dc5e9ed243874d601221d022fbb46d1c2d6fa659c2c031f4bd245f6c17ce6?apiKey=0a6b15d7691a40b885f9cbf59314b167&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/845dc5e9ed243874d601221d022fbb46d1c2d6fa659c2c031f4bd245f6c17ce6?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-          className="mt-20 aspect-[2.07] w-full max-w-[1214px] self-center overflow-hidden object-contain object-center max-md:mt-10 max-md:max-w-full"
-        />{" "}
-        <div className="mt-52 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />{" "}
-        <div className="ml-24 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />{" "}
-          <div className="grow justify-center whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            PROPOSED SOLUTION
+          <Image
+            src="/calender.png"
+            alt="Research Calender"
+            width={1058}
+            height={800}
+            className="mx-auto mt-20 max-w-full overflow-hidden object-contain object-center md:mt-32"
+          />
+        </div>
+        <Divider />
+        <div id="brainstorming" className="flex w-full flex-col">
+          <div className="mt-5 flex items-center gap-5 md:ml-6 md:mt-16">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
+              BRAINSTORMING AND IDEATION
+            </h2>
           </div>
-        </div>{" "}
-        <div className="ml-24 mt-16 max-w-[618px] justify-center self-start text-xl font-medium leading-7 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          Our solution 
-          <span className="text-whitesmoke-100">
-            enables users to scan individual products at grocery stores{" "}
-          </span>
-          as students mainly rely on pre-packaged food available at the grocery
-          stores. Upon scanning,{" "}
-          <span className="text-whitesmoke-100">
-            the app displays vital information, such as total sugar content, and
-            provides healthier alternatives for the scanned products.
-          </span>
+          <div className="mt-10 flex aspect-[2.07] w-full max-w-[1214px] items-center justify-center self-center overflow-hidden object-contain object-center max-md:mb-5 max-md:mt-10 max-md:max-w-full md:mt-16">
+            <Image
+              className="object-contain object-center"
+              src="/High Sugar Consumption 1.png"
+              width={1214}
+              height={587}
+              alt="EVALUATING THE ACTIVITY"
+            />
+          </div>
+        </div>
+        <Divider />
+        <div
+          id="proposed-solution"
+          className="mt-24 flex flex-col items-start gap-4 self-start max-md:ml-2.5 max-md:mt-5 md:ml-6"
+        >
+          <div className="flex items-center gap-5">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
+              PROPOSED SOLUTION
+            </h2>
+          </div>
+          <p className="mt-8 w-full max-w-screen-sm text-xl font-medium leading-7 text-[rgba(242,242,242,0.60)] lg:max-w-screen-md">
+            Our solution{" "}
+            <span className="text-whitesmoke-100">
+              enables users to scan individual products at grocery stores{" "}
+            </span>
+            as students mainly rely on pre-packaged food available at the
+            grocery stores. Upon scanning,{" "}
+            <span className="text-whitesmoke-100">
+              the app displays vital information, such as total sugar content,
+              and provides healthier alternatives for the scanned products.
+            </span>
+            <br />
+            <br />
+            Our goal is to simplify the process for students{" "}
+            <span className="text-whitesmoke-100">
+              to educate them on maintaining the right balance in eating habits
+            </span>
+          </p>{" "}
+        </div>
+        <div
+          id="methods"
+          className="mt-28 flex flex-col items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10 md:ml-6"
+        >
+          <div className="flex items-center gap-5">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
+              METHODS
+            </h2>
+          </div>
+          <p className="mt-8 w-full max-w-screen-sm text-xl font-medium leading-7 text-[rgba(242,242,242,0.60)] lg:max-w-screen-md">
+            We conducted usability studies to identify and rectify system
+            problems, tailoring the app to user expectations and requirements.{" "}
+            <br />
+            <br />
+            We used a variety of evaluation methods,{" "}
+            <span className="text-whitesmoke-100">
+              including think-aloud sessions and heuristic evaluations
+            </span>{" "}
+            to gather valuable insights and identify opportunities for design
+            enhancement.
+            <br />
+            <br />
+            These methods helped us identify areas for improvement, answer
+            questions about which aspects of the interaction were challenging
+            for users, and determine what improvements they expected.
+          </p>
+        </div>
+        <Divider className="mt-28" />
+        <div
+          id="evaluation-insights"
+          className="mt-28 flex w-full flex-col gap-4 max-md:ml-2.5 max-md:mt-5 md:ml-6"
+        >
+          <div className="flex items-center gap-5">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
+              KEY EVALUATION INSIGHTS
+            </h2>
+          </div>
+          <p className="mt-8 w-full max-w-screen-sm text-xl font-medium leading-7 text-[rgba(242,242,242,0.60)] lg:max-w-screen-md">
+            Our evaluations included heuristic analysis as well as think-aloud
+            sessions. They revealed important information on the scanning
+            system.
+          </p>
+
+          <div className="mx-auto flex w-full flex-col gap-6 self-end">
+            <div className="mt-16 flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5 lg:max-w-screen-md">
+              <p className="whitespace-nowrap text-xl leading-6 text-white">
+                1.
+              </p>{" "}
+              <p className="shrink grow basis-auto self-stretch text-xl leading-7 text-white max-md:max-w-full">
+                Participants expressed concerns about the lack of clear scanning
+                instructions.
+              </p>
+            </div>
+            <div className="flex w-full max-w-screen-sm items-start gap-4 self-end rounded-2xl bg-[#1A1A1A] px-7 py-12 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5 lg:max-w-screen-md">
+              <p className="whitespace-nowrap text-xl leading-6 text-white">
+                2.
+              </p>{" "}
+              <p className="shrink grow basis-auto self-stretch text-xl leading-6 text-white">
+                Absence of clear and cancel the scan option.
+              </p>
+            </div>
+            <div className="flex w-full max-w-screen-sm items-start gap-3.5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5 lg:max-w-screen-md">
+              <p className="whitespace-nowrap text-xl leading-6 text-white">
+                3.
+              </p>{" "}
+              <p className="shrink grow basis-auto self-stretch text-xl leading-7 text-white max-md:max-w-full">
+                Reminders for altering limits and notifying them when crossed.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <Divider className="mt-28" />
+
+        <div
+          id="future-directions"
+          className="mt-28 flex w-full flex-col gap-4 max-md:ml-2.5 max-md:mt-10 md:ml-6"
+        >
+          <div className="flex items-center gap-5">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
+              FUTURE DIRECTIONS
+            </h2>
+          </div>
+          <p className="mt-8 w-full max-w-screen-sm text-xl font-medium leading-7 text-[rgba(242,242,242,0.60)] lg:max-w-screen-md">
+            We plan to work with nutritionists to establish advanced nutritional
+            criteria and dietary guidelines for the app to evaluate products
+            based on various dietary preferences and restrictions helping us
+            cater to a larger audience.
+          </p>
           <br />
           <br />
-          Our goal is to simplify the process for students{" "}
-          <span className="text-whitesmoke-100">
-            to educate them on maintaining the right balance in eating habits
-          </span>
-        </div>{" "}
-        <div className="ml-24 mt-44 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />{" "}
-          <div className="justify-center text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            METHODS
-          </div>
-        </div>{" "}
-        <div className="ml-24 mt-16 max-w-[621px] self-start text-xl font-medium leading-7 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          {/* <div _text="" /> */}
-        </div>{" "}
-        <div className="mt-60 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />{" "}
-        <div className="ml-24 mt-40 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />{" "}
-          <div className="grow justify-center whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            KEY EVALUATION INSIGHTS
-          </div>
-        </div>{" "}
-        <div className="ml-24 mt-16 max-w-[611px] self-start text-xl font-medium leading-7 text-whitesmoke-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
-          Our evaluations included heuristic analysis as well as think-aloud
-          sessions. They revealed important information on the scanning system.
-        </div>{" "}
-        <div className="mr-24 mt-16 flex items-start gap-5 self-end rounded-3xl bg-zinc-900 px-7 py-9 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <div className="whitespace-nowrap text-xl leading-6 text-white">
-            1.
-          </div>{" "}
-          <div className="shrink grow basis-auto self-stretch text-xl leading-7 text-white max-md:max-w-full">
-            Participants expressed concerns about the lack of clear scanning
-            instructions.
-          </div>
-        </div>{" "}
-        <div className="mr-24 mt-6 flex items-start gap-4 self-end rounded-3xl bg-zinc-900 px-7 py-12 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <div className="whitespace-nowrap text-xl leading-6 text-white">
-            2.
-          </div>{" "}
-          <div className="shrink grow basis-auto self-stretch text-xl leading-6 text-white">
-            Absence of clear and cancel the scan option.
-          </div>
-        </div>{" "}
-        <div className="mr-24 mt-6 flex items-start gap-3.5 self-end rounded-3xl bg-zinc-900 px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <div className="whitespace-nowrap text-xl leading-6 text-white">
-            3.
-          </div>{" "}
-          <div className="shrink grow basis-auto self-stretch text-xl leading-7 text-white max-md:max-w-full">
-            Reminders for altering limits and notifying them when crossed.
-          </div>
-        </div>{" "}
-        <div className="mt-44 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-zinc-100 bg-opacity-40 max-md:mt-10" />{" "}
-        <div className="ml-20 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-zinc-100 shadow-sm" />{" "}
-          <div className="w-full justify-center text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            FUTURE DIRECTIONS
-          </div>
-        </div>{" "}
-        <div className="ml-20 mt-16 max-w-[596px] self-start text-xl font-medium leading-7 text-whitesmoke-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
-           We plan to work with nutritionists to establish advanced nutritional
-          criteria and dietary guidelines for the app to evaluate products based
-          on various dietary preferences and restrictions helping us cater to a
-          larger audience.
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
       </div>
     </main>
