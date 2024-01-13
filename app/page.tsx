@@ -1,28 +1,38 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollDownIcon from "@/components/icons/ScrollDownIcon";
 import ProjectCard from "@/components/project/ProjectCard";
 
 const projects = [
   {
-    title: "Homie",
-    description: "A mobile app that helps you find roommates and housing.",
-    thumbnail: "/images/homie.png",
-    colour: "stadiabt",
-    link: "/project/homie",
-  },
-  {
     title: "Homeslice",
-    description: "A mobile app that helps you find roommates and housing.",
+    secondaryTitle: "UX Research | UI Design",
+    description:
+      "Designing an app to help spread awareness among students and educate them on what is healthy. Streamlining the decision-making process and guide users toward healthier food choices.",
     thumbnail: "/images/homeslice.png",
     colour: "spotlight",
+    secondaryTitleColour: "#6FCF97",
     link: "/project/homeslice",
   },
   {
     title: "Sugarwise",
-    description: "A mobile app that helps you find roommates and housing.",
+    secondaryTitle: "UX Research | UI Design",
+    description:
+      "Designing an app to allow users to find a room and a roommate  and share their requirements with just a few steps. Modernizing the way users customize and share their housing preferences to find the ideal match in an outdated market. ",
     thumbnail: "/images/sugarwise.png",
     colour: "thn",
+    secondaryTitleColour: "#A377FF",
     link: "/project/sugarwise",
+  },
+  {
+    title: "Homie",
+    secondaryTitle: "UX Research | UI Design",
+    description:
+      "Designing an app to give students a rich and immersive experience, reducing homesickness by fostering new cultural connections and shared celebrations within the community.",
+    thumbnail: "/images/homie.png",
+    colour: "stadiabt",
+    secondaryTitleColour: "#F2994A",
+    link: "/project/homie",
   },
 ];
 
@@ -146,16 +156,19 @@ const Work = () => {
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
+              id={index + 1}
               title={project.title}
+              secondaryTitle={project.secondaryTitle}
               description={project.description}
               thumbnail={project.thumbnail}
               colour={project.colour as any}
+              secondaryTitleColour={project.secondaryTitleColour}
               link={project.link}
             />
           ))}
         </div>
       </div>
-      
+      <Footer />
     </main>
   );
 };

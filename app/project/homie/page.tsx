@@ -77,15 +77,15 @@ function HomiePage() {
       />
       <ProjectHero
         title="Homie"
+        bgImage="/homie-hero.png"
         contents={[
           { name: "Overview", path: "#overview" },
           { name: "Kickoff", path: "#kickoff" },
+          { name: "Competitive Analysis", path: "#competitive-analysis" },
           { name: "Research", path: "#research" },
+          { name: "Personas", path: "#personas" },
           { name: "Architecture", path: "#architecture" },
-          { name: "Wireframing", path: "#wireframing" },
-          { name: "Prototyping", path: "#prototyping" },
           { name: "Final designs", path: "#final-designs" },
-          { name: "Style guide", path: "#style-guide" },
           { name: "Takeaway", path: "#takeaway" },
         ]}
       />
@@ -245,7 +245,7 @@ function HomiePage() {
           </div>
         </div>
         <Divider />
-        <div id="research" className="flex w-full flex-col">
+        <div id="competitive-analysis" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
             <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
             <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
@@ -285,7 +285,7 @@ function HomiePage() {
 
         <Divider />
 
-        <div id="architecture" className="flex w-full flex-col">
+        <div id="research" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
             <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
             <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
@@ -320,7 +320,7 @@ function HomiePage() {
 
         <Divider />
 
-        <div id="wireframing" className="flex w-full flex-col">
+        <div className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
             <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
             <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
@@ -351,7 +351,7 @@ function HomiePage() {
 
         <Divider />
 
-        <div id="prototyping" className="flex w-full flex-col">
+        <div id="personas" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
             <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
             <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
@@ -403,7 +403,7 @@ function HomiePage() {
 
         <Divider />
 
-        <div id="final-designs" className="flex w-full flex-col">
+        <div id="architecture" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
             <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
             <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
@@ -422,7 +422,7 @@ function HomiePage() {
           </div>
 
           <div
-            className="mt-10 flex w-full flex-col items-center justify-center md:mt-16"
+            className="relative mt-10 flex w-full flex-col items-center justify-center md:mt-16"
             style={{
               borderRadius: "32px",
               background:
@@ -430,17 +430,25 @@ function HomiePage() {
               boxShadow: "0px 40px 100px 0px rgba(0, 0, 0, 0.40)",
             }}
           >
+            <div
+              className="absolute top-0 w-full"
+              style={{
+                height: 0.66,
+                background:
+                  "linear-gradient(90deg, rgba(0, 0, 0, 0.00) 5%, rgba(104, 76, 163, 0.58) 28.06%, rgba(163, 119, 255, 0.90) 49.08%, rgba(139, 101, 217, 0.77) 65.42%, rgba(0, 0, 0, 0.00) 95%)",
+              }}
+            />
             <img
               loading="lazy"
               src="https://cdn.builder.io/api/v1/image/assets/TEMP/6cdd5376755d7c380d3322e23508fb09914e14ddbdda9fe0413999dbfd101509?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-              className="mt-16 aspect-square w-14 max-w-full items-center justify-center self-center overflow-hidden object-contain object-center max-md:mt-10"
+              className="mt-12 aspect-square w-14 max-w-full items-center justify-center self-center overflow-hidden object-contain object-center max-md:mt-10"
             />
-            <div className="mb-5 mt-6 justify-center self-center text-sm font-medium leading-5 tracking-[2px] text-whitesmoke-100 text-opacity-60">
+            <div className="my-6 mb-8 justify-center self-center text-sm font-medium leading-5 tracking-[2px] text-whitesmoke-100 text-opacity-60">
               FINAL DESIGNS
             </div>
           </div>
         </div>
-        <div id="style-guide" className="flex w-full flex-col">
+        <div id="final-designs" className="flex w-full flex-col">
           <div className="mt-10 flex w-full items-center gap-5 md:mt-16">
             <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
             <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
@@ -451,7 +459,7 @@ function HomiePage() {
           {challenges.map((challenge, index) => (
             <Fragment key={index}>
               <h3
-                className={`self-start text-xl font-extrabold text-violet-400 ${challenge.marginTop}`}
+                className={`self-start whitespace-nowrap text-xl font-extrabold text-violet-400 ${challenge.marginTop}`}
               >
                 {challenge.title}
               </h3>
@@ -485,6 +493,9 @@ function HomiePage() {
             other features and designs I wanted to within Homie due to time
             constraints, it&apos;s not to say I won&apos;t try to incorporate
             them in future projects down the line.
+            <br />
+            <br />
+            <br />
             <br />
           </div>
         </div>

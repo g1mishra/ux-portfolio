@@ -1,28 +1,38 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface ProjectCardProps {
+  id?: number;
   title: string;
+  secondaryTitle?: string;
   description?: string;
   thumbnail?: string;
   colour: "stadiabt" | "thn" | "spotlight" | "rbc";
+  secondaryTitleColour?: string;
   link: string;
 }
 
 const ProjectCard = ({
+  id,
   title,
+  secondaryTitle,
   description,
   thumbnail,
   colour,
+  secondaryTitleColour,
   link,
 }: ProjectCardProps) => {
   return (
     <div className="project-card-outline">
       <div className="glare-item-top outer-edge"></div>
-      <Link href={link} className="project-card w-inline-block min-h-[200px] max-h-[700px]">
+      <Link
+        href={link}
+        className="project-card w-inline-block max-h-[700px] min-h-[200px] w-full pb-9"
+      >
         <div className="glare-item-top inner-edge"></div>
         <div className="projectcard-top">
           <div className="projectcard-title-row">
-            <div className="text-projectcard-title">{title}</div>
+            <h1 className="text-projectcard-title">{title}</h1>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="48"
@@ -37,24 +47,39 @@ const ProjectCard = ({
               />
             </svg>
           </div>
-          {/* <div className="text-projectcard-description">
-                  <span className="text-projectcard-description-company">
-                    Google, &#x27;23
-                  </span>
-                  — Giving a second life to over a million controllers.
-                </div> */}
         </div>
-        {/* <Image
-                src=""
-                loading="lazy"
-                alt=""
-                className="project-thumbnail"
-                width={1000}
-                height={1000}
-              /> */}
+        <div className="flex h-full flex-col gap-6 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-5 sm:col-span-1 sm:gap-9">
+            <div className="flex items-center gap-5">
+              <div className="h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+              <span className="self-stretch text-base font-medium uppercase leading-6 text-whitesmoke-100 text-opacity-60 sm:text-lg">
+                Case Study {id}
+              </span>
+            </div>
+            <h2
+              className="font-karla text-xl font-medium leading-none sm:text-[32px]"
+              style={{ color: secondaryTitleColour }}
+            >
+              {secondaryTitle}
+            </h2>
+            <p className="w-full max-w-screen-sm font-karla text-base font-medium text-whitesmoke-100 text-opacity-80 sm:text-lg sm:leading-9">
+              {description}
+            </p>
+          </div>
+          <div className="relative overflow-hidden hidden w-full flex-1 items-center justify-center sm:flex">
+            {thumbnail ? (
+              <Image
+                src={thumbnail}
+                alt={title}
+                fill={true}
+                className="object-contain"
+              />
+            ) : null}
+          </div>
+        </div>
         <div
           className={`project-card-colour ${colour} transition-colors duration-300 ease-in-out hover:opacity-100`}
-        ></div>
+        />
       </Link>
     </div>
   );

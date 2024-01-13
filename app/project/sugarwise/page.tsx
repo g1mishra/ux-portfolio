@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Divider from "@/components/Divider";
 import HeroGradientBG from "@/components/HeroGradientBG";
+import ChallengeIcon from "@/components/icons/ChallengeIcon";
 import OverviewSection from "@/components/project/OverviewSection";
 import ProjectHero from "@/components/project/ProjectHero";
 import Image from "next/image";
@@ -73,13 +74,12 @@ const SugarwisePage = () => {
         contents={[
           { name: "Overview", path: "#overview" },
           { name: "Kickoff", path: "#kickoff" },
+          { name: "The problem", path: "#problems" },
           { name: "Research", path: "#research" },
-          { name: "Architecture", path: "#architecture" },
-          { name: "Wireframing", path: "#wireframing" },
-          { name: "Prototyping", path: "#prototyping" },
+          { name: "Brainstorming", path: "#brainstorming" },
+          { name: "The solution", path: "#solution" },
+          { name: "Evaluations", path: "#evaluations" },
           { name: "Final designs", path: "#final-designs" },
-          { name: "Style guide", path: "#style-guide" },
-          { name: "Takeaway", path: "#takeaway" },
         ]}
       />
       <div className="container mx-auto flex w-full max-w-[882px] flex-col items-center px-4 font-karla min-[1440px]:max-w-[1044px] min-[1920px]:max-w-[1440px]">
@@ -108,24 +108,24 @@ const SugarwisePage = () => {
                 Before initiating the design process, we needed to answer some
                 important questions.
               </span>
-              <ol className="ml-[22.87px] md:ml-[27.44px] list-decimal text-xl md:text-2xl">
+              <ol className="ml-[22.87px] flex list-decimal flex-col gap-3 text-xl md:ml-[27.44px] md:text-2xl">
                 <li>
-                  <span className="text-xl md:text-2xl leading-[50px] text-whitesmoke-100">
+                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
                     Who is our target audience?
                   </span>
                 </li>
                 <li>
-                  <span className="text-xl md:text-2xl leading-[50px] text-whitesmoke-100">
+                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
                     What is the reason for choosing them as the target audience?
                   </span>
                 </li>
                 <li>
-                  <span className="text-xl md:text-2xl leading-[50px] text-whitesmoke-100">
+                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
                     How will the application help them with the problem?
                   </span>
                 </li>
                 <li>
-                  <span className="text-xl md:text-2xl leading-[50px] text-whitesmoke-100">
+                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
                     What is the scope of this project?
                   </span>
                 </li>
@@ -249,7 +249,7 @@ const SugarwisePage = () => {
           </div>
         </div>
         <div
-          className="mt-20 flex w-full flex-col items-center bg-dimgray p-8 pt-0 max-md:my-10 md:p-14"
+          className="mt-20 flex w-full flex-col items-center bg-dimgray p-8 max-md:my-10 md:p-14"
           style={{
             borderRadius: "32px",
             background:
@@ -257,17 +257,11 @@ const SugarwisePage = () => {
             boxShadow: "0px 40px 100px 0px rgba(0, 0, 0, 0.40)",
           }}
         >
-          <Image
-            alt="Icon Challenge"
-            src="/icons/icon-challenge.png"
-            width="57"
-            height="56"
-            className="mt-10 aspect-square w-14 max-w-full items-center justify-center self-center overflow-hidden object-contain object-center"
-          />
+          <ChallengeIcon color="#0D9212" />
           <p className="mt-6 justify-center self-center whitespace-nowrap text-center text-lg font-medium leading-7 text-whitesmoke-100 text-opacity-40 md:text-xl">
             HOW MIGHT WE
           </p>{" "}
-          <p className="mt-6 justify-center self-center text-center text-lg font-medium leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-xl md:text-3xl">
+          <p className="mt-6 justify-center self-center text-center text-lg font-medium leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-xl md:px-4 md:text-3xl lg:px-8">
             How might we tackle high sugar consumption for the students, who
             want to eat healthy food but struggles to find such food items?
           </p>{" "}
@@ -289,7 +283,7 @@ const SugarwisePage = () => {
           <div className="ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10 lg:max-w-screen-md">
             {researchRows.map((item, index) => (
               <div
-                className="flex flex-col items-start self-end rounded-3xl border border-solid border-stone-500 max-md:p-5 md:px-12 md:py-11"
+                className="flex flex-col items-start self-end rounded-2xl border border-solid border-stone-500 max-md:p-5 md:p-8"
                 key={index}
               >
                 <Image
@@ -300,10 +294,10 @@ const SugarwisePage = () => {
                   src={item.imgSrc}
                   className="aspect-square w-[45px] max-w-full overflow-hidden object-contain object-center"
                 />
-                <div className="mt-9 justify-center self-stretch text-xl leading-tight text-whitesmoke-100 max-md:max-w-full">
+                <div className="mt-7 justify-center self-stretch text-xl leading-tight text-whitesmoke-100 max-md:max-w-full">
                   {item.title}
                 </div>
-                <div className="mb-6 mt-7 self-stretch text-lg leading-[1.44] text-whitesmoke-100 max-md:max-w-full">
+                <div className="mt-5 self-stretch text-lg leading-[1.44] text-whitesmoke-100 max-md:max-w-full">
                   {item.description.map((_text, index) => {
                     if (index % 2 === 0) {
                       return (
@@ -323,13 +317,15 @@ const SugarwisePage = () => {
               </div>
             ))}
           </div>
-          <Image
-            src="/calender.png"
-            alt="Research Calender"
-            width={1058}
-            height={800}
-            className="mx-auto mt-20 max-w-full overflow-hidden object-contain object-center md:mt-32"
-          />
+          <div className="mt-20 flex w-full items-center justify-center self-center overflow-hidden max-md:mb-5 md:mt-32">
+            <Image
+              src="/sugarwise-research-calendar.png"
+              alt="Research Calender"
+              width={1058}
+              height={800}
+              className="object-contain object-center"
+            />
+          </div>
         </div>
         <Divider />
         <div id="brainstorming" className="flex w-full flex-col">
@@ -339,10 +335,10 @@ const SugarwisePage = () => {
               BRAINSTORMING AND IDEATION
             </h2>
           </div>
-          <div className="mt-10 flex aspect-[2.07] w-full max-w-[1214px] items-center justify-center self-center overflow-hidden object-contain object-center max-md:mb-5 max-md:mt-10 max-md:max-w-full md:mt-16">
+          <div className="mt-10 flex w-full items-center justify-center self-center overflow-hidden max-md:mb-5 md:mt-16">
             <Image
               className="object-contain object-center"
-              src="/High Sugar Consumption 1.png"
+              src="/sugarwise-brainstorming.png"
               width={1214}
               height={587}
               alt="EVALUATING THE ACTIVITY"
@@ -351,7 +347,7 @@ const SugarwisePage = () => {
         </div>
         <Divider />
         <div
-          id="proposed-solution"
+          id="solution"
           className="mt-24 flex flex-col items-start gap-4 self-start max-md:ml-2.5 max-md:mt-5 md:ml-6"
         >
           <div className="flex items-center gap-5">
@@ -409,7 +405,7 @@ const SugarwisePage = () => {
         </div>
         <Divider className="mt-28" />
         <div
-          id="evaluation-insights"
+          id="evaluations"
           className="mt-28 flex w-full flex-col gap-4 max-md:ml-2.5 max-md:mt-5 md:ml-6"
         >
           <div className="flex items-center gap-5">

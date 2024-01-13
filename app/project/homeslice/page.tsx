@@ -1,9 +1,78 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
+import Divider from "@/components/Divider";
 import HeroGradientBG from "@/components/HeroGradientBG";
+import ChallengeIcon from "@/components/icons/ChallengeIcon";
 import OverviewSection from "@/components/project/OverviewSection";
 import ProjectHero from "@/components/project/ProjectHero";
-import React from "react";
+import Image from "next/image";
+
+import { Icon1, Icon2, Icon3, Icon4 } from "./ResearchIcons";
+
+const problemRows = [
+  {
+    id: "1",
+    text: [
+      `“The struggle is not just in understanding their culture `,
+      `but in preserving mine. `,
+      `Sometimes, I feel so lost and start missing my home.”`,
+    ],
+  },
+  {
+    id: "2",
+    text: [
+      `“Getting used to the States was tough; It took a really good amount of time to `,
+      `adjust to the cultural shift`,
+      `, and at moments.”`,
+    ],
+  },
+  {
+    id: "3",
+    text: [
+      `“`,
+      `Adapting to life here was a bit of a challenge`,
+      ` it’s hard that you feel that you are at home until you are.”`,
+    ],
+  },
+];
+
+const researchRows = [
+  {
+    icon: <Icon1 />,
+    title: "Lack of support system",
+    description: [
+      "When students have a strong support network, they often experience a smoother transition. The design solution should aim at helping students feel ",
+      "connected to their friends, and form a support network to abate homesickness.",
+    ],
+  },
+  {
+    icon: <Icon2 />,
+    title: "Cultural Differences",
+    description: [
+      "Participants experienced how when they were immersed in a new culture that differed from their own, which led to a sense of confusion and an overall feeling of being disconnected. In order to ",
+      "foster a more inclusive environment, ",
+      "we aim to focus on bridging the cultural gaps.",
+    ],
+  },
+  {
+    icon: <Icon3 />,
+    title: "Inability to Engage in Familiar Activities",
+    description: [
+      "Events that are an integral part of one’s life back home does lead to a longing for those familiar experiences. This issue is exacerbated by participants having hectic and busy schedules. A proper ",
+      "management system ",
+      "should be adopted as an important objective.",
+    ],
+  },
+  {
+    icon: <Icon4 />,
+    title: "Transition to Living Independently",
+    description: [
+      "We have to focus on ",
+      "building a community",
+      ". The design intervention should try to help the students connect and share their experiences and support each other.",
+    ],
+  },
+];
 
 function HomeslicePage() {
   return (
@@ -15,19 +84,20 @@ function HomeslicePage() {
       />
       <ProjectHero
         title="Homeslice"
+        bgImage="/homeslice-hero.png"
         contents={[
           { name: "Overview", path: "#overview" },
           { name: "Kickoff", path: "#kickoff" },
+          { name: "The Problem", path: "#problems" },
           { name: "Research", path: "#research" },
-          { name: "Architecture", path: "#architecture" },
-          { name: "Wireframing", path: "#wireframing" },
-          { name: "Prototyping", path: "#prototyping" },
-          { name: "Final designs", path: "#final-designs" },
-          { name: "Style guide", path: "#style-guide" },
+          { name: "Brainstorming", path: "#brainstorming" },
+          { name: "Proposed Solution", path: "#proposed-solution" },
+          { name: "Evaluations", path: "#evaluations" },
+          { name: "Final Designs", path: "#final-designs" },
           { name: "Takeaway", path: "#takeaway" },
         ]}
       />
-      <div className="container mx-auto flex flex-col items-center px-4">
+      <div className="container mx-auto flex w-full max-w-[882px] flex-col items-center px-4 font-karla min-[1440px]:max-w-[1044px] min-[1920px]:max-w-[1440px]">
         <OverviewSection
           overview={[
             "Homeslice is a community-driven platform that connects students with local families or individuals who are keen to share their cultural traditions.",
@@ -37,563 +107,482 @@ function HomeslicePage() {
           research="User Research, Interaction design, Visual design, Prototyping & Testing"
           timeline="Nov - Dec 2023"
         />
-        <div className="ml-28 mt-28 flex items-start gap-5 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
-          <div className="self-stretch text-xl font-medium leading-6 text-white text-opacity-60">
-            KICKOFF
+        <div
+          id="kickoff"
+          className="mt-16 grid grid-cols-1 gap-10 md:mt-36 md:grid-cols-2"
+        >
+          <div className="flex flex-col">
+            <div className="flex items-center gap-5">
+              <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+              <h3 className="self-stretch text-xl font-medium leading-6 text-white text-opacity-60">
+                KICKOFF
+              </h3>
+            </div>
+            <div className="mt-12 flex flex-col gap-8 self-start">
+              <span className="text-lg text-whitesmoke-100 text-opacity-60 sm:text-xl">
+                The design journey was initiated by addressing these questions
+                first:
+              </span>
+              <ol className="ml-[22.87px] flex list-decimal flex-col gap-3 text-xl md:ml-[27.44px] md:text-2xl">
+                <li>
+                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                    Who is our target audience?
+                  </span>
+                </li>
+                <li>
+                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                    Why only them?
+                  </span>
+                </li>
+                <li>
+                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                    How is the problem affecting the target audience?
+                  </span>
+                </li>
+                <li>
+                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                    What are the effects of the problem on the target audience?
+                  </span>
+                </li>
+              </ol>
+              <span className="text-lg text-whitesmoke-100 text-opacity-60 sm:text-xl">
+                After conducting surveys and one-on-one interviews to understand
+                the problem, it became evident that cultural shock played a
+                major factor in inducing the feeling of homesickness.
+              </span>
+              <br />
+            </div>
           </div>
         </div>
-        <div className="ml-28 mt-14 max-w-[591px] self-start text-lg font-medium leading-8 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          <span className="text-xl">
-            The design journey was initiated by addressing these questions
-            first:
-          </span>
-          <br />
-          <ol>
-            <li>
-              <span className="text-2xl leading-[50px] text-whitesmoke-100">
-                Who is our target audience?
-              </span>
-            </li>
-            <li>
-              <span className="text-2xl leading-[50px] text-whitesmoke-100">
-                Why only them?{" "}
-              </span>
-            </li>
-            <li>
-              <span className="text-2xl leading-[50px] text-whitesmoke-100">
-                How is the problem affecting the target audience?
-              </span>
-            </li>
-            <li>
-              <span className="text-2xl leading-[50px] text-whitesmoke-100">
-                What are the effects of the problem on the target audience?
-              </span>
-            </li>
-          </ol>
-          <br />
-          <span className="text-xl">
-            After conducting surveys and one-on-one interviews to understand the
-            problem, it became evident that cultural shock played a major factor
-            in inducing the feeling of homesickness.{" "}
-          </span>
-          <br />
-        </div>
-        <div className="mt-28 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-whitesmoke-400 bg-opacity-40 max-md:mt-10" />
-        <div className="ml-28 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
-          <div className="justify-center text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            THE PROBLEM
+        <Divider />
+        <div
+          id="problems"
+          className="mt-5 grid grid-cols-1 gap-y-10 md:mt-20 md:grid-cols-2"
+        >
+          <div className="flex flex-col">
+            <div className="flex items-center gap-5">
+              <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+              <h3 className="self-stretch text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-60">
+                THE PROBLEM
+              </h3>
+            </div>
+            <div className="mt-12 flex flex-col gap-10 self-start max-md:mt-10 md:gap-16">
+              <h4
+                className="text-xl font-medium leading-8 text-opacity-60"
+                style={{
+                  textShadow:
+                    "0px 5px 15px rgba(0, 87, 255, 0.25), 0px -6px 15px rgba(13, 146, 18, 0.10), 0px 0px 20px rgba(255, 255, 255, 0.20)",
+                }}
+              >
+                <span className="text-lg leading-10 text-whitesmoke-100 sm:text-xl md:text-2xl">
+                  This wasn’t just a typical loneliness.
+                </span>
+              </h4>
+            </div>
+          </div>
+          <div />
+          <div className="col-span-2 mt-6 grid grid-cols-1 sm:gap-10 md:grid-cols-2">
+            <p className="justify-center text-xl font-medium leading-[1.4] text-whitesmoke-100">
+              Navigating the Emotional Maze : A Tangle of Homesickness
+              Constraints
+            </p>
+            <div className="flex flex-col gap-8">
+              <p className="text-xl leading-[1.35] text-whitesmoke-100 text-opacity-60 ">
+                Being away from the family, transitioning to a new environment,
+                cultural norms and lack of support system were some of the
+                factors which led to homesickness among international students.
+              </p>
+              <p className=" text-xl leading-[1.35] text-whitesmoke-100">
+                <span className="text-whitesmoke-100 text-opacity-60">
+                  One major factor contributing to homesickness among Indian
+                  international students, distinct from some other international
+                  students,
+                </span>{" "}
+                was the deeply rooted family-centric Indian culture. In many
+                Indian families, members often live together, and the concept of
+                extended families is prevalent.
+                <br />
+                <br />
+                <span className="text-whitesmoke-100 text-opacity-60">
+                  When Indian students move abroad for education, they face a
+                  more significant emotional gap due to the strong familial
+                  connections they are accustomed to.
+                </span>
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-5">
+            {problemRows.map((item) => (
+              <div
+                key={item.id}
+                className="flex items-center justify-center gap-5 rounded-3xl bg-whitesmoke-400 px-6 py-4 max-sm:flex-wrap sm:px-10 sm:py-9"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="28"
+                  height="28"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_1464_358)">
+                    <path
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M13.9987 2.3335C7.5552 2.3335 2.33203 7.55666 2.33203 14.0002C2.33203 20.4437 7.5552 25.6668 13.9987 25.6668C20.4422 25.6668 25.6654 20.4437 25.6654 14.0002C25.6654 7.55666 20.4422 2.3335 13.9987 2.3335ZM9.91537 11.0835C9.91537 10.5473 10.021 10.0163 10.2262 9.52087C10.4314 9.02546 10.7322 8.57532 11.1113 8.19614C11.4905 7.81697 11.9407 7.5162 12.4361 7.31099C12.9315 7.10578 13.4625 7.00016 13.9987 7.00016C14.5349 7.00016 15.0659 7.10578 15.5613 7.31099C16.0567 7.5162 16.5069 7.81697 16.8861 8.19614C17.2652 8.57532 17.566 9.02546 17.7712 9.52087C17.9764 10.0163 18.082 10.5473 18.082 11.0835C18.082 12.1665 17.6518 13.2051 16.8861 13.9708C16.1203 14.7366 15.0817 15.1668 13.9987 15.1668C12.9157 15.1668 11.8771 14.7366 11.1113 13.9708C10.3456 13.2051 9.91537 12.1665 9.91537 11.0835ZM21.2997 19.8148C20.4264 20.9134 19.3161 21.8004 18.0519 22.4097C16.7877 23.019 15.4021 23.3348 13.9987 23.3335C12.5953 23.3348 11.2097 23.019 9.9455 22.4097C8.68126 21.8004 7.57102 20.9134 6.6977 19.8148C8.58887 18.458 11.1695 17.5002 13.9987 17.5002C16.8279 17.5002 19.4085 18.458 21.2997 19.8148Z"
+                      fill="#D47F22"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1464_358">
+                      <rect width="28" height="28" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p className="shrink grow basis-auto justify-center self-stretch text-lg italic leading-7 text-whitesmoke-100">
+                  {item.text.map((_text, index) => {
+                    if (index % 2 === 0) {
+                      return (
+                        <span
+                          style={{
+                            color: "rgba(242, 242, 242, 0.60)",
+                            textShadow:
+                              "0px 0px 10px rgba(242, 242, 242, 0.40)",
+                          }}
+                          key={index}
+                        >
+                          {_text}
+                        </span>
+                      );
+                    }
+                    return <span key={index}>{_text}</span>;
+                  })}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="ml-28 mt-12 max-w-[475px] justify-center self-start text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          This wasn’t just a typical loneliness.
+        <div
+          className="mt-20 flex w-full flex-col items-center bg-dimgray p-8 max-md:my-10 md:p-14"
+          style={{
+            borderRadius: "32px",
+            background:
+              "radial-gradient(683.88% 39.03% at 50% 50%, rgba(13, 146, 18, 0.04) 0%, rgba(0, 0, 0, 0.00) 100%), rgba(217, 217, 217, 0.10)",
+            boxShadow: "0px 40px 100px 0px rgba(0, 0, 0, 0.40)",
+          }}
+        >
+          <ChallengeIcon color="#FF800A" />
+          <p className="mt-6 justify-center self-center whitespace-nowrap text-center text-lg font-medium leading-7 text-whitesmoke-100 text-opacity-40 md:text-xl">
+            HOW MIGHT WE
+          </p>{" "}
+          <p className="mt-6 justify-center self-center text-center text-lg font-medium leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-xl md:px-4 md:text-3xl lg:px-8">
+            How might we alleviate the impact of homesickness created by
+            cultural shock on Indian international students?
+          </p>{" "}
         </div>
-        <div className="mt-24 flex w-full max-w-[1211px] items-start justify-between gap-5 self-center max-md:mt-10 max-md:max-w-full max-md:flex-wrap">
-          <div className="shrink grow basis-auto justify-center text-xl font-medium leading-7 text-whitesmoke-100">
-            Navigating the Emotional Maze : A Tangle of Homesickness Constraints
+        <div id="research" className="my-10 flex w-full flex-col md:my-20">
+          <div className="flex items-center gap-5">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
+              USER RESEARCH
+            </h2>
           </div>
-          <div className="shrink grow basis-auto justify-center self-stretch text-xl leading-7 text-whitesmoke-100 text-opacity-60 max-md:max-w-full">
-            Being away from the family, transitioning to a new environment,
-            cultural norms and lack of support system were some of the factors
-            which led to homesickness among international students.
+          <p className="mt-12 w-full max-w-screen-sm self-start text-lg font-medium leading-normal text-neutral-400 max-md:mt-10 md:text-xl lg:max-w-screen-md">
+            To better grasp the challenges of homesickness in our target
+            audience, we conducted one-on-one interviews. The 8 participants we
+            interviewed exhibited varying degrees of homesickness during the
+            initial weeks of college.
+            <br />
+          </p>
+          <div className="ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10 lg:max-w-screen-md">
+            {researchRows.map((item, index) => (
+              <div
+                className="flex flex-col items-start self-end rounded-2xl border border-solid border-stone-500 max-md:p-5 md:p-8"
+                key={index}
+              >
+                {item.icon}
+                <div className="mt-7 justify-center self-stretch text-xl leading-tight text-whitesmoke-100 max-md:max-w-full">
+                  {item.title}
+                </div>
+                <div className="mt-5 self-stretch text-lg leading-[1.44] text-whitesmoke-100 max-md:max-w-full">
+                  {item.description.map((_text, index) => {
+                    if (index % 2 === 0) {
+                      return (
+                        <span
+                          style={{
+                            color: "rgba(242, 242, 242, 0.60)",
+                          }}
+                          key={index}
+                        >
+                          {_text}
+                        </span>
+                      );
+                    }
+                    return <span key={index}>{_text}</span>;
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-20 flex w-full items-center justify-center self-center overflow-hidden max-md:mb-5 md:mt-32">
+            <Image
+              src="/homeslice-research-calender.png"
+              alt="Research Calender"
+              width={1058}
+              height={800}
+              className="object-contain object-center"
+            />
           </div>
         </div>
-        <div className="mr-20 mt-14 max-w-[517px] justify-center self-end text-xl leading-7 text-white max-md:mr-2.5 max-md:mt-10 max-md:max-w-full">
-          {/* <div _text="" /> */}
+        <Divider />
+        <div id="brainstorming" className="flex w-full flex-col">
+          <div className="mt-5 flex items-center gap-5 md:ml-6 md:mt-16">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
+              BRAINSTORMING AND IDEATION
+            </h2>
+          </div>
+          <div className="mt-10 flex w-full items-center justify-center self-center overflow-hidden max-md:mb-5 max-md:mt-10 md:mt-16">
+            <Image
+              className="object-contain object-center"
+              src="/homeslice-brainstorming.png"
+              width={1125}
+              height={1112}
+              alt="EVALUATING THE ACTIVITY"
+            />
+          </div>
         </div>
-        <div className="ml-28 mt-16 flex items-center justify-between gap-5 self-start rounded-3xl bg-whitesmoke-400 bg-opacity-0 px-11 py-9 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/3c38268bec2fccd1f83c3654ca15f4de60ff56dfd96981269c6db2cf05f73cac?"
-            className="my-auto aspect-square w-7 max-w-full shrink-0 overflow-hidden object-contain object-center"
-          />
-          <div className="shrink grow basis-auto justify-center self-stretch text-lg italic leading-7 text-whitesmoke-100 text-opacity-90 max-md:max-w-full">
+        <Divider />
+        <div
+          id="proposed-solution"
+          className="mt-24 flex w-full flex-col items-start gap-4 self-start max-md:ml-2.5 max-md:mt-5 md:ml-6"
+        >
+          <div className="flex items-center gap-5">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
+              PROPOSED SOLUTION
+            </h2>
+          </div>
+          <p className="mt-8 w-full max-w-screen-sm text-xl font-medium leading-7 text-[rgba(242,242,242,0.60)] lg:max-w-screen-md">
+            Our solution is a user-friendly platform that{" "}
             <span className="text-whitesmoke-100">
-              &quot;The struggle is not just in understanding their culture{" "}
-            </span>
-            but in preserving mine.{" "}
-            <span className="text-whitesmoke-100">
-              Sometimes, I feel so lost and start missing my home.”
-            </span>
-          </div>
-        </div>
-        <div className="ml-28 mt-6 flex items-center justify-between gap-5 self-start rounded-3xl bg-whitesmoke-400 bg-opacity-0 px-11 py-9 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/31092e19c1677237dcf3d269b67649d60547aec66e16615ef2522c1b8bc7a443?"
-            className="my-auto aspect-square w-7 max-w-full shrink-0 overflow-hidden object-contain object-center"
-          />
-          <div className="shrink grow basis-auto justify-center self-stretch text-lg italic leading-7 text-white max-md:max-w-full">
-            &quot;Getting used to the States was tough; It took a really good
-            amount of time to{" "}
-            <span className="text-white">adjust to the cultural shift</span>
-          </div>
-        </div>
-        <div className="ml-28 mt-6 flex items-center justify-between gap-5 self-start rounded-3xl bg-whitesmoke-400 bg-opacity-0 px-11 py-9 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/f2c5e2c74df66ec9247f9e2769a499bfdc978cfe0a117a0852fae5a5fb889dae?"
-            className="my-auto aspect-square w-7 max-w-full shrink-0 overflow-hidden object-contain object-center"
-          />
-          <div className="shrink grow basis-auto justify-center self-stretch text-lg italic leading-7 text-white max-md:max-w-full">
-            &quot;
-            <span className="text-white">
-              Adapting to life here was a bit of a challenge
-            </span>
-          </div>
-        </div>
-        <div className="mt-24 h-px shrink-0 self-stretch max-md:mt-10 max-md:max-w-full" />
-        <img
-          loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/5f7f8c543f905e52054013b199e0befeff16442622e4de2bd83f9a40548b4e65?"
-          className="mt-10 aspect-square w-14 max-w-full items-center justify-center self-center overflow-hidden object-contain object-center"
-        />
-        {/* <div className="mt-8 justify-center self-center whitespace-nowrap text-center text-xl font-medium leading-7 text-whitesmoke-100 text-opacity-40">
-          HOW MIGHT WE
-        </div>
-        <div className="mt-11 max-w-[1180px] justify-center self-center text-center text-4xl font-medium leading-[56px] text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          How might we alleviate the impact of homesickness created by cultural
-          shock on Indian international students?
-        </div>
-        <div className="ml-28 mt-64 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
-          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            USER RESEARCH
-          </div>
-        </div>
-        <div className="ml-28 mt-11 max-w-[673px] self-start text-xl leading-7 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          To better grasp the challenges of homesickness in our target audience,
-          we conducted one-on-one interviews. The 8 participants we interviewed
-          exhibited varying degrees of homesickness during the initial weeks of
-          college.
-        </div>
-        <div className="mr-40 mt-16 flex w-[684px] max-w-full flex-col items-start self-end rounded-3xl border border-solid border-stone-500 py-11 pl-8 pr-16 max-md:mr-2.5 max-md:mt-10 max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/2e9301300d13bc69c47afc1eb751e47fd6a841e2e49e2510f64f7a4fe9b26475?"
-            className="aspect-square w-9 max-w-full overflow-hidden object-contain object-center"
-          />
-          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-            Lack of support system
-          </div>
-          <div className="mt-7 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
-            When students have a strong support network, they often experience a
-            smoother transition. The design solution should aim at helping
-            students feel{" "}
-            <span className="text-whitesmoke-100">
-              connected to their friends, and form a support network to abate
-              homesickness.
+              connects students with local families willing to share their
+              cultural traditions.
             </span>
             <br />
+            <br />
+            Our goal is to simplify the process for students to connect with
+            these families, who can host them for cultural celebrations. In
+            return, students have the opportunity to invite these families to
+            join in their own cultural festivals.
+          </p>
+          <div className="mt-12 flex flex-col gap-10 self-start max-md:mt-10 md:gap-16">
+            <h4
+              className="text-xl font-medium leading-8 text-opacity-60"
+              style={{
+                textShadow:
+                  "0px 5px 15px rgba(0, 87, 255, 0.25), 0px -6px 15px rgba(13, 146, 18, 0.10), 0px 0px 20px rgba(255, 255, 255, 0.20)",
+              }}
+            >
+              <span className="text-lg leading-10 text-whitesmoke-100 sm:text-xl md:text-2xl">
+                Our application facilitates two flows
+              </span>
+            </h4>
           </div>
-        </div>
-        <div className="mr-40 mt-8 flex w-[684px] max-w-full flex-col items-start self-end rounded-3xl border border-solid border-stone-500 py-11 pl-8 pr-14 max-md:mr-2.5 max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/392e8bd2e19cf1f281faa765986bcda09e01590c316f96e8b7c5dfa9ee52e4d5?"
-            className="aspect-square w-9 max-w-full overflow-hidden object-contain object-center"
-          />
-          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-            Cultural Differences
-          </div>
-          <div className="mt-8 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
-            <div />
-          </div>
-        </div>
-        <div className="mr-40 mt-8 flex w-[684px] max-w-full flex-col items-start self-end rounded-3xl border border-solid border-stone-500 py-11 pl-8 pr-20 max-md:mr-2.5 max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e2fe97b562523ad5ca1aa2202c0610f25b7f716a2b4803422ef115e5083caee?"
-            className="aspect-square w-9 max-w-full overflow-hidden object-contain object-center"
-          />
-          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-            Inability to Engage in Familiar Activities
-          </div>
-          <div className="mt-7 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
-            <div />
-          </div>
-        </div>
-        <div className="mr-40 mt-8 flex w-[684px] max-w-full flex-col items-start self-end rounded-3xl border border-solid border-stone-500 py-11 pl-8 pr-16 max-md:mr-2.5 max-md:px-5">
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/ff7cdb25569e35716dbdc7a9c1d534f92ed13e904a3c6d6515d08248477f9dc5?"
-            className="aspect-square w-9 max-w-full overflow-hidden object-contain object-center"
-          />
-          <div className="mt-11 justify-center self-stretch text-xl leading-6 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-            Transition to Living Independently
-          </div>
-          <div className="mb-7 mt-7 self-stretch text-lg leading-7 text-whitesmoke-100 max-md:max-w-full">
-            <div />
-          </div>
-        </div>
-        <div className="mt-40 w-[1059px] max-w-full self-center max-md:mt-10">
-          <div className="flex gap-5 max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div className="flex w-[57%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="flex items-stretch gap-px max-md:max-w-full max-md:flex-wrap">
-                <div className="h-[647px] w-px shrink-0 bg-stone-500" />
-                <div className="mt-4 flex flex-col items-center self-start max-md:max-w-full">
-                  <div className="flex w-[519px] max-w-full items-start justify-between gap-5 max-md:flex-wrap">
-                    <div className="text-lg leading-6 text-white">WEEK 1</div>
-                    <div className="self-stretch text-lg leading-6 text-white">
-                      WEEK 2
-                    </div>
-                    <div className="self-stretch text-lg leading-6 text-white">
-                      WEEK 3
-                    </div>
-                    <div className="text-lg leading-6 text-white">WEEK 4</div>
-                  </div>
-                  <div className="mt-16 flex w-[155px] max-w-full flex-col items-start self-start rounded-3xl border border-solid border-zinc-800 bg-zinc-900 py-6 pl-3.5 max-md:mt-10">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/df385e2bf0bb46978c34be7aa21d28bb64a83cbe3c8a54565880aad4c4e0fa58?"
-                      className="aspect-square w-[38px] max-w-full overflow-hidden object-contain object-center"
-                    />
-                    <div className="mt-5 text-lg leading-6 text-white">
-                      Domain Space and Requirements Gathering
-                    </div>
-                  </div>
-                  <div className="mt-8 flex w-[448px] max-w-full flex-col items-start self-end">
-                    <div className="flex w-[155px] max-w-full flex-col items-start rounded-3xl border border-solid border-zinc-800 bg-zinc-900 py-6 pl-4">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8c38e74fa7b0ad4ef6b6d830f1f63e069dcad2878340afa55250a2a55c621e7?"
-                        className="aspect-square w-[38px] max-w-full overflow-hidden object-contain object-center"
-                      />
-                      <div className="mt-5 text-lg leading-6 text-white">
-                        Explorative Design and Rapid Ideation
-                      </div>
-                    </div>
-                    <div className="mt-8 flex w-[295px] max-w-full flex-col items-start self-end rounded-3xl border border-solid border-zinc-800 bg-zinc-900 py-6 pl-4 pr-14 max-md:pr-5">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/2056b4564d4cc61280a60146b795c0404cad51c2e49c1ae2ddd96bf4ed1185da?"
-                        className="aspect-square w-[38px] max-w-full overflow-hidden object-contain object-center"
-                      />
-                      <div className="mt-5 self-stretch text-lg leading-6 text-white">
-                        Sketching , Prototyping and Internal Walkthrough
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+          <div className="mr-20 mt-9 flex w-full max-w-screen-sm flex-col gap-6 rounded-3xl bg-[#1A1A1A] p-5 sm:self-end md:p-10 lg:max-w-screen-md">
+            <div className="flex items-center gap-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                className="shrink-0 "
+              >
+                <path
+                  d="M14.333 29.266c-1.6-.2-3.094-.677-4.483-1.433a12.834 12.834 0 0 1-3.6-2.883 13.306 13.306 0 0 1-2.383-4.034C3.289 19.394 3 17.756 3 16c0-1.956.461-3.822 1.383-5.6A16.34 16.34 0 0 1 8.1 5.666H4.033v-2h7.634V11.3h-2V7a13.06 13.06 0 0 0-3.4 4.05C5.422 12.616 5 14.266 5 16c0 2.933.889 5.439 2.667 7.516 1.777 2.078 4 3.317 6.666 3.717v2.033Zm-.233-7.6L8.933 16.5l1.4-1.4 3.767 3.766 7.567-7.566 1.4 1.4-8.967 8.966Zm6.233 6.667V20.7h2V25a13.511 13.511 0 0 0 3.4-4.067A10.192 10.192 0 0 0 27 16c0-2.934-.889-5.44-2.667-7.517-1.777-2.078-4-3.317-6.666-3.717V2.733c3.244.4 5.944 1.833 8.1 4.3C27.922 9.5 29 12.49 29 16c0 1.955-.461 3.822-1.383 5.6a16.34 16.34 0 0 1-3.717 4.733h4.067v2h-7.634Z"
+                  fill="#F2F2F2"
+                />
+              </svg>
+              <h5 className="text-xl leading-6 text-white">
+                Hosting an event or a party
+              </h5>
             </div>
-            <div className="ml-5 flex w-[43%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="flex grow items-stretch justify-between gap-0 max-md:max-w-full max-md:flex-wrap">
-                <div className="h-[800px] w-px shrink-0 bg-stone-500" />
-                <div className="mt-4 flex flex-col items-center self-start max-md:max-w-full">
-                  <div className="flex w-[359px] max-w-full items-stretch justify-between gap-5">
-                    <div className="self-start text-lg leading-6 text-white">
-                      WEEK 5
-                    </div>
-                    <div className="text-lg leading-6 text-white">WEEK 6</div>
-                    <div className="self-start text-lg leading-6 text-white">
-                      WEEK 7
-                    </div>
-                  </div>
-                  <div className="mt-[588px] flex flex-col items-start self-stretch rounded-3xl border border-solid border-zinc-800 bg-zinc-900 pb-11 pl-6 pr-20 pt-6 max-md:mt-10 max-md:max-w-full max-md:px-5">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/45156154064a94a27a3032ad7808dc97a68cffaba2fe35d5415d76b0f7b08db6?"
-                      className="aspect-square w-[38px] max-w-full overflow-hidden object-contain object-center"
-                    />
-                    <div className="mt-6 text-lg leading-6 text-white">
-                      Testing , Refining and Launching
-                    </div>
-                  </div>
-                </div>
-                <div className="h-[688px] w-px shrink-0 self-start bg-stone-500" />
-              </div>
+            <div className="flex items-center gap-5">
+              <span className="block w-8 shrink-0" />
+              <p className="mt-5 text-lg leading-6 text-whitesmoke-100 text-opacity-60">
+                The user will start by signing up and establishing his
+                personalized profile. Once the profile is set, he can
+                effortlessly create a post to share details of his upcoming
+                party or event.
+              </p>
+            </div>
+          </div>
+          <div className="mr-20 mt-6 flex w-full max-w-screen-sm flex-col gap-6 rounded-3xl bg-[#1A1A1A] p-5 sm:self-end md:p-10 lg:max-w-screen-md">
+            <div className="flex items-center gap-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                className="shrink-0 "
+              >
+                <path
+                  d="M14.333 29.266c-1.6-.2-3.094-.677-4.483-1.433a12.834 12.834 0 0 1-3.6-2.883 13.306 13.306 0 0 1-2.383-4.034C3.289 19.394 3 17.756 3 16c0-1.956.461-3.822 1.383-5.6A16.34 16.34 0 0 1 8.1 5.666H4.033v-2h7.634V11.3h-2V7a13.06 13.06 0 0 0-3.4 4.05C5.422 12.616 5 14.266 5 16c0 2.933.889 5.439 2.667 7.516 1.777 2.078 4 3.317 6.666 3.717v2.033Zm-.233-7.6L8.933 16.5l1.4-1.4 3.767 3.766 7.567-7.566 1.4 1.4-8.967 8.966Zm6.233 6.667V20.7h2V25a13.511 13.511 0 0 0 3.4-4.067A10.192 10.192 0 0 0 27 16c0-2.934-.889-5.44-2.667-7.517-1.777-2.078-4-3.317-6.666-3.717V2.733c3.244.4 5.944 1.833 8.1 4.3C27.922 9.5 29 12.49 29 16c0 1.955-.461 3.822-1.383 5.6a16.34 16.34 0 0 1-3.717 4.733h4.067v2h-7.634Z"
+                  fill="#F2F2F2"
+                />
+              </svg>
+              <h5 className="text-xl leading-6 text-white">
+                Joining an event or attending an event
+              </h5>
+            </div>
+            <div className="flex items-center gap-5">
+              <span className="block w-8 shrink-0" />
+              <p className="mt-5 text-lg leading-6 text-whitesmoke-100 text-opacity-60">
+                The user will begin his journey by signing up. Once the signup
+                process is completed, they can explore a variety of events on
+                the homescreen. From there, they can simply choose the one that
+                resonates with them and join.
+              </p>
             </div>
           </div>
         </div>
-        <div className="mt-24 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-whitesmoke-400 bg-opacity-40 max-md:mt-10" />
-        <div className="ml-28 mt-32 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
-          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            BRAINSTORMING AND IDEATION
+        <Divider />
+        <div
+          id="evaluations"
+          className="mt-28 flex w-full flex-col gap-4 max-md:ml-2.5 max-md:mt-5 md:ml-6"
+        >
+          <div className="flex items-center gap-5">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
+              PRODUCT EVALUATIONS
+            </h2>
           </div>
-        </div>
-        <img
-          loading="lazy"
-          srcSet="..."
-          className="mt-24 aspect-[1.01] w-[1125px] max-w-full self-center overflow-hidden object-contain object-center max-md:mt-10"
-        />
-        <div className="mt-36 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-whitesmoke-400 bg-opacity-40 max-md:mt-10" />
-        <div className="ml-28 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
-          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            PROPOSED SOLUTION
+          <div className="mt-10 flex w-full flex-col gap-6 self-start md:mt-12 ">
+            <h4
+              className="text-xl font-medium leading-8 text-opacity-60"
+              style={{
+                textShadow:
+                  "0px 5px 15px rgba(0, 87, 255, 0.25), 0px -6px 15px rgba(13, 146, 18, 0.10), 0px 0px 20px rgba(255, 255, 255, 0.20)",
+              }}
+            >
+              <span className="font-karla text-lg leading-10 text-whitesmoke-100 sm:text-xl md:text-2xl">
+                User Evaluations
+              </span>
+            </h4>
+            <p className="w-full max-w-screen-sm text-xl font-medium leading-7 text-whitesmoke-100 opacity-60">
+              To gain insights into how potential users interact with our
+              solution, we performed usability testing with four individuals who
+              have either experienced homesickness in the past and are currently
+              feeling it. <br />
+              <br />
+              We assessed the system&apos;s user-friendliness by having
+              participants explore the application and complete specific tasks.
+            </p>
           </div>
-        </div>
-        <div className="ml-28 mt-16 max-w-[592px] justify-center self-start text-xl font-medium leading-7 text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          <div />
-        </div>
-        <div className="ml-28 mt-20 max-w-[475px] justify-center self-start text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          Our application facilitates two flows
-        </div>
-        <div className="mr-24 mt-7 flex w-[684px] max-w-full flex-col items-start self-end rounded-3xl bg-zinc-900 py-11 pl-12 pr-20 max-md:mr-2.5 max-md:px-5">
-          <div className="flex items-stretch justify-between gap-5">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/ee441da99d89e8c8e54c83012ca89ec2143669ebf61fa4b9265b8f49e0d3962e?"
-              className="aspect-square w-8 max-w-full shrink-0 items-center justify-center overflow-hidden object-contain object-center"
-            />
-            <div className="mt-2.5 grow self-start whitespace-nowrap text-xl leading-6 text-white">
-              Hosting an event or a party
+          <div className="flex w-full flex-col gap-6 self-end">
+            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+              <span className="text-xl leading-7">1.</span>
+              <p className="text-xl leading-7 text-white">
+                As a new user on the application, complete the signup process.
+              </p>
+            </div>
+            <div className="flex w-full max-w-screen-sm items-start gap-4 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+              <span className="text-xl leading-7">2.</span>
+              <p className="text-xl leading-6 text-white">
+                Complete the flow for hosting an event
+              </p>
+            </div>
+            <div className="flex w-full max-w-screen-sm items-start gap-3.5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+              <span className="text-xl leading-7">3.</span>
+              <p className="text-xl leading-7 text-white">
+                Register for a private event
+              </p>
+            </div>
+            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+              <span className="text-xl leading-7">4.</span>
+              <p className="text-xl leading-6 text-white">
+                Join an event of your choice
+              </p>
             </div>
           </div>
-          <div className="mt-11 w-[501px] max-w-full self-end text-lg leading-6 text-whitesmoke-100 text-opacity-60 max-md:mt-10">
-            The user will start by signing up and establishing his personalized
-            profile. Once the profile is set, he can effortlessly create a post
-            to share details of his upcoming party or event.
+
+          <div className="mt-10 flex w-full flex-col gap-6 self-start md:mt-12 ">
+            <h4
+              className="text-xl font-medium leading-8 text-opacity-60"
+              style={{
+                textShadow:
+                  "0px 5px 15px rgba(0, 87, 255, 0.25), 0px -6px 15px rgba(13, 146, 18, 0.10), 0px 0px 20px rgba(255, 255, 255, 0.20)",
+              }}
+            >
+              <span className="font-karla text-lg leading-10 text-whitesmoke-100 sm:text-xl md:text-2xl">
+                Expert Evaluations
+              </span>
+            </h4>
+            <p className="w-full max-w-screen-sm text-xl font-medium leading-7 text-whitesmoke-100 opacity-60">
+              We asked four professionals to assess our app. We evaluated our
+              app using experts in the area of human-computer interaction (HCI).{" "}
+              <br />
+              <br />
+              Our expertise included a Lead UX Designer, a Design Consultant,
+              and two second-year master&apos;s students in the discipline of
+              HCI. After providing a quick overview of the app&apos;s idea, we
+              asked participants to complete four tasks, as a part of the
+              evaluation
+            </p>
           </div>
-        </div>
-        <div className="mr-20 mt-9 flex w-[684px] max-w-full flex-col items-stretch self-end rounded-3xl bg-zinc-900 py-11 pl-12 pr-20 max-md:mr-2.5 max-md:px-5">
-          <div className="flex items-stretch justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/0763bdba66e0782492ef12e8740b1621d474919cbc37b529acab70b6bca15de9?"
-              className="aspect-square w-8 max-w-full shrink-0 items-center justify-center overflow-hidden object-contain object-center"
-            />
-            <div className="mt-2.5 shrink grow basis-auto self-start text-xl leading-6 text-white max-md:max-w-full">
-              Joining an event or attending an event
+          <div className="flex w-full flex-col gap-6 self-end">
+            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+              <span className="text-xl leading-7">1.</span>
+              <p className="text-xl leading-7 text-white">
+                As a new user, register in the application. the signup process.
+              </p>
+            </div>
+            <div className="flex w-full max-w-screen-sm items-start gap-4 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+              <span className="text-xl leading-7">2.</span>
+              <p className="text-xl leading-7 text-white">
+                Join a private event in the application
+              </p>
+            </div>
+            <div className="flex w-full max-w-screen-sm items-start gap-3.5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+              <span className="text-xl leading-7">3.</span>
+              <p className="text-xl leading-7 text-white">
+                Host an event by creating a post in the application.
+              </p>
+            </div>
+            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+              <span className="text-xl leading-7">4.</span>
+              <p className="text-xl leading-7 text-white">
+                Accept an event invite.
+              </p>
             </div>
           </div>
-          <div className="mt-11 w-[501px] max-w-full self-end text-lg leading-6 text-whitesmoke-100 text-opacity-60 max-md:mt-10">
-            The user will begin his journey by signing up. Once the signup
-            process is completed, they can explore a variety of events on the
-            homescreen. From there, they can simply choose the one that
-            resonates with them and join.
-          </div>
         </div>
-        <div className="mt-52 flex h-px w-[1276px] max-w-full shrink-0 flex-col self-center bg-whitesmoke-400 bg-opacity-40 max-md:mt-10" />
-        <div className="ml-28 mt-28 flex items-start gap-4 self-start max-md:ml-2.5 max-md:mt-10">
-          <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-400 shadow-sm" />
-          <div className="grow justify-center self-stretch whitespace-nowrap text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-40">
-            PRODUCT EVALUATIONS
-          </div>
-        </div>
-        <div className="ml-28 mt-14 max-w-[475px] justify-center self-start text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          User Evaluations
-        </div>
-        <div className="mt-7 w-full max-w-[1224px] self-center max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div className="flex w-[45%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="justify-center text-xl font-medium leading-7 text-whitesmoke-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
-                To gain insights into how potential users interact with our
-                solution, we performed usability testing with four individuals
-                who have either experienced homesickness in the past and are
-                currently feeling it. <br />
-                <br />
-                We assessed the system&apos;s user-friendliness by having
-                participants explore the application and complete specific
-                tasks.
-              </div>
-            </div>{" "}
-            <div className="ml-5 flex w-[55%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="mt-40 flex w-full grow items-start justify-between gap-5 rounded-3xl bg-zinc-900 px-7 py-9 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-                <div className="whitespace-nowrap text-xl leading-6 text-white">
-                  1.
-                </div>{" "}
-                <div className="shrink grow basis-auto self-stretch text-xl leading-6 text-white max-md:max-w-full">
-                  As a new user on the application, complete the signup process.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>{" "}
-        <div className="mr-16 mt-6 flex items-start gap-4 self-end rounded-3xl bg-zinc-900 px-7 py-12 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <div className="whitespace-nowrap text-xl leading-6 text-white">
-            2.
-          </div>{" "}
-          <div className="shrink grow basis-auto self-stretch text-xl leading-6 text-white">
-            Complete the flow for hosting an event
-          </div>
-        </div>{" "}
-        <div className="mr-16 mt-6 flex items-start gap-4 self-end rounded-3xl bg-zinc-900 px-7 py-12 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <div className="whitespace-nowrap text-xl leading-6 text-white">
-            3.
-          </div>{" "}
-          <div className="shrink grow basis-auto self-stretch text-xl leading-6 text-white">
-            Register for a private event
-          </div>
-        </div>{" "}
-        <div className="mr-16 mt-6 flex items-start gap-4 self-end rounded-3xl bg-zinc-900 px-7 py-12 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <div className="whitespace-nowrap text-xl leading-6 text-white">
-            4.
-          </div>{" "}
-          <div className="shrink grow basis-auto self-stretch text-xl leading-6 text-white">
-            Join an event of your choice
-          </div>
-        </div>{" "}
-        <div className="ml-28 mt-24 max-w-[475px] justify-center self-start text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
-          Expert Evaluations
-        </div>{" "}
-        <div className="mt-5 w-full max-w-[1224px] self-center max-md:max-w-full">
-          <div className="flex gap-5 max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div className="flex w-[45%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="justify-center text-xl font-medium leading-7 text-whitesmoke-100 text-opacity-60 max-md:mt-10 max-md:max-w-full">
-                We asked four professionals to assess our app. We evaluated our
-                app using experts in the area of human-computer interaction
-                (HCI). <br />
-                <br />
-                Our expertise included a Lead UX Designer, a Design Consultant,
-                and two second-year master&apos;s students in the discipline of
-                HCI. After providing a quick overview of the app&apos;s idea, we
-                asked participants to complete four tasks, as a part of the
-                evaluation
-              </div>
-            </div>{" "}
-            <div className="ml-5 flex w-[55%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="mt-44 flex w-full grow items-start justify-between gap-5 rounded-3xl bg-zinc-900 px-7 py-12 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-                <div className="whitespace-nowrap text-xl leading-6 text-white">
-                  1.
-                </div>{" "}
-                <div className="shrink grow basis-auto self-stretch text-xl leading-6 text-white">
-                   As a new user, register in the application.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>{" "}
-        <div className="mr-16 mt-6 flex items-start gap-4 self-end rounded-3xl bg-zinc-900 px-7 py-12 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <div className="whitespace-nowrap text-xl leading-6 text-white">
-            2.
-          </div>{" "}
-          <div className="shrink grow basis-auto self-stretch text-xl leading-6 text-white">
-            Join a private event in the application
-          </div>
-        </div>{" "}
-        <div className="mr-16 mt-6 flex items-start gap-4 self-end rounded-3xl bg-zinc-900 px-7 py-12 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <div className="whitespace-nowrap text-xl leading-6 text-white">
-            3.
-          </div>{" "}
-          <div className="shrink grow basis-auto self-stretch text-xl leading-6 text-white max-md:max-w-full">
-            Host an event by creating a post in the application.
-          </div>
-        </div>{" "}
-        <div className="mr-16 mt-6 flex items-start gap-4 self-end rounded-3xl bg-zinc-900 px-7 py-12 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-          <div className="whitespace-nowrap text-xl leading-6 text-white">
-            4.
-          </div>{" "}
-          <div className="w-full self-stretch text-xl leading-6 text-white">
-            Accept an event invite.
-          </div>
-        </div>{" "}
-        <div className="mt-32 max-w-[999px] justify-center self-center text-center text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full">
+        <h4
+          style={{
+            textShadow:
+              "0px 5px 15px rgba(0, 87, 255, 0.25), 0px -6px 15px rgba(255, 90, 0, 0.10), 0px 0px 20px rgba(255, 255, 255, 0.20)",
+          }}
+          className="mt-32  text-center text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full"
+        >
           The performance breakdown of each task, by each expert, is illustrated
           below
-        </div>{" "}
-        <div className="mt-16 w-[753px] max-w-full self-center max-md:mt-10">
-          <div className="flex gap-5 max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div className="flex w-[37%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="flex grow items-stretch justify-between gap-5 max-md:mt-10">
-                <div className="h-[404px] w-px shrink-0 bg-stone-500" />{" "}
-                <div className="mt-4 flex grow basis-[0%] flex-col items-stretch self-start">
-                  <div className="whitespace-nowrap text-lg leading-6 text-white">
-                    EXPERTS
-                  </div>{" "}
-                  <div className="mt-14 whitespace-nowrap text-center text-lg font-medium leading-6 text-white max-md:mt-10">
-                    Expert - 1
-                  </div>{" "}
-                  <div className="mt-16 whitespace-nowrap text-center text-lg font-medium leading-6 text-white max-md:mt-10">
-                    Expert - 2
-                  </div>{" "}
-                  <div className="mt-16 whitespace-nowrap text-center text-lg font-medium leading-6 text-white max-md:mt-10">
-                    Expert - 3
-                  </div>{" "}
-                  <div className="mt-16 whitespace-nowrap text-center text-lg font-medium leading-6 text-white max-md:mt-10">
-                    Expert - 4
-                  </div>
-                </div>{" "}
-                <div className="h-[404px] w-px shrink-0 bg-stone-500" />{" "}
-                <div className="mt-4 flex grow basis-[0%] flex-col items-stretch self-start">
-                  <div className="whitespace-nowrap text-lg leading-6 text-white">
-                    TASK - 1
-                  </div>{" "}
-                  <div className="mt-14 whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                    SUCESS
-                  </div>{" "}
-                  <div className="mt-16 whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                    SUCESS
-                  </div>{" "}
-                  <div className="mt-16 whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                    SUCESS
-                  </div>{" "}
-                  <div className="mt-16 whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                    SUCESS
-                  </div>
-                </div>
-              </div>
-            </div>{" "}
-            <div className="ml-5 flex w-[63%] flex-col items-stretch max-md:ml-0 max-md:w-full">
-              <div className="flex grow items-start justify-between gap-0 max-md:mt-10 max-md:max-w-full max-md:flex-wrap">
-                <div className="h-[404px] w-px shrink-0 self-stretch bg-stone-500" />{" "}
-                <div className="mt-4 flex grow basis-[0%] flex-col items-stretch self-start">
-                  <div className="self-center whitespace-nowrap text-lg leading-6 text-white">
-                    TASK - 2
-                  </div>{" "}
-                  <div className="mt-14 self-center whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                    SUCESS
-                  </div>{" "}
-                  <div className="mt-16 self-center whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                    SUCESS
-                  </div>{" "}
-                  <div className="mt-14 items-stretch justify-center whitespace-nowrap border border-solid border-zinc-800 bg-zinc-900 px-11 py-5 text-center text-lg font-medium leading-6 text-whitesmoke-100 max-md:mt-10 max-md:px-5">
-                    FAILURE
-                  </div>{" "}
-                  <div className="mt-7 items-stretch justify-center whitespace-nowrap border border-solid border-zinc-800 bg-zinc-900 px-11 py-5 text-center text-lg font-medium leading-6 text-whitesmoke-100 max-md:px-5">
-                    FAILURE
-                  </div>
-                </div>{" "}
-                <div className="h-[404px] w-px shrink-0 self-stretch bg-stone-500" />{" "}
-                <div className="flex grow basis-[0%] flex-col items-stretch self-stretch pb-12">
-                  <div className="z-[1] flex items-stretch justify-between gap-5 pr-10 max-md:pr-5">
-                    <div className="mt-4 flex grow basis-[0%] flex-col items-stretch self-start">
-                      <div className="whitespace-nowrap text-lg leading-6 text-white">
-                        TASK - 3
-                      </div>{" "}
-                      <div className="mt-14 whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                        SUCESS
-                      </div>{" "}
-                      <div className="mt-16 whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                        SUCESS
-                      </div>{" "}
-                      <div className="mt-16 whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                        SUCESS
-                      </div>
-                    </div>{" "}
-                    <div className="h-[404px] w-px shrink-0 bg-stone-500" />{" "}
-                    <div className="mt-4 flex grow basis-[0%] flex-col items-stretch self-start">
-                      <div className="whitespace-nowrap text-lg leading-6 text-white">
-                        TASK - 4
-                      </div>{" "}
-                      <div className="mt-14 whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                        SUCESS
-                      </div>{" "}
-                      <div className="mt-16 whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                        SUCESS
-                      </div>{" "}
-                      <div className="mt-16 whitespace-nowrap text-center text-lg font-bold leading-6 text-amber-600 max-md:mt-10">
-                        SUCESS
-                      </div>
-                    </div>
-                  </div>{" "}
-                  <div className="flex items-center justify-between gap-5">
-                    <div className="my-auto text-center text-lg font-bold leading-6 text-amber-600">
-                      SUCESS
-                    </div>{" "}
-                    <div className="grow items-stretch justify-center self-stretch whitespace-nowrap border border-solid border-zinc-800 bg-zinc-900 px-11 py-5 text-center text-lg font-medium leading-6 text-whitesmoke-100 max-md:px-5">
-                      FAILURE
-                    </div>
-                  </div>
-                </div>{" "}
-                <div className="h-[404px] w-px shrink-0 self-stretch bg-stone-500" />
-              </div>
-            </div>
-          </div>
-        </div> */}
+        </h4>{" "}
+        <div className="my-10 flex w-full items-center justify-center self-center md:my-16">
+          <Image
+            className="object-contain object-center"
+            src="/homeslice-tasks-breakdown.png"
+            width={752}
+            height={404}
+            alt="EVALUATING THE ACTIVITY"
+          />
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </main>
   );

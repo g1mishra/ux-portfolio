@@ -3,9 +3,11 @@
 import { usePathname, useRouter } from "next/navigation";
 import React, { useCallback, useEffect, useState } from "react";
 import ScrollLink from "../ScrollLink";
+import Image from "next/image";
 
 interface ProjectHeroProps {
   title: string;
+  bgImage?: string;
   contents: { name: string; path: string }[];
   onBackClick?: () => void;
 }
@@ -14,6 +16,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
   title,
   contents,
   onBackClick,
+  bgImage,
 }) => {
   const router = useRouter();
   const pathname = usePathname();
@@ -68,7 +71,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
   return (
     <section className="z-10 flex h-screen w-full flex-col items-stretch px-4 pb-2 pt-12 md:px-12 xl:px-16">
       <button
-        className="fixed z-50 flex max-w-max items-center justify-center gap-2.5 rounded-full border border-solid border-whitesmoke-400 border-opacity-0 bg-whitesmoke-500 px-7 py-4 font-inter backdrop-blur-[5px] md:px-[37px] md:py-[21px]"
+        className="fixed z-50 flex max-w-max items-center justify-center gap-2.5 rounded-full border border-solid border-whitesmoke-400 border-opacity-0 bg-whitesmoke-500 px-6 py-3 font-inter backdrop-blur-[5px] md:px-8 md:py-4"
         onClick={updatedOnBackClick}
       >
         <svg
@@ -104,7 +107,20 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
       >
         {title}
       </h1>
-      <div className="fixed bottom-0 top-0  z-50 hidden flex-col justify-center gap-6 self-end xl:flex">
+
+      {bgImage ? (
+        <div className="relative flex h-full w-full items-baseline justify-center overflow-hidden object-contain">
+          <Image
+            src={bgImage}
+            alt="Project Image"
+            priority
+            fill
+            className="object-contain object-top"
+          />
+        </div>
+      ) : null}
+
+      <div className="fixed bottom-0 right-7 top-0  z-50 hidden flex-col justify-center gap-6 self-end xl:flex">
         <div className="whitespace-nowrap text-lg leading-6 text-whitesmoke-100 ">
           CONTENTS
         </div>
@@ -116,7 +132,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
               color:
                 activeContent === index ? "white" : "rgba(242, 242, 242, 0.60)",
             }}
-            className={`cursor-pointer whitespace-nowrap text-base font-light  leading-6 text-opacity-60 xl:text-lg`}
+            className={`cursor-pointer whitespace-nowrap text-base font-light  leading-6 text-opacity-60`}
           >
             {content.name}
           </ScrollLink>
