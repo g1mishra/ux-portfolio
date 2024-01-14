@@ -49,30 +49,30 @@ const ProjectCard = ({
           </div>
         </div>
         <div className="flex h-full flex-col gap-6 sm:flex-row">
-          <div className="flex w-full max-w-sm flex-col gap-5 sm:col-span-1 md:mt-10 2xl:mt-8 2xl:max-w-screen-sm 2xl:gap-9">
+          <div className="3xl:mt-8 3xl:max-w-screen-sm 3xl:gap-9 flex w-full max-w-sm flex-col gap-5 sm:col-span-1 md:mt-10">
             <div className="flex items-center gap-5">
               <div className="h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
-              <span className="self-stretch text-base font-medium uppercase leading-6 text-whitesmoke-100 text-opacity-60 2xl:text-lg">
+              <span className="3xl:text-lg self-stretch text-base font-medium uppercase leading-6 text-whitesmoke-100 text-opacity-60">
                 Case Study {id}
               </span>
             </div>
             <h2
-              className="mt-2 font-karla text-lg font-medium leading-none md:text-xl 2xl:text-[32px]"
+              className="3xl:text-[32px] mt-2 font-karla text-lg font-medium leading-none md:text-xl"
               style={{ color: secondaryTitleColour }}
             >
               {secondaryTitle}
             </h2>
-            <p className="w-full max-w-screen-sm font-karla text-base font-medium text-whitesmoke-100 text-opacity-80 sm:text-lg sm:leading-9 2xl:text-xl">
+            <p className="3xl:text-xl w-full max-w-screen-sm font-karla text-base font-medium text-whitesmoke-100 text-opacity-80 sm:text-lg sm:leading-9">
               {description}
             </p>
           </div>
-          <div className="relative hidden w-full flex-1 items-center justify-center overflow-hidden sm:flex">
+          <div className="relative hidden  w-full flex-1 items-center justify-center overflow-hidden sm:flex">
             {thumbnail ? (
               <Image
                 src={thumbnail}
                 alt={title}
                 fill={true}
-                className="object-contain"
+                className="max-h-[729px] object-contain"
               />
             ) : null}
           </div>

@@ -61,6 +61,9 @@ const config: Config = {
         xl: "20px",
         "21xl": "40px",
       },
+      screens: {
+        "3xl": "1792px",
+      },
     },
   },
   plugins: [],

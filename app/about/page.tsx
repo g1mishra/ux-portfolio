@@ -12,11 +12,11 @@ const AboutPage = () => {
             <div className="mt-28 flex w-full flex-col self-center p-4  max-md:max-w-full md:mt-44">
               <div className="flex items-center gap-5 ">
                 <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-                <h1 className="grow self-stretch text-base font-medium leading-6 text-whitesmoke-100 text-opacity-60 2xl:text-xl">
+                <h1 className="3xl:text-xl grow self-stretch text-base font-medium leading-6 text-whitesmoke-100 text-opacity-60">
                   ABOUT ME
                 </h1>
               </div>
-              <p className="mt-8 max-w-screen-lg font-karla text-3xl font-bold leading-relaxed text-white md:text-4xl xl:text-5xl 2xl:text-6xl">
+              <p className="3xl:text-6xl mt-8 max-w-screen-lg font-karla text-3xl font-bold leading-relaxed text-white md:text-4xl xl:text-5xl">
                 Design is much more than{" "}
                 <span
                   className="font-inter font-medium"
@@ -59,14 +59,14 @@ const AboutPage = () => {
                         </div>
                       </div>
                       <div className="mt-16 flex flex-col items-stretch max-md:mt-10 max-md:max-w-full md:pl-3 md:pr-14">
-                        <h3 className=" text-xl font-medium leading-10 text-zinc-100 max-md:max-w-full xl:text-2xl 2xl:text-3xl">
+                        <h3 className=" 3xl:text-3xl text-xl font-medium leading-10 text-zinc-100 max-md:max-w-full xl:text-2xl">
                           My background
                         </h3>
-                        <p className="mt-12 text-lg font-medium leading-8 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full xl:text-xl 2xl:text-2xl">
+                        <p className="3xl:text-2xl mt-12 text-lg font-medium leading-8 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full xl:text-xl">
                           Hello! I&apos;m Sampada, a Computer Engineer turned
                           UX/UI Designer.
                         </p>{" "}
-                        <p className="mt-12  text-lg font-medium leading-8 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full xl:text-xl 2xl:text-2xl">
+                        <p className="3xl:text-2xl  mt-12 text-lg font-medium leading-8 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full xl:text-xl">
                           I&apos;ve always been interested in designing and have
                           admired how thoughtful design has the power to change
                           the world. Whether it&apos;s through simplifying one
@@ -78,7 +78,7 @@ const AboutPage = () => {
                   </div>{" "}
                   <div className="ml-5 flex w-6/12 flex-col items-stretch max-md:ml-0 max-md:w-full">
                     <div className="my-auto flex flex-col items-start max-md:mt-10 max-md:max-w-full sm:px-5">
-                      <h3 className="max-w-full text-xl font-medium leading-10 text-zinc-100 text-opacity-80 xl:text-2xl 2xl:text-3xl">
+                      <h3 className="3xl:text-3xl max-w-full text-xl font-medium leading-10 text-zinc-100 text-opacity-80 xl:text-2xl">
                         This is me — alongside some clicks from my recent trip
                         to New York.
                       </h3>{" "}
@@ -133,10 +133,10 @@ const AboutPage = () => {
                         </div>
                       </div>{" "}
                       <div className="mt-24 flex flex-col items-stretch max-md:mt-10 max-md:max-w-full sm:pr-5 md:pl-3 md:pr-12">
-                        <h3 className="text-xl font-medium leading-10 text-zinc-100 max-md:max-w-full xl:text-2xl 2xl:text-3xl">
+                        <h3 className="3xl:text-3xl text-xl font-medium leading-10 text-zinc-100 max-md:max-w-full xl:text-2xl">
                           When I’m not designing,
                         </h3>{" "}
-                        <p className="mt-12 text-lg font-medium leading-8 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full xl:text-xl 2xl:text-2xl">
+                        <p className="3xl:text-2xl mt-12 text-lg font-medium leading-8 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full xl:text-xl">
                           I’m probably drawing or doodling, scrolling through my
                           Pinterest feed, listening to music or creating yet
                           another Spotify playlist.
@@ -154,10 +154,10 @@ const AboutPage = () => {
                   <div className="ml-5 flex w-6/12 flex-col items-stretch max-md:ml-0 max-md:w-full">
                     <div className="mt-6 flex grow flex-col items-stretch max-md:mt-10 max-md:max-w-full">
                       <div className="flex flex-col items-stretch max-md:max-w-full sm:pr-5 md:pl-3 md:pr-14">
-                        <h3 className="text-xl font-medium leading-10 text-zinc-100 max-md:max-w-full xl:text-2xl 2xl:text-3xl">
+                        <h3 className="3xl:text-3xl text-xl font-medium leading-10 text-zinc-100 max-md:max-w-full xl:text-2xl">
                           But, there’s more to it.
                         </h3>{" "}
-                        <p className="mt-12 text-lg font-medium leading-8 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full xl:text-xl 2xl:text-2xl">
+                        <p className="3xl:text-2xl mt-12 text-lg font-medium leading-8 text-zinc-100 text-opacity-60 max-md:mt-10 max-md:max-w-full xl:text-xl">
                           One of the things that really drives me day to day is
                           I like learning new things. I think the more
                           experience I gain, the more I realize how little I
