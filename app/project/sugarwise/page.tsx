@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Divider from "@/components/Divider";
 import HeroGradientBG from "@/components/HeroGradientBG";
+import VideoRenderer from "@/components/VideoRender";
 import ChallengeIcon from "@/components/icons/ChallengeIcon";
 import OverviewSection from "@/components/project/OverviewSection";
 import ProjectHero from "@/components/project/ProjectHero";
@@ -61,6 +62,32 @@ const researchRows = [
   },
 ];
 
+const videoRows = [
+  {
+    title: "Setting Daily Limit ",
+    src: "/videos/sugarwise/Set-limit.mov",
+    description: [
+      "Empowering users to customize their daily sugar intake based on age and gender. Offering a personalized touch — users can also opt for a custom option to set a unique daily sugar limit that aligns perfectly with their individual preferences and health goals. This flexibility ensures a tailored and user-centric approach to managing sugar intake for a healthier lifestyle.",
+    ],
+  },
+  {
+    title: "Scanning a Product",
+    src: "/videos/sugarwise/Scan-product.mov",
+    description: [
+      "Application offers a swift product scan feature that instantly reveals the sugar content. Beyond the quick scan, users receive a comprehensive product description, providing detailed insights into the item.",
+      "Taking personalization to the next level, the app considers the user's previously entered personal details. It not only displays the sugar content but also breaks down the portion-wise intake tailored to the user's specific information.",
+    ],
+  },
+  {
+    title: "Scanning an Aisle",
+    src: "/videos/sugarwise/Scan-Aisle.mov",
+    description: [
+      "Application provides a unique feature that enables users to scan entire aisles, identifying products with low sugar content. This functionality goes beyond individual product scans, offering a holistic view of healthier options within a given aisle.",
+      "TUsers can quickly assess products and receive recommendations for healthier substitutes. This not only simplifies the process of making informed choices but also promotes a convenient way to opt for alternatives with lower sugar content.",
+    ],
+  },
+];
+
 const SugarwisePage = () => {
   return (
     <main className="relative flex min-h-screen flex-col items-stretch bg-gray-100 pb-12">
@@ -71,6 +98,7 @@ const SugarwisePage = () => {
       />
       <ProjectHero
         title="Sugarwise"
+        bgImage="/sugarwise-hero.png"
         contents={[
           { name: "Overview", path: "#overview" },
           { name: "Kickoff", path: "#kickoff" },
@@ -80,6 +108,7 @@ const SugarwisePage = () => {
           { name: "The solution", path: "#solution" },
           { name: "Evaluations", path: "#evaluations" },
           { name: "Final designs", path: "#final-designs" },
+          { name: "Future directions", path: "#future-directions" },
         ]}
       />
       <div className="container mx-auto flex w-full max-w-[882px] flex-col items-center px-4 font-karla min-[1440px]:max-w-[1044px] min-[1920px]:max-w-[1440px]">
@@ -90,6 +119,7 @@ const SugarwisePage = () => {
           ]}
           role="Product Designer"
           research="User Research, Interaction design, Visual design, Prototyping & Testing"
+          team="Namitha Murali, Rutika Bangera, Saksham Rajput, Sampada Taralgatti"
           timeline="August - October 2023"
         />
         <div
@@ -99,7 +129,7 @@ const SugarwisePage = () => {
           <div className="flex flex-col">
             <div className="flex items-center gap-5">
               <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-              <h3 className="self-stretch text-xl font-medium leading-6 text-white text-opacity-60">
+              <h3 className="self-stretch text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-60">
                 KICKOFF
               </h3>
             </div>
@@ -110,22 +140,22 @@ const SugarwisePage = () => {
               </span>
               <ol className="ml-[22.87px] flex list-decimal flex-col gap-3 text-xl md:ml-[27.44px] md:text-2xl">
                 <li>
-                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
                     Who is our target audience?
                   </span>
                 </li>
                 <li>
-                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
                     What is the reason for choosing them as the target audience?
                   </span>
                 </li>
                 <li>
-                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
                     How will the application help them with the problem?
                   </span>
                 </li>
                 <li>
-                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
                     What is the scope of this project?
                   </span>
                 </li>
@@ -261,7 +291,7 @@ const SugarwisePage = () => {
           <p className="mt-6 justify-center self-center whitespace-nowrap text-center text-lg font-medium leading-7 text-whitesmoke-100 text-opacity-40 md:text-xl">
             HOW MIGHT WE
           </p>{" "}
-          <p className="mt-6 justify-center self-center text-center text-lg font-medium leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-xl md:px-4 md:text-3xl lg:px-8">
+          <p className="3xl:text-3xl mt-6 justify-center self-center text-center text-lg font-medium !leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-2xl md:px-4 lg:px-8">
             How might we tackle high sugar consumption for the students, who
             want to eat healthy food but struggles to find such food items?
           </p>{" "}
@@ -280,19 +310,19 @@ const SugarwisePage = () => {
             homesickness during the initial weeks of college.
             <br />
           </p>
-          <div className="ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10 lg:max-w-screen-md">
+          <div className="3xl:max-w-screen-md ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10">
             {researchRows.map((item, index) => (
               <div
                 className="flex flex-col items-start self-end rounded-2xl border border-solid border-stone-500 max-md:p-5 md:p-8"
                 key={index}
               >
                 <Image
-                  width={45}
-                  height={45}
+                  width={index === 0 ? 45 : 37}
+                  height={index === 0 ? 45 : 37}
                   loading="lazy"
                   alt="Icon"
                   src={item.imgSrc}
-                  className="aspect-square w-[45px] max-w-full overflow-hidden object-contain object-center"
+                  className="overflow-hidden object-contain object-center"
                 />
                 <div className="mt-7 justify-center self-stretch text-xl leading-tight text-whitesmoke-100 max-md:max-w-full">
                   {item.title}
@@ -449,6 +479,65 @@ const SugarwisePage = () => {
           </div>
         </div>
 
+        <Divider />
+        <div id="final-designs" className="flex w-full flex-col">
+          <div className="mt-10 flex w-full flex-wrap items-center justify-between gap-5 md:mt-16">
+            <h2>
+              <span className="mr-5 inline-block h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+              <span className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+                FINAL DESIGNS
+              </span>
+            </h2>
+          </div>
+          {videoRows.map((video, index) => (
+            <div
+              key={index}
+              className={`mt-10 grid grid-cols-1 gap-9 max-md:mb-5 sm:grid-cols-2 ${
+                index > 0 ? "md:mt-28" : "md:mt-16"
+              }`}
+            >
+              <div className="flex flex-col justify-center">
+                <h3
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #3EB075 0%, rgba(105, 191, 112, 0.90) 111.38%)",
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                  className={`whitespace-nowrap text-xl font-extrabold`}
+                >
+                  {video.title}
+                </h3>
+                <ul className="ml-[22.87px]  list-disc text-xl font-medium leading-8 text-whitesmoke-100 text-opacity-60 md:ml-[27.44px]">
+                  {video.description.map((item, index) => (
+                    <li key={index} className="mt-5">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex w-full items-center justify-center self-center overflow-hidden">
+                <VideoRenderer
+                  src={video.src}
+                  title={video.title}
+                  type="video/mp4"
+                  className="aspect-square min-h-[300px]"
+                />
+              </div>
+            </div>
+          ))}
+          <a
+            target="_blank"
+            href="https://www.figma.com/proto/di64HqGbQUdHiBZt5dzeCs/High-Sugar-Consumption?page-id=0%3A1&type=design&node-id=65-311&viewport=75%2C-103%2C0.09&t=3pfmlAeOTY9rvxMF-1&scaling=scale-down&starting-point-node-id=65%3A311&mode=design"
+            className="mx-auto mt-8 rounded-lg px-7 py-3.5 text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 hover:bg-[linear-gradient(135deg,_#3EB075_0%,_rgba(105,_191,_112,_0.90)_111.38%)] hover:text-white"
+            style={{
+              border: "1px solid rgba(242, 242, 242, 0.60)",
+            }}
+          >
+            Figma Protoytpe
+          </a>
+        </div>
         <Divider className="mt-28" />
 
         <div
@@ -461,7 +550,7 @@ const SugarwisePage = () => {
               FUTURE DIRECTIONS
             </h2>
           </div>
-          <p className="mt-8 w-full max-w-screen-sm text-xl font-medium leading-7 text-[rgba(242,242,242,0.60)] lg:max-w-screen-md">
+          <p className="mt-8 w-full text-xl font-medium leading-7 text-[rgba(242,242,242,0.60)]">
             We plan to work with nutritionists to establish advanced nutritional
             criteria and dietary guidelines for the app to evaluate products
             based on various dietary preferences and restrictions helping us

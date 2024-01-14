@@ -94,7 +94,7 @@ const Work = () => {
                   <p className="mt-12 w-10/12 text-xl font-normal text-white">
                     I&#39;m a passionate User Experience Designer based in
                     Indianapolis, Indiana with an experience in delivering
-                    end-to-end UX/UI design fro products and services. My design
+                    end-to-end UX/UI design for products and services. My design
                     journey is fueled by a profound passion for improving the
                     lives of others through design, and I am constantly seeking
                     to learn new things every day.
@@ -124,7 +124,7 @@ const Work = () => {
           </h2>
           <p className="mt-3 text-lg font-normal text-white">
             I&#39;m a passionate User Experience Designer based in Indianapolis,
-            Indiana with an experience in delivering end-to-end UX/UI design fro
+            Indiana with an experience in delivering end-to-end UX/UI design for
             products and services. My design journey is fueled by a profound
             passion for improving the lives of others through design, and I am
             constantly seeking to learn new things every day.

@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Divider from "@/components/Divider";
 import HeroGradientBG from "@/components/HeroGradientBG";
+import VideoRenderer from "@/components/VideoRender";
 import OverviewSection from "@/components/project/OverviewSection";
 import ProjectHero from "@/components/project/ProjectHero";
 import Image from "next/image";
@@ -42,30 +43,64 @@ const challenges = [
     subtitle: "Comprehending the data",
     description:
       "Creating easy-to-understand customized feed for users was a goal that helped drive this project as far as it did. A lot of the time, users don't know how to search, find or comprehend the data that apps throw at them. I solved this issue by giving user options to add his interests, personality traits and living habits.",
-    marginTop: "mt-10",
+    src: "/videos/homie/Challenge-1.mov",
   },
   {
     title: "CHALLENGE 2",
     subtitle: "Seamless exploration",
     description:
       "Before establishing a familiar navigation throughout the app, I had to decide what kind of navigation would work best for the user. I decided combine user’s needs and wants to improvise the user experience. Placing the navigation at the bottom and the main content at the centre of the screen allowed me to create a natural bridge between contents of the screen.",
-    marginTop: "mt-[515px]",
+    src: "/videos/homie/Challenge-2.mov",
   },
   {
     title: "CHALLENGE 3",
     subtitle: "Search history",
     description:
       "I wanted to allow users to explore their search history. It's cool for users to go back and see what places or profiles they've viewed so far, what type, and how long ago it was. It helps you get a better feel for what kind of places you've been viewing lately at a glance without having to go into your profile.",
-    marginTop: "mt-[501px]",
+    src: "/videos/homie/Challenge-3.mov",
   },
   {
     title: "CHALLENGE 4",
     subtitle: "What kind of people do you like to be around",
     description:
       'Ahh, the age-old question... "Which kind of people interests you?" or "What kind of people do you like to be around?" Answering this question is no longer an issue as users are able to easily share both the profiles and the housing details with one tap, allowing you to share with others exactly the perfect kind of place and roommate you can enjoy time with.',
-    marginTop: "mt-[531px]",
+    src: "/videos/homie/Challenge-4.mov",
   },
 ];
+
+const starIcon = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="36"
+    height="37"
+    viewBox="0 0 36 37"
+    fill="none"
+  >
+    <g clipPath="url(#clip0_1584_1758)">
+      <path
+        d="M26.9891 6.52036L21.7782 2.61083C19.5384 0.930503 16.4584 0.930503 14.2186 2.61083L9.00769 6.52034L3.67924 10.2682C1.38904 11.879 0.43723 14.8083 1.34321 17.4577L3.4511 23.6217L5.36891 29.8475C6.1932 32.5235 8.68506 34.3339 11.4847 34.2909L17.9984 34.191L24.5121 34.2909C27.3118 34.3339 29.8037 32.5235 30.6279 29.8475L32.5458 23.6217L34.6536 17.4577C35.5596 14.8083 34.6078 11.879 32.3176 10.2682L26.9891 6.52036Z"
+        fill="#A377FF"
+        fillOpacity="0.1"
+        stroke="#A377FF"
+        strokeWidth="1.79951"
+      />
+      <path
+        d="M15.7911 21.0343L16.8638 18.6865L19.2116 17.6084L16.8646 16.5366L15.7911 14.1879L14.7086 16.5366L12.3706 17.6084L14.7077 18.6865L15.7911 21.0343ZM15.7911 24.6456L13.5896 19.81L8.75391 17.6084L13.5883 15.4127L15.7911 10.5767L17.9885 15.4127L22.8282 17.6084L17.9872 19.81L15.7911 24.6456ZM23.728 27.2133L22.6379 24.7823L20.2067 23.6974L22.6379 22.5848L23.728 20.1762L24.8352 22.5848L27.2439 23.6974L24.8352 24.7823L23.728 27.2133Z"
+        fill="#A377FF"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_1584_1758">
+        <rect
+          width="35.9902"
+          height="36.89"
+          fill="white"
+          transform="translate(0.00390625)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
 
 function HomiePage() {
   return (
@@ -159,16 +194,16 @@ function HomiePage() {
               CHALLENGES
             </div>
             <div className="mb-4 mt-10 flex flex-col gap-[25px] text-center">
-              <p className="text-lg font-bold text-whitesmoke-100 md:text-center md:text-2xl">
+              <p className="3xl:text-2xl text-lg font-bold text-whitesmoke-100 sm:text-xl md:text-center">
                 Create easy-to-understand customized feed for the users.
               </p>
-              <p className="text-lg font-bold  text-whitesmoke-100 md:text-center md:text-2xl">
+              <p className="3xl:text-2xl text-lg  font-bold text-whitesmoke-100 sm:text-xl md:text-center">
                 Combine user’s need and wants to improvise the user experience.
               </p>
-              <p className="text-lg font-bold  text-whitesmoke-100 md:text-center md:text-2xl">
+              <p className="3xl:text-2xl text-lg  font-bold text-whitesmoke-100 sm:text-xl md:text-center">
                 Allow users to dive into the places they’ve viewed or searched.
               </p>
-              <p className="text-lg font-bold  text-whitesmoke-100 md:text-center md:text-2xl">
+              <p className="3xl:text-2xl text-lg  font-bold text-whitesmoke-100 sm:text-xl md:text-center">
                 Bridge gap between users sharing a similar interests.
               </p>
             </div>
@@ -181,14 +216,14 @@ function HomiePage() {
         >
           <div className="flex flex-col">
             <div className="flex items-center gap-5">
-              <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-              <h3 className="self-stretch text-xl font-medium leading-6 text-white text-opacity-60">
+              <div className="flex h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+              <h3 className="self-stretch text-xl font-medium leading-6 text-whitesmoke-100 text-opacity-60">
                 KICKOFF
               </h3>
             </div>
-            <div className="mt-12 flex flex-col gap-10 self-start max-md:mt-10 md:gap-16">
-              <h4 className="text-xl font-medium leading-8 text-opacity-60">
-                <span className="leading-10 text-whitesmoke-100 sm:text-2xl md:text-[28px]">
+            <div className="mt-10 flex flex-col gap-8 self-start max-md:mt-10">
+              <h4 className="text-lg font-medium leading-8 text-opacity-60">
+                <span className="3xl:text-[28px] leading-10 text-whitesmoke-100 sm:text-xl">
                   Starting off, I asked myself a few initial questions.
                 </span>
               </h4>
@@ -202,43 +237,27 @@ function HomiePage() {
             </div>
           </div>
           <div className="ml-5 flex flex-col items-stretch gap-6 max-md:ml-0 max-md:w-full">
-            <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-10 max-md:max-w-full md:gap-10 md:px-11">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/71e108884d55dd635c56fe823b69533f298e1644680eb0c6fcaa747ea460299f?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-                className="aspect-[0.97] w-9 max-w-full overflow-hidden object-contain object-center"
-              />
-              <p className="text-2xl font-medium text-whitesmoke-100">
+            <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-8 max-md:max-w-full sm:px-8 md:gap-7">
+              {starIcon}
+              <p className="3xl:text-2xl text-xl font-medium text-whitesmoke-100">
                 Who is our primary user?
               </p>
             </div>
-            <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-10 max-md:max-w-full md:gap-10 md:px-11">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/639ea04300daebaa465dfc4829d43dfa282b75e128388756ffecd82354850a63?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-                className="aspect-[0.97] w-9 max-w-full items-center justify-center overflow-hidden object-contain object-center"
-              />
-              <p className="text-2xl font-medium text-whitesmoke-100">
+            <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-8 max-md:max-w-full sm:px-8 md:gap-7">
+              {starIcon}
+              <p className="3xl:text-2xl text-xl font-medium text-whitesmoke-100">
                 What kind of goals do they have?
               </p>
             </div>
-            <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-10 max-md:max-w-full md:gap-10 md:px-11">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/6689d76d74cc53b854d1cc1a3160a21125d1a50e64519ffd167e3d58d5dfe870?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-                className="aspect-[0.97] w-9 max-w-full items-center justify-center overflow-hidden object-contain object-center"
-              />
-              <p className="text-2xl font-medium text-whitesmoke-100">
+            <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-8 max-md:max-w-full sm:px-8 md:gap-7">
+              {starIcon}
+              <p className="3xl:text-2xl text-xl font-medium text-whitesmoke-100">
                 How this application will help?
               </p>
             </div>
-            <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-10 max-md:max-w-full md:gap-10 md:px-11">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/2f4df362cadb361158aba2a2f8d77e511b8483d3a368e3f958150363bb2fbb09?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-                className="aspect-[0.97] w-9 max-w-full items-center justify-center overflow-hidden object-contain object-center"
-              />
-              <p className="justify-center text-2xl font-medium leading-[49.92px] text-whitesmoke-100">
+            <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-8 max-md:max-w-full sm:px-8 md:gap-7">
+              {starIcon}
+              <p className="3xl:text-2xl justify-center text-xl font-medium text-whitesmoke-100">
                 What is the scope of this project?
               </p>
             </div>
@@ -247,8 +266,8 @@ function HomiePage() {
         <Divider />
         <div id="competitive-analysis" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
-            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-            <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+            <div className="flex h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
               COMPETITIVE ANALYSIS
             </h2>
           </div>
@@ -274,7 +293,7 @@ function HomiePage() {
           </p>
           <div className="mt-10 flex w-full items-center justify-center md:mt-16">
             <Image
-              className="object-contain object-center"
+              className="3xl:max-h-max max-h-[70vh] object-contain object-center"
               src="/competitive-analysis.png"
               width={1023}
               height={760}
@@ -287,8 +306,8 @@ function HomiePage() {
 
         <div id="research" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
-            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-            <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+            <div className="flex h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
               EVALUATING THE ACTIVITY
             </h2>
           </div>
@@ -322,8 +341,8 @@ function HomiePage() {
 
         <div className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
-            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-            <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+            <div className="flex h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
               PRIORITIZATION PLOTTING
             </h2>
           </div>
@@ -340,7 +359,7 @@ function HomiePage() {
 
           <div className="mx-auto mt-10 flex items-center justify-center rounded-21xl border-2 border-darkslategray p-8 md:mt-16">
             <Image
-              className="object-contain object-center"
+              className="max-h-[70vh] object-contain object-center"
               src="/prioritization-plotting.png"
               width={844}
               height={676}
@@ -353,8 +372,8 @@ function HomiePage() {
 
         <div id="personas" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
-            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-            <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+            <div className="flex h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
               MEET THE USERS
             </h2>
           </div>
@@ -391,7 +410,7 @@ function HomiePage() {
                 <p className="mt-3 self-center text-xl font-medium text-whitesmoke-100 md:mt-6 md:text-2xl">
                   Frustrations
                 </p>
-                <ul className="mt-3 list-inside list-disc self-center leading-relaxed text-whitesmoke-100 text-opacity-60 sm:text-lg md:mt-6 md:text-xl md:leading-loose">
+                <ul className="3xl:text-xl 3xl:leading-loose ml-2 mt-3 list-disc self-center text-whitesmoke-100 text-opacity-60 sm:text-lg 2xl:mt-6">
                   {user.frustrations.map((frustration, index) => (
                     <li key={index}>{frustration}</li>
                   ))}
@@ -405,8 +424,8 @@ function HomiePage() {
 
         <div id="architecture" className="flex w-full flex-col">
           <div className="mt-0 flex items-center gap-5 md:mt-16">
-            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-            <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+            <div className="flex h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
               INFORMATION ARCHITECTURE
             </h2>
           </div>
@@ -420,67 +439,67 @@ function HomiePage() {
               alt="PRIORITIZATION PLOTTING"
             />
           </div>
-
-          <div
-            className="relative mt-10 flex w-full flex-col items-center justify-center md:mt-16"
-            style={{
-              borderRadius: "32px",
-              background:
-                "radial-gradient(1077.21% 48.8% at 50% 50%, rgba(163, 119, 255, 0.20) 0%, rgba(0, 0, 0, 0.00) 84.24%), rgba(242, 242, 242, 0.04)",
-              boxShadow: "0px 40px 100px 0px rgba(0, 0, 0, 0.40)",
-            }}
-          >
-            <div
-              className="absolute top-0 w-full"
-              style={{
-                height: 0.66,
-                background:
-                  "linear-gradient(90deg, rgba(0, 0, 0, 0.00) 5%, rgba(104, 76, 163, 0.58) 28.06%, rgba(163, 119, 255, 0.90) 49.08%, rgba(139, 101, 217, 0.77) 65.42%, rgba(0, 0, 0, 0.00) 95%)",
-              }}
-            />
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/6cdd5376755d7c380d3322e23508fb09914e14ddbdda9fe0413999dbfd101509?apiKey=0a6b15d7691a40b885f9cbf59314b167&"
-              className="mt-12 aspect-square w-14 max-w-full items-center justify-center self-center overflow-hidden object-contain object-center max-md:mt-10"
-            />
-            <div className="my-6 mb-8 justify-center self-center text-sm font-medium leading-5 tracking-[2px] text-whitesmoke-100 text-opacity-60">
-              FINAL DESIGNS
-            </div>
-          </div>
         </div>
+        <Divider />
         <div id="final-designs" className="flex w-full flex-col">
           <div className="mt-10 flex w-full items-center gap-5 md:mt-16">
-            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-            <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+            <div className="flex h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
               FINAL DESIGNS
             </h2>
           </div>
 
           {challenges.map((challenge, index) => (
-            <Fragment key={index}>
-              <h3
-                className={`self-start whitespace-nowrap text-xl font-extrabold text-violet-400 ${challenge.marginTop}`}
-              >
-                {challenge.title}
-              </h3>
-              <h5 className="mt-5 w-64 self-start text-xl font-medium leading-8 text-whitesmoke-100">
-                {challenge.subtitle}
-              </h5>
-              <p
-                className={`mt-10 self-start text-xl font-medium leading-8 text-whitesmoke-100 text-opacity-60 md:max-w-screen-sm`}
-              >
-                {challenge.description}
-              </p>
-            </Fragment>
+            <div
+              key={index}
+              className={`mt-10 grid grid-cols-1 gap-9 max-md:mb-5 sm:grid-cols-2 ${
+                index > 0 ? "md:mt-28" : "md:mt-16"
+              }`}
+            >
+              <div className="flex flex-col justify-center">
+                <h3
+                  className={`whitespace-nowrap text-xl font-extrabold text-violet-400`}
+                >
+                  {challenge.title}
+                </h3>
+                <h5 className="mt-5 w-64 self-start text-xl font-medium leading-8 text-whitesmoke-100">
+                  {challenge.subtitle}
+                </h5>
+                <p
+                  className={`mt-10 self-start text-xl font-medium leading-8 text-whitesmoke-100 text-opacity-60 md:max-w-screen-sm`}
+                >
+                  {challenge.description}
+                </p>
+              </div>
+              <div className="flex w-full items-center justify-center self-center overflow-hidden">
+                <VideoRenderer
+                  src={challenge.src}
+                  title={challenge.title}
+                  type="video/mp4"
+                  className="aspect-square min-h-[300px]"
+                />
+              </div>
+            </div>
           ))}
+
+          <a
+            target="_blank"
+            href="https://www.figma.com/proto/hZqFWgZvk93y0pQtLXk73M/Homie?page-id=1%3A4&type=design&node-id=30-83&viewport=268%2C339%2C0.13&t=ZaGPHGrReM4hSGoP-1&scaling=scale-down&starting-point-node-id=30%3A83&mode=design"
+            className="mx-auto mt-8 rounded-lg px-7 py-3.5 text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 hover:bg-[linear-gradient(225deg,_#9293FF_0%,_#AC8FFF_38.14%,_#C48CFF_65.46%,_#DC89FF_100%)] hover:text-white"
+            style={{
+              border: "1px solid rgba(242, 242, 242, 0.60)",
+            }}
+          >
+            Figma Protoytpe
+          </a>
         </div>
 
         <Divider />
 
         <div id="takeaway" className="flex w-full flex-col">
           <div className="mt-0 flex w-full items-center gap-5 md:mt-16">
-            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-            <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+            <div className="flex h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
               TAKEAWAYS
             </h2>
           </div>

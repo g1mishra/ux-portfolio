@@ -75,6 +75,42 @@ const researchRows = [
   },
 ];
 
+const videoRows = [
+  {
+    title: "Profile Building",
+    src: "/videos/homeslice/Profile-building.mov",
+    description: [
+      "Ensuring a secure and user-friendly sign-up process. Upon registration, users embark on a journey to craft a personalized profile, tailoring their feed to align seamlessly with their interests.",
+      "Commitment to security is woven into every step. As users build their profiles, we prioritize the authenticity of their information, fostering a reassuring sense of safety and confidence.",
+    ],
+  },
+  {
+    title: "Creating a Post",
+    src: "/videos/homeslice/Create-post.mov",
+    description: [
+      "Streamlining the post creation process for students to connect with families is our focus. Prioritizing simplicity, ensuring an easy and efficient way for students to engage with these families.",
+      "In addition, following cultural guidelines, ensuring that all events and traditions align with the rules and cultural needs.Committing to a respectful and inclusive approach to fostering connections between students and families.",
+    ],
+  },
+  {
+    title: "Private Event",
+    src: "/videos/homeslice/Private-event.mov",
+    description: [
+      "Organizing a curated event with limited capacity and tailored guidelines according to the host's preferences.  Ensuring a smooth and interactive process for participants to connect with hosts and enhance their event experience.",
+      "To join the event, participants can send a quick request to the host and patiently await approval. A convenient chat option is available to facilitate communication, allowing attendees to seek clarification and gather additional details from the event owner.",
+    ],
+  },
+
+  {
+    title: "Public Event",
+    src: "/videos/homeslice/Public-event.mov",
+    description: [
+      "Welcoming everyone to join an inclusive event where capacity is not a limiting factor. Embracing a first-come, first-served basis, the event promises a plethora of entertainment for all participants.",
+      "Moreover, participants have the option to save events for future registration, providing flexibility and convenience.  Ensuring that individuals can easily engage with and register for events that they are interested in at their own pace.",
+    ],
+  },
+];
+
 function HomeslicePage() {
   return (
     <main className="relative flex flex-col items-stretch bg-gray-100 pb-12">
@@ -509,7 +545,6 @@ function HomeslicePage() {
               </p>
             </div>
           </div>
-
           <div className="mt-10 flex w-full flex-col gap-6 self-start md:mt-12 ">
             <h4
               className="text-xl font-medium leading-8 text-opacity-60"
@@ -560,69 +595,89 @@ function HomeslicePage() {
               </p>
             </div>
           </div>
+          <h4
+            style={{
+              textShadow:
+                "0px 5px 15px rgba(0, 87, 255, 0.25), 0px -6px 15px rgba(255, 90, 0, 0.10), 0px 0px 20px rgba(255, 255, 255, 0.20)",
+            }}
+            className="mt-32  text-center text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full"
+          >
+            The performance breakdown of each task, by each expert, is
+            illustrated below
+          </h4>{" "}
+          <div className="my-10 flex w-full items-center justify-center self-center md:my-16">
+            <Image
+              className="object-contain object-center"
+              src="/homeslice-tasks-breakdown.png"
+              width={752}
+              height={404}
+              alt="EVALUATING THE ACTIVITY"
+            />
+          </div>
         </div>
-        <h4
-          style={{
-            textShadow:
-              "0px 5px 15px rgba(0, 87, 255, 0.25), 0px -6px 15px rgba(255, 90, 0, 0.10), 0px 0px 20px rgba(255, 255, 255, 0.20)",
-          }}
-          className="mt-32  text-center text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full"
-        >
-          The performance breakdown of each task, by each expert, is illustrated
-          below
-        </h4>{" "}
-        <div className="my-10 flex w-full items-center justify-center self-center md:my-16">
-          <Image
-            className="object-contain object-center"
-            src="/homeslice-tasks-breakdown.png"
-            width={752}
-            height={404}
-            alt="EVALUATING THE ACTIVITY"
-          />
-        </div>
+
         <br />
         <br />
         <Divider />
         <div id="final-designs" className="flex w-full flex-col">
-          <div className="mt-10 flex w-full items-center gap-5 md:mt-16">
-            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
-            <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
-              FINAL DESIGNS
+          <div className="mt-10 flex w-full flex-wrap items-center justify-between gap-5 md:mt-16">
+            <h2>
+              <span className="mr-5 inline-block h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
+              <span className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+                FINAL DESIGNS
+              </span>
             </h2>
           </div>
-          <div className="mt-10 grid grid-cols-1 max-md:mb-5 sm:grid-cols-2 md:mt-16 gap-9">
-            {[
-              {
-                title: "Create Post",
-                src: "/videos/homeslice/Create-post.mov",
-              },
-              {
-                title: "Private Event",
-                src: "/videos/homeslice/Private-event.mov",
-              },
-              {
-                title: "Profile Building",
-                src: "/videos/homeslice/Profile-building.mov",
-              },
-              {
-                title: "Public Event",
-                src: "/videos/homeslice/Public-event.mov",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex w-full items-center justify-center self-center overflow-hidden"
-              >
+          {videoRows.map((video, index) => (
+            <div
+              key={index}
+              className={`mt-10 grid grid-cols-1 gap-9 max-md:mb-5 sm:grid-cols-2 ${
+                index > 0 ? "md:mt-28" : "md:mt-16"
+              }`}
+            >
+              <div className="flex flex-col justify-center">
+                <h3
+                  style={{
+                    background:
+                      "linear-gradient(92deg, #FF5A00 2.29%, #FF9A00 100%)",
+                    backgroundClip: "text",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                  className={`whitespace-nowrap text-xl font-extrabold`}
+                >
+                  {video.title}
+                </h3>
+                <ul className="ml-[22.87px]  list-disc text-xl font-medium leading-8 text-whitesmoke-100 text-opacity-60 md:ml-[27.44px]">
+                  {video.description.map((item, index) => (
+                    <li key={index} className="mt-5">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex w-full items-center justify-center self-center overflow-hidden">
                 <VideoRenderer
-                  src={item.src}
-                  title={item.title}
+                  src={video.src}
+                  title={video.title}
                   type="video/mp4"
                   className="aspect-square min-h-[300px]"
                 />
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+          <a
+            target="_blank"
+            href="https://www.figma.com/proto/AyT4qNVov6i3a7U4oRhz2d/Homesickness?page-id=166%3A414&type=design&node-id=256-1414&viewport=849%2C-396%2C0.18&t=ZvLWMo5syYqX1fw3-1&scaling=scale-down&starting-point-node-id=256%3A1414&mode=design"
+            className="mx-auto mt-8 rounded-lg px-7 py-3.5 text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 hover:bg-[linear-gradient(92deg,_#FF5A00_2.29%,_#FF9A00_100%)] hover:text-white"
+            style={{
+              border: "1px solid rgba(242, 242, 242, 0.60)",
+            }}
+          >
+            Figma Protoytpe
+          </a>
         </div>
+
         <Divider />
         <div id="takeaway" className="flex w-full flex-col">
           <div className="mt-0 flex w-full items-center gap-5 md:mt-16">

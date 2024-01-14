@@ -7,7 +7,7 @@ interface VideoRenderProps extends React.HTMLAttributes<HTMLVideoElement> {
 
 const VideoRenderer: React.FC<VideoRenderProps> = ({ src, type, ...rest }) => {
   return (
-    <video autoPlay {...rest} muted controls={false}>
+    <video autoPlay loop {...rest} muted controls={false}>
       <source src={src} type={type} />
       Your browser does not support the video tag.
     </video>
