@@ -5,7 +5,7 @@ import Image from "next/image";
 const AboutPage = () => {
   return (
     <>
-      <main className="container mx-auto min-h-screen w-full">
+      <main className="container mx-auto flex w-full max-w-[882px] flex-col items-center px-4 min-[1440px]:max-w-[1044px] min-[1920px]:max-w-[1440px]">
         <Header />
         <div className="flex flex-col items-center py-12">
           <div className="flex w-full flex-col items-end max-md:max-w-full">
