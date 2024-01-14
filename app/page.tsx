@@ -11,7 +11,7 @@ const projects = [
       "Designing an app to help spread awareness among students and educate them on what is healthy. Streamlining the decision-making process and guide users toward healthier food choices.",
     thumbnail: "/images/homeslice.png",
     colour: "spotlight",
-    secondaryTitleColour: "#6FCF97",
+    secondaryTitleColour: "#F2994A",
     link: "/project/homeslice",
   },
   {
@@ -21,7 +21,7 @@ const projects = [
       "Designing an app to allow users to find a room and a roommate  and share their requirements with just a few steps. Modernizing the way users customize and share their housing preferences to find the ideal match in an outdated market. ",
     thumbnail: "/images/sugarwise.png",
     colour: "thn",
-    secondaryTitleColour: "#A377FF",
+    secondaryTitleColour: "#6FCF97",
     link: "/project/sugarwise",
   },
   {
@@ -31,7 +31,7 @@ const projects = [
       "Designing an app to give students a rich and immersive experience, reducing homesickness by fostering new cultural connections and shared celebrations within the community.",
     thumbnail: "/images/homie.png",
     colour: "stadiabt",
-    secondaryTitleColour: "#F2994A",
+    secondaryTitleColour: "#A377FF",
     link: "/project/homie",
   },
 ];
