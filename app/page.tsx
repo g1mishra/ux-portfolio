@@ -8,7 +8,7 @@ const projects = [
     title: "Homeslice",
     secondaryTitle: "UX Research | UI Design",
     description:
-      "Designing an app to help spread awareness among students and educate them on what is healthy. Streamlining the decision-making process and guide users toward healthier food choices.",
+      "Designing an app to give students a rich and immersive experience, reducing homesickness by fostering new cultural connections and shared celebrations within the community.",
     thumbnail: "/images/homeslice.png",
     colour: "spotlight",
     secondaryTitleColour: "#F2994A",
@@ -18,7 +18,8 @@ const projects = [
     title: "Sugarwise",
     secondaryTitle: "UX Research | UI Design",
     description:
-      "Designing an app to allow users to find a room and a roommate  and share their requirements with just a few steps. Modernizing the way users customize and share their housing preferences to find the ideal match in an outdated market. ",
+      "Designing an app to help spread awareness among students and educate them on what is healthy. Streamlining the decision-making process and guide users toward healthier food choices.",
+
     thumbnail: "/images/sugarwise.png",
     colour: "thn",
     secondaryTitleColour: "#6FCF97",
@@ -28,7 +29,8 @@ const projects = [
     title: "Homie",
     secondaryTitle: "UX Research | UI Design",
     description:
-      "Designing an app to give students a rich and immersive experience, reducing homesickness by fostering new cultural connections and shared celebrations within the community.",
+      "Designing an app to allow users to find a room and a roommate  and share their requirements with just a few steps. Modernizing the way users customize and share their housing preferences to find the ideal match in an outdated market. ",
+
     thumbnail: "/images/homie.png",
     colour: "stadiabt",
     secondaryTitleColour: "#A377FF",

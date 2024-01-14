@@ -71,7 +71,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
   return (
     <section className="z-10 flex h-screen w-full flex-col items-stretch px-4 pb-2 pt-12 md:px-12 xl:px-16">
       <button
-        className="fixed z-50 flex max-w-max items-center justify-center gap-2.5 rounded-full border border-solid border-whitesmoke-400 border-opacity-0 bg-whitesmoke-500 px-6 py-3 font-inter backdrop-blur-[5px] md:px-8 md:py-4"
+        className="3xl:px-8 3xl:py-4 fixed z-50 flex max-w-max items-center justify-center gap-2.5 rounded-full border border-solid border-whitesmoke-400 border-opacity-0 bg-whitesmoke-500 px-5 py-2.5 font-inter backdrop-blur-[5px]"
         onClick={updatedOnBackClick}
       >
         <svg
@@ -80,6 +80,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
           height="25"
           viewBox="0 0 25 25"
           fill="none"
+          className="3xl:h-6 3xl:w-6 h-5 w-5"
         >
           <path
             d="M19.0546 12.0224L5.05471 12.0859M5.05471 12.0859L11.0819 18.0586M5.05471 12.0859L11.0274 6.05875"
@@ -89,7 +90,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
             strokeLinejoin="round"
           />
         </svg>
-        <p className="text-[22px] font-medium leading-5 tracking-tight text-whitesmoke-100">
+        <p className="3xl:text-[22px] text-lg font-medium leading-5 tracking-tight text-whitesmoke-100">
           Back
         </p>
       </button>

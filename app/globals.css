@@ -83,7 +83,7 @@ img {
 
 .section-nav {
   z-index: 10;
-  height: 168px;
+  /* height: 168px; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
   padding-top: 24px;
   padding-left: 48px;
@@ -1009,7 +1009,7 @@ img {
 
 @media screen and (min-width: 1920px) {
   .section-nav {
-    height: 200px;
+    /* height: 200px; */
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(16, 16, 16, 0));
     padding-top: 32px;
   }
@@ -1346,7 +1346,7 @@ img {
 
 @media screen and (max-width: 767px) {
   .section-nav {
-    height: 144px;
+    /* height: 144px; */
     padding-left: 24px;
     padding-right: 24px;
   }

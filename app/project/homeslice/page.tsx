@@ -7,6 +7,7 @@ import OverviewSection from "@/components/project/OverviewSection";
 import ProjectHero from "@/components/project/ProjectHero";
 import Image from "next/image";
 
+import VideoRenderer from "@/components/VideoRender";
 import { Icon1, Icon2, Icon3, Icon4 } from "./ResearchIcons";
 
 const problemRows = [
@@ -104,6 +105,7 @@ function HomeslicePage() {
             "An intuitive and user-friendly interface, empowering students to connect with families open to hosting them for cultural celebrations. This aims to provide an immersive and enriching experience, effectively alleviating homesickness by fostering new cultural immersion and shared celebrations with a community.",
           ]}
           role="Product Designer"
+          team="Avishkar Shinde, Ravleen Matharu, Saksham Rajput, Sampada Taralgatti"
           research="User Research, Interaction design, Visual design, Prototyping & Testing"
           timeline="Nov - Dec 2023"
         />
@@ -125,22 +127,22 @@ function HomeslicePage() {
               </span>
               <ol className="ml-[22.87px] flex list-decimal flex-col gap-3 text-xl md:ml-[27.44px] md:text-2xl">
                 <li>
-                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
                     Who is our target audience?
                   </span>
                 </li>
                 <li>
-                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
                     Why only them?
                   </span>
                 </li>
                 <li>
-                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
                     How is the problem affecting the target audience?
                   </span>
                 </li>
                 <li>
-                  <span className="text-xl leading-[50px] text-whitesmoke-100 md:text-2xl">
+                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
                     What are the effects of the problem on the target audience?
                   </span>
                 </li>
@@ -274,7 +276,7 @@ function HomeslicePage() {
           <p className="mt-6 justify-center self-center whitespace-nowrap text-center text-lg font-medium leading-7 text-whitesmoke-100 text-opacity-40 md:text-xl">
             HOW MIGHT WE
           </p>{" "}
-          <p className="mt-6 justify-center self-center text-center text-lg font-medium leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-xl md:px-4 md:text-3xl lg:px-8">
+          <p className="3xl:text-3xl mt-6 justify-center self-center text-center text-lg font-medium leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-2xl md:px-4 lg:px-8">
             How might we alleviate the impact of homesickness created by
             cultural shock on Indian international students?
           </p>{" "}
@@ -293,7 +295,7 @@ function HomeslicePage() {
             initial weeks of college.
             <br />
           </p>
-          <div className="ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10 lg:max-w-screen-md">
+          <div className="3xl:max-w-screen-md ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10">
             {researchRows.map((item, index) => (
               <div
                 className="flex flex-col items-start self-end rounded-2xl border border-solid border-stone-500 max-md:p-5 md:p-8"
@@ -580,7 +582,70 @@ function HomeslicePage() {
         </div>
         <br />
         <br />
-        <br />
+        <Divider />
+        <div id="final-designs" className="flex w-full flex-col">
+          <div className="mt-10 flex w-full items-center gap-5 md:mt-16">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+              FINAL DESIGNS
+            </h2>
+          </div>
+          <div className="mt-10 grid grid-cols-1 max-md:mb-5 sm:grid-cols-2 md:mt-16 gap-9">
+            {[
+              {
+                title: "Create Post",
+                src: "/videos/homeslice/Create-post.mov",
+              },
+              {
+                title: "Private Event",
+                src: "/videos/homeslice/Private-event.mov",
+              },
+              {
+                title: "Profile Building",
+                src: "/videos/homeslice/Profile-building.mov",
+              },
+              {
+                title: "Public Event",
+                src: "/videos/homeslice/Public-event.mov",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex w-full items-center justify-center self-center overflow-hidden"
+              >
+                <VideoRenderer
+                  src={item.src}
+                  title={item.title}
+                  type="video/mp4"
+                  className="aspect-square min-h-[300px]"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <Divider />
+        <div id="takeaway" className="flex w-full flex-col">
+          <div className="mt-0 flex w-full items-center gap-5 md:mt-16">
+            <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
+            <h2 className="grow self-stretch text-lg font-medium leading-6 text-white text-opacity-60 md:text-xl">
+              TAKEAWAYS
+            </h2>
+          </div>
+
+          <div className="mt-14 self-start text-xl font-medium leading-8 text-whitesmoke-100 text-opacity-60 max-md:mt-10">
+            We plan to assess how new features impact user engagement and
+            completion rates for event postings. Simultaneously, we aim to
+            iterate design based on user feedback, focusing on enhancing the
+            user experience. Additionally, we plan to test social connection
+            features to build a stronger sense of community within the
+            application. Continuous refinement through iterative design and user
+            interaction is key to our approach.
+            <br />
+            <br />
+            <br />
+            <br />
+          </div>
+        </div>
         <br />
         <br />
       </div>

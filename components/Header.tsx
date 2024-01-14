@@ -20,7 +20,7 @@ const Header = () => {
             <div className="logo-block">
               <div className="logo-background" />
               <Link href="/" className="logo-text">
-                <h1 className="text-logo">Sampada</h1>
+                <h1 className="text-logo">Sampada.</h1>
               </Link>
             </div>
           </div>
@@ -47,7 +47,7 @@ const Header = () => {
           <div className="nav-right-wrapper">
             <div className="chip-socials-wrapper">
               <a
-                href="#linkedin"
+                href="https://www.linkedin.com/in/sampada-taralgatti"
                 target="_blank"
                 className="chip-socials w-inline-block"
               >
@@ -106,7 +106,7 @@ const Header = () => {
         }}
       >
         <a
-          href="#linkedin"
+          href="https://www.linkedin.com/in/sampada-taralgatti"
           target="_blank"
           className="popup-menu-item w-inline-block"
         >

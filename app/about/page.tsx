@@ -16,7 +16,7 @@ const AboutPage = () => {
                   ABOUT ME
                 </h1>
               </div>
-              <p className="3xl:text-6xl mt-8 max-w-screen-lg font-karla text-3xl font-bold leading-relaxed text-white md:text-4xl xl:text-5xl">
+              <p className="3xl:text-6xl mt-8 max-w-screen-lg font-karla text-3xl font-bold !leading-tight text-white md:text-4xl xl:text-5xl">
                 Design is much more than{" "}
                 <span
                   className="font-inter font-medium"
@@ -30,7 +30,7 @@ const AboutPage = () => {
                     letterSpacing: "-1px",
                   }}
                 >
-                  just a piece of art.
+                  just <br /> a piece of art.
                 </span>
               </p>
               <div className="mt-12 self-stretch max-md:mt-10 max-md:max-w-full">

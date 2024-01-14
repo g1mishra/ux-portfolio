@@ -30,7 +30,7 @@ const ProjectCard = ({
         className="project-card w-inline-block max-h-[700px] min-h-[200px] w-full pb-9"
       >
         <div className="glare-item-top inner-edge"></div>
-        <div className="projectcard-top z-10">
+        <div className="projectcard-top relative z-10">
           <div className="projectcard-title-row">
             <h1 className="text-projectcard-title">{title}</h1>
             <svg
@@ -39,7 +39,7 @@ const ProjectCard = ({
               height="48"
               viewBox="0 0 48 48"
               fill="none"
-              className="icon-projectcard-arrow"
+              className="icon-projectcard-arrow cursor-pointer"
             >
               <path
                 d="M28.05 35.9016L25.9 33.8016L34.3 25.4016H8V22.4016H34.3L25.85 13.9516L28 11.8516L40.05 23.9016L28.05 35.9016Z"
@@ -66,7 +66,7 @@ const ProjectCard = ({
               {description}
             </p>
           </div>
-          <div className="relative hidden  w-full flex-1 items-center justify-center overflow-hidden sm:flex">
+          <div className="relative hidden w-full flex-1 items-center justify-center overflow-hidden sm:flex">
             {thumbnail ? (
               <Image
                 src={thumbnail}

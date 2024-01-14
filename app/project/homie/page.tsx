@@ -485,7 +485,7 @@ function HomiePage() {
             </h2>
           </div>
 
-          <div className="mt-14 max-w-[993px] self-start text-xl font-medium leading-8 text-whitesmoke-100 text-opacity-60 max-md:mt-10">
+          <div className="mt-14 self-start text-xl font-medium leading-8 text-whitesmoke-100 text-opacity-60 max-md:mt-10">
             Being someone who was once in search for a room and roommate
             herself, working on Homie was incredibly rewarding. I got to
             experiment with some of the new Figma&apos;s features, and narrow

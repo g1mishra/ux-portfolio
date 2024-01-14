@@ -5,6 +5,7 @@ interface OverviewSectionProps {
   role: string;
   research: string;
   timeline: string;
+  team?: string;
   children?: React.ReactNode;
 }
 
@@ -13,6 +14,7 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({
   role,
   research,
   timeline,
+  team,
   children,
 }) => {
   return (
@@ -40,13 +42,23 @@ const OverviewSection: React.FC<OverviewSectionProps> = ({
             <div className="mt-10 text-xl font-medium leading-8 text-whitesmoke-100 max-md:mt-10">
               {role}
             </div>
-            <div className="mt-5 text-xl leading-8 text-whitesmoke-100 text-opacity-60">
+            <div className="mt-3 text-xl leading-8 text-whitesmoke-100 text-opacity-60">
               {research}
             </div>
-            <div className="mt-10 text-xl font-medium leading-6 text-white max-md:mt-10">
+            {team ? (
+              <>
+                <div className="mt-5 text-xl font-medium leading-8 text-whitesmoke-100">
+                  Team
+                </div>
+                <div className="mt-3 text-xl leading-8 text-whitesmoke-100 text-opacity-60">
+                  {team}
+                </div>
+              </>
+            ) : null}
+            <div className="mt-5 text-xl font-medium leading-6 text-white">
               Timeline
             </div>
-            <div className="mt-5 text-xl leading-8 text-whitesmoke-100 text-opacity-60">
+            <div className="mt-3 text-xl leading-8 text-whitesmoke-100 text-opacity-60">
               {timeline}
             </div>
           </div>

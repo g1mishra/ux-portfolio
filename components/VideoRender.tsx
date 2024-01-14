@@ -1,17 +1,17 @@
 import React from "react";
 
-interface VideoRenderProps {
+interface VideoRenderProps extends React.HTMLAttributes<HTMLVideoElement> {
   src: string;
   type: string;
 }
 
-const VideoRender: React.FC<VideoRenderProps> = ({ src, type }) => {
+const VideoRenderer: React.FC<VideoRenderProps> = ({ src, type, ...rest }) => {
   return (
-    <video autoPlay muted controls={false}>
+    <video autoPlay {...rest} muted controls={false}>
       <source src={src} type={type} />
       Your browser does not support the video tag.
     </video>
   );
 };
 
-export default VideoRender;
+export default VideoRenderer;

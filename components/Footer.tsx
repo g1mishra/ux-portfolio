@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container-footer">
         <div className="footer-top-wrapper">
           <div className="flex w-full flex-col items-center justify-center gap-3 sm:gap-7">
-            <h1 className="text-center text-xl font-medium leading-10 text-whitesmoke-100 text-opacity-80 xl:text-2xl 2xl:text-[28px]">
+            <h1 className="3xl:text-[28px] text-center text-xl font-medium 3xl:leading-10 text-whitesmoke-100 text-opacity-80">
               Thanks for stopping by!{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -20,11 +20,11 @@ const Footer = () => {
                 />
               </svg>
             </h1>
-            <p className="w-full text-center text-lg text-whitesmoke-100 underline 2xl:text-2xl">
+            <p className="3xl:text-2xl w-full text-center text-lg text-whitesmoke-100">
               Interested in working together? I&apos;d love to hear from you.
             </p>
             <a
-              className="whitespace-nowrap text-center text-base text-whitesmoke-100 sm:text-2xl"
+              className="3xl:text-2xl whitespace-nowrap text-center text-base text-whitesmoke-100 sm:text-lg"
               href="mailto:designwork.sampada@gmail.com"
             >
               designwork.sampada@gmail.com
