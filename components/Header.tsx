@@ -55,7 +55,7 @@ const Header = () => {
                 <ArrowLinkIcon className="icon-external" />
               </a>
               <a
-                href="#resume"
+                href="https://drive.google.com/file/d/1Jv3_PgDWvYsuknQ2GLdWAPF91y5rsmQU/view"
                 target="_blank"
                 className="chip-socials w-inline-block"
               >
@@ -114,7 +114,7 @@ const Header = () => {
           <ArrowLinkIcon className="icon-popup-external" />
         </a>
         <a
-          href="#resume"
+          href="https://drive.google.com/file/d/1Jv3_PgDWvYsuknQ2GLdWAPF91y5rsmQU/view"
           target="_blank"
           className="popup-menu-item w-inline-block"
         >

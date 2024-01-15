@@ -71,7 +71,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
   return (
     <section className="z-10 flex h-screen w-full flex-col items-stretch px-4 pb-2 pt-12 md:px-12 xl:px-16">
       <button
-        className="3xl:px-8 3xl:py-4 fixed z-50 flex max-w-max items-center justify-center gap-2.5 rounded-full border border-solid border-whitesmoke-400 border-opacity-0 bg-whitesmoke-500 px-5 py-2.5 font-inter backdrop-blur-[5px]"
+        className="fixed z-50 flex max-w-max items-center justify-center gap-2.5 rounded-full border border-solid border-whitesmoke-400 border-opacity-0 bg-whitesmoke-500 px-5 py-2.5 font-inter backdrop-blur-[5px] 3xl:px-8 3xl:py-4"
         onClick={updatedOnBackClick}
       >
         <svg
@@ -80,7 +80,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
           height="25"
           viewBox="0 0 25 25"
           fill="none"
-          className="3xl:h-6 3xl:w-6 h-5 w-5"
+          className="h-5 w-5 3xl:h-6 3xl:w-6"
         >
           <path
             d="M19.0546 12.0224L5.05471 12.0859M5.05471 12.0859L11.0819 18.0586M5.05471 12.0859L11.0274 6.05875"
@@ -90,7 +90,7 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
             strokeLinejoin="round"
           />
         </svg>
-        <p className="3xl:text-[22px] text-lg font-medium leading-5 tracking-tight text-whitesmoke-100">
+        <p className="text-lg font-medium leading-5 tracking-tight text-whitesmoke-100 3xl:text-[22px]">
           Back
         </p>
       </button>
@@ -104,19 +104,19 @@ const ProjectHero: React.FC<ProjectHeroProps> = ({
           textShadow:
             "0px -5px 25px rgba(255, 255, 255, 0.25), 0px -5px 15px rgba(255, 90, 0, 0.15), 0px 5px 15px rgba(0, 87, 255, 0.20)",
         }}
-        className="mt-16 text-center font-inter text-4xl font-medium leading-[88px] -tracking-[1px] md:text-6xl"
+        className="mt-20 sm:mt-16 text-center font-inter text-4xl font-medium leading-[88px] -tracking-[1px] md:text-6xl"
       >
         {title}
       </h1>
 
       {bgImage ? (
-        <div className="relative flex h-full w-full items-baseline justify-center overflow-hidden object-contain">
+        <div className="relative flex h-full w-full items-center justify-center overflow-hidden object-contain">
           <Image
             src={bgImage}
             alt="Project Image"
             priority
             fill
-            className="object-contain object-top"
+            className="object-contain object-top pt-10 sm:pt-0"
           />
         </div>
       ) : null}

@@ -13,18 +13,18 @@
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth !important;
+  /* scroll-behavior: smooth !important; */
 }
 
 
-html.has-scroll-smooth {
+/* html.has-scroll-smooth {
   overflow: hidden;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-}
+} */
 
 .shadow-text {
   -webkit-text-fill-color: transparent;

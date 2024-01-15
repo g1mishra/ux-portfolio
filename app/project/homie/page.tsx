@@ -6,7 +6,6 @@ import VideoRenderer from "@/components/VideoRender";
 import OverviewSection from "@/components/project/OverviewSection";
 import ProjectHero from "@/components/project/ProjectHero";
 import Image from "next/image";
-import { Fragment } from "react";
 
 const users = [
   {
@@ -194,16 +193,16 @@ function HomiePage() {
               CHALLENGES
             </div>
             <div className="mb-4 mt-10 flex flex-col gap-[25px] text-center">
-              <p className="3xl:text-2xl text-lg font-bold text-whitesmoke-100 sm:text-xl md:text-center">
+              <p className="text-lg font-bold text-whitesmoke-100 sm:text-xl md:text-center 3xl:text-2xl">
                 Create easy-to-understand customized feed for the users.
               </p>
-              <p className="3xl:text-2xl text-lg  font-bold text-whitesmoke-100 sm:text-xl md:text-center">
+              <p className="text-lg font-bold  text-whitesmoke-100 sm:text-xl md:text-center 3xl:text-2xl">
                 Combine user’s need and wants to improvise the user experience.
               </p>
-              <p className="3xl:text-2xl text-lg  font-bold text-whitesmoke-100 sm:text-xl md:text-center">
+              <p className="text-lg font-bold  text-whitesmoke-100 sm:text-xl md:text-center 3xl:text-2xl">
                 Allow users to dive into the places they’ve viewed or searched.
               </p>
-              <p className="3xl:text-2xl text-lg  font-bold text-whitesmoke-100 sm:text-xl md:text-center">
+              <p className="text-lg font-bold  text-whitesmoke-100 sm:text-xl md:text-center 3xl:text-2xl">
                 Bridge gap between users sharing a similar interests.
               </p>
             </div>
@@ -223,7 +222,7 @@ function HomiePage() {
             </div>
             <div className="mt-10 flex flex-col gap-8 self-start max-md:mt-10">
               <h4 className="text-lg font-medium leading-8 text-opacity-60">
-                <span className="3xl:text-[28px] leading-10 text-whitesmoke-100 sm:text-xl">
+                <span className="leading-10 text-whitesmoke-100 sm:text-xl 3xl:text-[28px]">
                   Starting off, I asked myself a few initial questions.
                 </span>
               </h4>
@@ -239,25 +238,25 @@ function HomiePage() {
           <div className="ml-5 flex flex-col items-stretch gap-6 max-md:ml-0 max-md:w-full">
             <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-8 max-md:max-w-full sm:px-8 md:gap-7">
               {starIcon}
-              <p className="3xl:text-2xl text-xl font-medium text-whitesmoke-100">
+              <p className="text-xl font-medium text-whitesmoke-100 3xl:text-2xl">
                 Who is our primary user?
               </p>
             </div>
             <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-8 max-md:max-w-full sm:px-8 md:gap-7">
               {starIcon}
-              <p className="3xl:text-2xl text-xl font-medium text-whitesmoke-100">
+              <p className="text-xl font-medium text-whitesmoke-100 3xl:text-2xl">
                 What kind of goals do they have?
               </p>
             </div>
             <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-8 max-md:max-w-full sm:px-8 md:gap-7">
               {starIcon}
-              <p className="3xl:text-2xl text-xl font-medium text-whitesmoke-100">
+              <p className="text-xl font-medium text-whitesmoke-100 3xl:text-2xl">
                 How this application will help?
               </p>
             </div>
             <div className="flex flex-col items-start gap-5 rounded-3xl border border-solid border-stone-500 px-6 py-8 max-md:max-w-full sm:px-8 md:gap-7">
               {starIcon}
-              <p className="3xl:text-2xl justify-center text-xl font-medium text-whitesmoke-100">
+              <p className="justify-center text-xl font-medium text-whitesmoke-100 3xl:text-2xl">
                 What is the scope of this project?
               </p>
             </div>
@@ -293,7 +292,8 @@ function HomiePage() {
           </p>
           <div className="mt-10 flex w-full items-center justify-center md:mt-16">
             <Image
-              className="3xl:max-h-max max-h-[70vh] object-contain object-center"
+              loading="lazy"
+              className="max-h-[70vh] object-contain object-center 3xl:max-h-max"
               src="/competitive-analysis.png"
               width={1023}
               height={760}
@@ -328,6 +328,7 @@ function HomiePage() {
           </p>
           <div className="mt-10 flex w-full items-center justify-center md:mt-16">
             <Image
+              loading="lazy"
               className="object-contain object-center"
               src="/evaluating-the-activity.png"
               width={775}
@@ -359,6 +360,7 @@ function HomiePage() {
 
           <div className="mx-auto mt-10 flex items-center justify-center rounded-21xl border-2 border-darkslategray p-8 md:mt-16">
             <Image
+              loading="lazy"
               className="max-h-[70vh] object-contain object-center"
               src="/prioritization-plotting.png"
               width={844}
@@ -377,11 +379,11 @@ function HomiePage() {
               MEET THE USERS
             </h2>
           </div>
-          <div className="mt-10 grid gap-10 md:mt-16 md:grid-cols-2">
+          <div className="mt-10 grid gap-10 md:mt-16 grid-cols-1  md:grid-cols-2">
             {users.map((user, index) => (
               <div
                 key={index}
-                className="flex max-w-max flex-col justify-center p-6 md:mx-auto md:p-10"
+                className="flex max-w-max flex-col justify-center p-6 mx-auto md:p-10"
                 style={{
                   borderRadius: "40px",
                   border: "2px solid #303030",
@@ -410,7 +412,7 @@ function HomiePage() {
                 <p className="mt-3 self-center text-xl font-medium text-whitesmoke-100 md:mt-6 md:text-2xl">
                   Frustrations
                 </p>
-                <ul className="3xl:text-xl 3xl:leading-loose ml-2 mt-3 list-disc self-center text-whitesmoke-100 text-opacity-60 sm:text-lg 2xl:mt-6">
+                <ul className="ml-2 mt-3 list-disc self-center text-whitesmoke-100 text-opacity-60 sm:text-lg 2xl:mt-6 3xl:text-xl 3xl:leading-loose">
                   {user.frustrations.map((frustration, index) => (
                     <li key={index}>{frustration}</li>
                   ))}
@@ -432,6 +434,7 @@ function HomiePage() {
 
           <div className="mt-10 flex w-full md:mt-16">
             <Image
+              loading="lazy"
               className="object-contain object-left"
               src="/information_architecture.png"
               width={1130}
@@ -476,7 +479,7 @@ function HomiePage() {
                   src={challenge.src}
                   title={challenge.title}
                   type="video/mp4"
-                  className="aspect-square min-h-[300px]"
+                  className="aspect-square min-h-[300px] xl:min-h-[650px]"
                 />
               </div>
             </div>
@@ -485,7 +488,7 @@ function HomiePage() {
           <a
             target="_blank"
             href="https://www.figma.com/proto/hZqFWgZvk93y0pQtLXk73M/Homie?page-id=1%3A4&type=design&node-id=30-83&viewport=268%2C339%2C0.13&t=ZaGPHGrReM4hSGoP-1&scaling=scale-down&starting-point-node-id=30%3A83&mode=design"
-            className="mx-auto mt-8 rounded-lg px-7 py-3.5 text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 hover:bg-[linear-gradient(225deg,_#9293FF_0%,_#AC8FFF_38.14%,_#C48CFF_65.46%,_#DC89FF_100%)] hover:text-white"
+            className="mx-auto max-w-max mt-8 rounded-lg px-7 py-3.5 text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 hover:bg-[linear-gradient(225deg,_#9293FF_0%,_#AC8FFF_38.14%,_#C48CFF_65.46%,_#DC89FF_100%)] hover:text-white"
             style={{
               border: "1px solid rgba(242, 242, 242, 0.60)",
             }}

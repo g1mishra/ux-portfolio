@@ -163,22 +163,22 @@ function HomeslicePage() {
               </span>
               <ol className="ml-[22.87px] flex list-decimal flex-col gap-3 text-xl md:ml-[27.44px] md:text-2xl">
                 <li>
-                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
+                  <span className="text-xl text-whitesmoke-100 3xl:text-2xl 3xl:leading-[50px]">
                     Who is our target audience?
                   </span>
                 </li>
                 <li>
-                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
+                  <span className="text-xl text-whitesmoke-100 3xl:text-2xl 3xl:leading-[50px]">
                     Why only them?
                   </span>
                 </li>
                 <li>
-                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
+                  <span className="text-xl text-whitesmoke-100 3xl:text-2xl 3xl:leading-[50px]">
                     How is the problem affecting the target audience?
                   </span>
                 </li>
                 <li>
-                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
+                  <span className="text-xl text-whitesmoke-100 3xl:text-2xl 3xl:leading-[50px]">
                     What are the effects of the problem on the target audience?
                   </span>
                 </li>
@@ -312,7 +312,7 @@ function HomeslicePage() {
           <p className="mt-6 justify-center self-center whitespace-nowrap text-center text-lg font-medium leading-7 text-whitesmoke-100 text-opacity-40 md:text-xl">
             HOW MIGHT WE
           </p>{" "}
-          <p className="3xl:text-3xl mt-6 justify-center self-center text-center text-lg font-medium leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-2xl md:px-4 lg:px-8">
+          <p className="mt-6 justify-center self-center text-center text-lg font-medium leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-2xl md:px-4 lg:px-8 3xl:text-3xl">
             How might we alleviate the impact of homesickness created by
             cultural shock on Indian international students?
           </p>{" "}
@@ -331,7 +331,7 @@ function HomeslicePage() {
             initial weeks of college.
             <br />
           </p>
-          <div className="3xl:max-w-screen-md ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10">
+          <div className="ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10 3xl:max-w-screen-md">
             {researchRows.map((item, index) => (
               <div
                 className="flex flex-col items-start self-end rounded-2xl border border-solid border-stone-500 max-md:p-5 md:p-8"
@@ -363,6 +363,7 @@ function HomeslicePage() {
           </div>
           <div className="mt-20 flex w-full items-center justify-center self-center overflow-hidden max-md:mb-5 md:mt-32">
             <Image
+              loading="lazy"
               src="/homeslice-research-calender.png"
               alt="Research Calender"
               width={1058}
@@ -381,6 +382,7 @@ function HomeslicePage() {
           </div>
           <div className="mt-10 flex w-full items-center justify-center self-center overflow-hidden max-md:mb-5 max-md:mt-10 md:mt-16">
             <Image
+              loading="lazy"
               className="object-contain object-center"
               src="/homeslice-brainstorming.png"
               width={1125}
@@ -392,7 +394,7 @@ function HomeslicePage() {
         <Divider />
         <div
           id="proposed-solution"
-          className="mt-24 flex w-full flex-col items-start gap-4 self-start max-md:ml-2.5 max-md:mt-5 md:ml-6"
+          className="mt-24 flex w-full flex-col items-start gap-4 self-start max-md:mt-5 md:ml-6"
         >
           <div className="flex items-center gap-5">
             <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
@@ -427,7 +429,7 @@ function HomeslicePage() {
             </h4>
           </div>
 
-          <div className="mr-20 mt-9 flex w-full max-w-screen-sm flex-col gap-6 rounded-3xl bg-[#1A1A1A] p-5 sm:self-end md:p-10 lg:max-w-screen-md">
+          <div className="mt-9 flex w-full max-w-screen-sm flex-col gap-6 self-end rounded-3xl bg-[#1A1A1A] p-5 md:p-10 lg:max-w-screen-md">
             <div className="flex items-center gap-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -456,7 +458,7 @@ function HomeslicePage() {
               </p>
             </div>
           </div>
-          <div className="mr-20 mt-6 flex w-full max-w-screen-sm flex-col gap-6 rounded-3xl bg-[#1A1A1A] p-5 sm:self-end md:p-10 lg:max-w-screen-md">
+          <div className="mt-6 flex w-full max-w-screen-sm flex-col gap-6 self-end rounded-3xl bg-[#1A1A1A] p-5 md:p-10 lg:max-w-screen-md">
             <div className="flex items-center gap-5">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -520,25 +522,25 @@ function HomeslicePage() {
             </p>
           </div>
           <div className="flex w-full flex-col gap-6 self-end">
-            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:px-5">
               <span className="text-xl leading-7">1.</span>
               <p className="text-xl leading-7 text-white">
                 As a new user on the application, complete the signup process.
               </p>
             </div>
-            <div className="flex w-full max-w-screen-sm items-start gap-4 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+            <div className="flex w-full max-w-screen-sm items-start gap-4 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:px-5">
               <span className="text-xl leading-7">2.</span>
               <p className="text-xl leading-6 text-white">
                 Complete the flow for hosting an event
               </p>
             </div>
-            <div className="flex w-full max-w-screen-sm items-start gap-3.5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+            <div className="flex w-full max-w-screen-sm items-start gap-3.5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:px-5">
               <span className="text-xl leading-7">3.</span>
               <p className="text-xl leading-7 text-white">
                 Register for a private event
               </p>
             </div>
-            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:px-5">
               <span className="text-xl leading-7">4.</span>
               <p className="text-xl leading-6 text-white">
                 Join an event of your choice
@@ -570,25 +572,25 @@ function HomeslicePage() {
             </p>
           </div>
           <div className="flex w-full flex-col gap-6 self-end">
-            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:px-5">
               <span className="text-xl leading-7">1.</span>
               <p className="text-xl leading-7 text-white">
                 As a new user, register in the application. the signup process.
               </p>
             </div>
-            <div className="flex w-full max-w-screen-sm items-start gap-4 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+            <div className="flex w-full max-w-screen-sm items-start gap-4 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:px-5">
               <span className="text-xl leading-7">2.</span>
               <p className="text-xl leading-7 text-white">
                 Join a private event in the application
               </p>
             </div>
-            <div className="flex w-full max-w-screen-sm items-start gap-3.5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+            <div className="flex w-full max-w-screen-sm items-start gap-3.5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:px-5">
               <span className="text-xl leading-7">3.</span>
               <p className="text-xl leading-7 text-white">
                 Host an event by creating a post in the application.
               </p>
             </div>
-            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
+            <div className="flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:px-5">
               <span className="text-xl leading-7">4.</span>
               <p className="text-xl leading-7 text-white">
                 Accept an event invite.
@@ -600,13 +602,14 @@ function HomeslicePage() {
               textShadow:
                 "0px 5px 15px rgba(0, 87, 255, 0.25), 0px -6px 15px rgba(255, 90, 0, 0.10), 0px 0px 20px rgba(255, 255, 255, 0.20)",
             }}
-            className="mt-32  text-center text-2xl font-medium leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full"
+            className="mt-32  text-center text-2xl font-medium leading-relaxed 2xl:leading-[62px] tracking-normal text-whitesmoke-100 max-md:mt-10 max-md:max-w-full"
           >
             The performance breakdown of each task, by each expert, is
             illustrated below
           </h4>{" "}
           <div className="my-10 flex w-full items-center justify-center self-center md:my-16">
             <Image
+              loading="lazy"
               className="object-contain object-center"
               src="/homeslice-tasks-breakdown.png"
               width={752}

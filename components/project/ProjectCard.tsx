@@ -49,26 +49,27 @@ const ProjectCard = ({
           </div>
         </div>
         <div className="flex h-full flex-col gap-6 sm:flex-row">
-          <div className="3xl:mt-8 3xl:max-w-screen-sm 3xl:gap-9 flex w-full max-w-sm flex-col gap-5 sm:col-span-1 md:mt-10">
-            <div className="flex items-center gap-5">
+          <div className="flex w-full max-w-sm flex-col gap-5 sm:col-span-1 md:mt-10 3xl:mt-8 3xl:max-w-screen-sm 3xl:gap-9">
+            <div className="flex items-center gap-5 mt-4 sm:mt-0">
               <div className="h-3 w-3 shrink-0 rounded-md bg-whitesmoke-100 shadow-white20" />
-              <span className="3xl:text-lg self-stretch text-base font-medium uppercase leading-6 text-whitesmoke-100 text-opacity-60">
+              <span className="self-stretch text-base font-medium uppercase leading-6 text-whitesmoke-100 text-opacity-60 3xl:text-lg">
                 Case Study {id}
               </span>
             </div>
             <h2
-              className="3xl:text-[32px] mt-2 font-karla text-lg font-medium leading-none md:text-xl"
+              className="mt-2 font-karla text-lg font-medium leading-none md:text-xl 3xl:text-[32px]"
               style={{ color: secondaryTitleColour }}
             >
               {secondaryTitle}
             </h2>
-            <p className="3xl:text-xl w-full max-w-screen-sm font-karla text-base font-medium text-whitesmoke-100 text-opacity-80 sm:text-lg sm:leading-9">
+            <p className="w-full max-w-screen-sm font-karla text-base font-medium text-whitesmoke-100 text-opacity-80 sm:text-lg sm:leading-9 3xl:text-xl">
               {description}
             </p>
           </div>
           <div className="relative hidden w-full flex-1 items-center justify-center overflow-hidden sm:flex">
             {thumbnail ? (
               <Image
+                loading="lazy"
                 src={thumbnail}
                 alt={title}
                 fill={true}

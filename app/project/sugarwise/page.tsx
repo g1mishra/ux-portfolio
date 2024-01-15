@@ -140,22 +140,22 @@ const SugarwisePage = () => {
               </span>
               <ol className="ml-[22.87px] flex list-decimal flex-col gap-3 text-xl md:ml-[27.44px] md:text-2xl">
                 <li>
-                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
+                  <span className="text-xl text-whitesmoke-100 3xl:text-2xl 3xl:leading-[50px]">
                     Who is our target audience?
                   </span>
                 </li>
                 <li>
-                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
+                  <span className="text-xl text-whitesmoke-100 3xl:text-2xl 3xl:leading-[50px]">
                     What is the reason for choosing them as the target audience?
                   </span>
                 </li>
                 <li>
-                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
+                  <span className="text-xl text-whitesmoke-100 3xl:text-2xl 3xl:leading-[50px]">
                     How will the application help them with the problem?
                   </span>
                 </li>
                 <li>
-                  <span className="3xl:leading-[50px] 3xl:text-2xl text-xl text-whitesmoke-100">
+                  <span className="text-xl text-whitesmoke-100 3xl:text-2xl 3xl:leading-[50px]">
                     What is the scope of this project?
                   </span>
                 </li>
@@ -291,7 +291,7 @@ const SugarwisePage = () => {
           <p className="mt-6 justify-center self-center whitespace-nowrap text-center text-lg font-medium leading-7 text-whitesmoke-100 text-opacity-40 md:text-xl">
             HOW MIGHT WE
           </p>{" "}
-          <p className="3xl:text-3xl mt-6 justify-center self-center text-center text-lg font-medium !leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-2xl md:px-4 lg:px-8">
+          <p className="mt-6 justify-center self-center text-center text-lg font-medium !leading-[1.56] text-whitesmoke-100 max-md:max-w-full sm:text-2xl md:px-4 lg:px-8 3xl:text-3xl">
             How might we tackle high sugar consumption for the students, who
             want to eat healthy food but struggles to find such food items?
           </p>{" "}
@@ -310,7 +310,7 @@ const SugarwisePage = () => {
             homesickness during the initial weeks of college.
             <br />
           </p>
-          <div className="3xl:max-w-screen-md ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10">
+          <div className="ml-auto mt-20 flex w-full max-w-screen-sm flex-col items-center gap-10 max-md:mt-10 3xl:max-w-screen-md">
             {researchRows.map((item, index) => (
               <div
                 className="flex flex-col items-start self-end rounded-2xl border border-solid border-stone-500 max-md:p-5 md:p-8"
@@ -349,6 +349,7 @@ const SugarwisePage = () => {
           </div>
           <div className="mt-20 flex w-full items-center justify-center self-center overflow-hidden max-md:mb-5 md:mt-32">
             <Image
+              loading="lazy"
               src="/sugarwise-research-calendar.png"
               alt="Research Calender"
               width={1058}
@@ -359,7 +360,7 @@ const SugarwisePage = () => {
         </div>
         <Divider />
         <div id="brainstorming" className="flex w-full flex-col">
-          <div className="mt-5 flex items-center gap-5 md:ml-6 md:mt-16">
+          <div className="mt-5 flex items-center gap-5 max-md:ml-2.5 md:ml-6 md:mt-16">
             <div className="flex h-3 w-3 shrink-0 flex-col rounded-md bg-whitesmoke-100 shadow-white20" />
             <h2 className="grow self-stretch text-lg font-medium leading-6 text-whitesmoke-100 text-opacity-60 md:text-xl">
               BRAINSTORMING AND IDEATION
@@ -367,6 +368,7 @@ const SugarwisePage = () => {
           </div>
           <div className="mt-10 flex w-full items-center justify-center self-center overflow-hidden max-md:mb-5 md:mt-16">
             <Image
+              loading="lazy"
               className="object-contain object-center"
               src="/sugarwise-brainstorming.png"
               width={1214}
@@ -451,27 +453,21 @@ const SugarwisePage = () => {
           </p>
 
           <div className="mx-auto flex w-full flex-col gap-6 self-end">
-            <div className="mt-16 flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:flex-wrap max-md:px-5 lg:max-w-screen-md">
-              <p className="whitespace-nowrap text-xl leading-6 text-white">
-                1.
-              </p>{" "}
+            <div className="mt-16 flex w-full max-w-screen-sm items-start gap-5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:mt-10 max-md:max-w-full max-md:px-5 lg:max-w-screen-md">
+              <p className="text-xl leading-6 text-white">1.</p>{" "}
               <p className="shrink grow basis-auto self-stretch text-xl leading-7 text-white max-md:max-w-full">
                 Participants expressed concerns about the lack of clear scanning
                 instructions.
               </p>
             </div>
-            <div className="flex w-full max-w-screen-sm items-start gap-4 self-end rounded-2xl bg-[#1A1A1A] px-7 py-12 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5 lg:max-w-screen-md">
-              <p className="whitespace-nowrap text-xl leading-6 text-white">
-                2.
-              </p>{" "}
+            <div className="flex w-full max-w-screen-sm items-start gap-4 self-end rounded-2xl bg-[#1A1A1A] px-7 py-12 max-md:mr-2.5 max-md:max-w-full max-md:px-5 lg:max-w-screen-md">
+              <p className="text-xl leading-6 text-white">2.</p>{" "}
               <p className="shrink grow basis-auto self-stretch text-xl leading-6 text-white">
                 Absence of clear and cancel the scan option.
               </p>
             </div>
-            <div className="flex w-full max-w-screen-sm items-start gap-3.5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5 lg:max-w-screen-md">
-              <p className="whitespace-nowrap text-xl leading-6 text-white">
-                3.
-              </p>{" "}
+            <div className="flex w-full max-w-screen-sm items-start gap-3.5 self-end rounded-2xl bg-[#1A1A1A] px-7 py-9 max-md:mr-2.5 max-md:max-w-full max-md:px-5 lg:max-w-screen-md">
+              <p className="text-xl leading-6 text-white">3.</p>{" "}
               <p className="shrink grow basis-auto self-stretch text-xl leading-7 text-white max-md:max-w-full">
                 Reminders for altering limits and notifying them when crossed.
               </p>
