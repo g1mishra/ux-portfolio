@@ -1,5 +1,6 @@
+
 export default function Home() {
-  const onSubmit = async (e) => {
+  const onSubmit = async (e: any) => {
     e.preventDefault();
 
     const response = await fetch("/api/contact", {
