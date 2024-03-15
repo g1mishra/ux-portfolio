@@ -37,9 +37,12 @@ export async function POST(request: Request) {
       { status: 200 },
     );
   } catch (error) {
-    console.error(error);
-    return new Response(JSON.stringify({ message: "Internal Server Error" }), {
-      status: 500,
-    });
+    console.error("Error from Vercel Email: ", error);
+    return new Response(
+      JSON.stringify({ message: error || "Internal Server Error" }),
+      {
+        status: 500,
+      },
+    );
   }
 }
