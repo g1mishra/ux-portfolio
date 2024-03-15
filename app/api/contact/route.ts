@@ -1,13 +1,13 @@
-import { sendEmailUsingVercelEmail } from "@/lib/vercelEmail"
+import { sendEmailUsingVercelEmail } from "@/lib/vercelEmail";
 
 // import { sendEmailUsingSendgrid } from "@/lib/sendgrid"O
 
-export const runtime = "edge"
+export const runtime = "edge";
 
 export async function POST(request: Request) {
-  const req = await request.json()
+  const req = await request.json();
   const { subject, message, firstName, lastName, phone, email, typeOfEnquiry } =
-    req.body
+    req.body;
 
   const htmlContent = `
     <div style="font-family: Arial, sans-serif; color: #333;">
@@ -21,20 +21,24 @@ export async function POST(request: Request) {
       <h3 style="color: #007bff;">Message</h3>
       <p>${message}</p>
     </div>
-  `
+  `;
 
   try {
     // await sendEmailUsingSendgrid("jack@norg.ai", subject, htmlContent)
-    await sendEmailUsingVercelEmail("jack@norg.ai", subject, htmlContent)
+    await sendEmailUsingVercelEmail(
+      "g1mishra.dev@gmail.com",
+      subject,
+      htmlContent,
+    );
 
     return new Response(
       JSON.stringify({ message: "Email sent successfully" }),
-      { status: 200 }
-    )
+      { status: 200 },
+    );
   } catch (error) {
-    console.error(error)
+    console.error(error);
     return new Response(JSON.stringify({ message: "Internal Server Error" }), {
       status: 500,
-    })
+    });
   }
 }
