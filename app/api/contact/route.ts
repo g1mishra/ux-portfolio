@@ -5,6 +5,7 @@ import { sendEmailUsingVercelEmail } from "@/lib/vercelEmail";
 export const runtime = "edge";
 
 export async function POST(request: Request) {
+  console.log("IP", request.headers.get("X-Forwarded-For"));
   const req = await request.json();
   const { subject, message, firstName, lastName, phone, email, typeOfEnquiry } =
     req.body;
