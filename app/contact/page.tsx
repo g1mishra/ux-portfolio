@@ -1,5 +1,6 @@
+"use client";
 
-export default function Home() {
+export default function Contact() {
   const onSubmit = async (e: any) => {
     e.preventDefault();
 
