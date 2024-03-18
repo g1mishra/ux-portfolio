@@ -48,10 +48,25 @@ class Email {
         },
         body: JSON.stringify(mcEmail),
       });
-      console.log("MailChannels Response: ", resp);
+      console.log("MailChannels Response: ", JSON.stringify(resp));
     } catch (error) {
       console.error("Error from MailChannels: ", error);
       throw new Error(JSON.stringify(error) || "Internal Server Error");
+    }
+
+    try {
+      // send email through MailChannels
+      const resp = await fetch("https://api.mailchannels.net/tx/v1/send?dry-run=true", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(mcEmail),
+      });
+      console.log("Dry MailChannels Response: ", JSON.stringify(resp));
+    } catch (error) {
+      console.error("Dry Error from MailChannels: ", error);
+      throw new Error(JSON.stringify(error) || "Dry Internal Server Error");
     }
   }
 
